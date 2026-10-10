@@ -1,0 +1,1809 @@
+
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="A deep dive into my executive biography.">
+<title>Executive Biography</title>
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0b1020;
+  --alt:#111b2e;
+  --surface:#16233b;
+  --text:#edf2fa;
+  --muted:#adbed4;
+  --accent:#91b6ff;
+  --line:#2a3a55;
+  --header:rgba(11,16,32,.96)
+}
+html[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f8fafd;
+  --alt:#edf2f8;
+  --surface:#e6edf6;
+  --text:#17253e;
+  --muted:#536782;
+  --accent:#285caa;
+  --line:#d1dce9;
+  --header:rgba(248,250,253,.96)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:145px}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Tahoma,sans-serif;
+  font-size:16px;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased
+}
+html[lang="fa"] body{
+  font-family:Tahoma,"Geeza Pro",Arial,sans-serif;
+  line-height:2.1
+}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent)}
+button,input,select{font:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.container{width:min(1140px,calc(100% - 44px));margin-inline:auto}
+.skip{
+  position:absolute;
+  top:-100px;
+  left:12px;
+  z-index:100;
+  background:var(--accent);
+  color:var(--bg);
+  padding:10px
+}
+.skip:focus{top:10px}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:var(--header);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line)
+}
+.header-inner{
+  width:min(1360px,calc(100% - 32px));
+  margin:auto;
+  min-height:83px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px
+}
+.brand{
+  font-size:10px;
+  font-weight:750;
+  letter-spacing:.08em;
+  white-space:nowrap;
+  flex-shrink:0
+}
+.brand-symbol{
+  color:var(--accent);
+  font-size:20px;
+  margin-inline-end:7px
+}
+.nav-links{
+  display:flex;
+  flex-wrap:nowrap;
+  white-space:nowrap;
+  align-items:center;
+  gap:clamp(9px,1.1vw,19px);
+  min-width:0;
+  overflow-x:auto;
+  scrollbar-width:thin;
+  padding:8px 0;
+  flex:1
+}
+.nav-links a{
+  font-size:clamp(10px,.78vw,12px);
+  font-weight:600;
+  color:var(--muted);
+  flex-shrink:0;
+  white-space:nowrap
+}
+.nav-links a:hover{color:var(--accent)}
+.header-controls{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  flex-shrink:0
+}
+.lang-switch{display:flex;align-items:center;gap:5px}
+.lang-switch button{
+  color:var(--muted);
+  border:0;
+  background:transparent;
+  font-size:11px;
+  padding:5px
+}
+.lang-switch button.active{
+  color:var(--accent);
+  font-weight:800
+}
+.theme-toggle{
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:50%;
+  width:36px;
+  height:36px
+}
+.hero{
+  min-height:85svh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  border-bottom:1px solid var(--line);
+  background:radial-gradient(
+    ellipse at 80% 25%,
+    rgba(76,117,193,.18),
+    transparent 46%
+  ),var(--bg)
+}
+.hero::before,.hero::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(145,182,255,.10);
+  pointer-events:none;
+  z-index:-1
+}
+.hero::before{
+  width:700px;
+  height:700px;
+  inset-inline-end:-260px;
+  top:-100px
+}
+.hero::after{
+  width:450px;
+  height:450px;
+  inset-inline-end:-135px;
+  top:25px
+}
+.hero-content{
+  padding-block:105px 115px;
+  min-width:0
+}
+.eyebrow,.section-number{
+  color:var(--accent);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em
+}
+.hero h1{
+  max-width:100%;
+  font-size:clamp(42px,7vw,87px);
+  line-height:1.14;
+  font-weight:500;
+  letter-spacing:-.05em;
+  margin:25px 0 32px
+}
+.hero-intro{
+  max-width:690px;
+  font-size:clamp(17px,2vw,20px);
+  color:var(--muted)
+}
+.hero-line{
+  width:85px;
+  height:1px;
+  background:var(--accent);
+  margin:43px 0 28px
+}
+.hero-motto{
+  font-size:clamp(24px,3vw,35px);
+  line-height:1.4;
+  margin:0
+}
+.hero-philosophy{
+  max-width:790px;
+  color:var(--muted);
+  font-size:clamp(16px,1.8vw,19px);
+  margin-top:21px;
+  line-height:1.75
+}
+.hero-cta{
+  display:inline-block;
+  margin-top:37px;
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700
+}
+.section{
+  padding-block:105px;
+  border-bottom:1px solid var(--line)
+}
+.section.alt{background:var(--alt)}
+.section-layout{
+  display:grid;
+  grid-template-columns:200px minmax(0,1fr);
+  gap:65px
+}
+.section-content{max-width:795px;min-width:0}
+.section-content h2{
+  font-size:clamp(31px,4vw,51px);
+  font-weight:500;
+  line-height:1.3;
+  letter-spacing:-.035em;
+  margin:0 0 35px
+}
+.section-content h3{
+  font-size:27px;
+  font-weight:500;
+  line-height:1.4;
+  margin:55px 0 25px
+}
+.paragraphs p,.section-content>p{
+  font-size:17px;
+  color:var(--muted);
+  margin:0 0 23px;
+  line-height:1.98
+}
+.paragraphs p:first-child{color:var(--text)}
+.timeline{
+  margin-top:43px;
+  border-top:1px solid var(--line)
+}
+.timeline-item{
+  display:grid;
+  grid-template-columns:135px minmax(0,1fr);
+  gap:24px;
+  padding:25px 0;
+  border-bottom:1px solid var(--line)
+}
+.timeline-year{
+  direction:ltr;
+  text-align:start;
+  color:var(--accent);
+  font-size:14px;
+  font-weight:700
+}
+.timeline-item h4{
+  font-size:18px;
+  font-weight:600;
+  margin:0 0 5px
+}
+.timeline-item p{
+  font-size:14px;
+  color:var(--muted);
+  margin:0
+}
+.skills{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px
+}
+.skill{
+  padding:22px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  font-size:14px
+}
+.skill::before{
+  content:"◆";
+  font-size:8px;
+  color:var(--accent);
+  margin-inline-end:13px
+}
+.pub-toolbar{
+  display:flex;
+  gap:12px;
+  margin:30px 0
+}
+.pub-toolbar input,.pub-toolbar select{
+  min-height:46px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:3px;
+  color:var(--text);
+  padding:10px 13px
+}
+.pub-toolbar input{flex:1;min-width:0}
+.pub-count{
+  font-size:13px;
+  color:var(--muted)
+}
+.pub-item{
+  display:grid;
+  grid-template-columns:90px minmax(0,1fr);
+  gap:18px;
+  padding:24px 0;
+  border-top:1px solid var(--line)
+}
+.pub-year{
+  direction:ltr;
+  text-align:start;
+  color:var(--accent);
+  font-size:14px;
+  font-weight:700
+}
+.pub-item h4{
+  margin:4px 0 8px;
+  font-size:17px;
+  font-weight:500;
+  line-height:1.55
+}
+.pub-item p{
+  margin:3px 0;
+  color:var(--muted);
+  font-size:13px
+}
+.link-button{
+  display:inline-flex;
+  gap:12px;
+  align-items:center;
+  margin:20px 10px 0 0;
+  border:1px solid var(--line);
+  padding:12px 20px;
+  font-size:13px;
+  background:transparent;
+  color:var(--text)
+}
+.link-button:hover{
+  border-color:var(--accent);
+  color:var(--accent)
+}
+.project-name{
+  font-size:28px!important;
+  color:var(--accent)!important;
+  font-weight:600
+}
+.quote{
+  border-inline-start:2px solid var(--accent);
+  padding-inline-start:25px;
+  font-size:25px;
+  line-height:1.65;
+  margin:35px 0
+}
+.empty{
+  color:var(--muted);
+  font-size:15px;
+  padding:20px 0
+}
+footer{
+  padding:30px 0;
+  background:var(--alt);
+  color:var(--muted);
+  font-size:12px
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px
+}
+.lab-intro{max-width:720px}
+.lab-tabs{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin:35px 0 23px
+}
+.lab-tab{
+  padding:11px 15px;
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--muted);
+  border-radius:3px;
+  font-size:13px;
+  text-align:start;
+  white-space:nowrap
+}
+.lab-tab:hover,.lab-tab.active{
+  color:var(--accent);
+  border-color:var(--accent);
+  background:var(--surface)
+}
+.lab-panel{
+  border:1px solid var(--line);
+  background:var(--surface);
+  padding:clamp(22px,4vw,42px)
+}
+.lab-case-label{
+  color:var(--accent);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em
+}
+.lab-case-title{
+  font-size:clamp(22px,3vw,32px)!important;
+  margin:12px 0 19px!important;
+  font-weight:500!important
+}
+.lab-scenario{
+  color:var(--text);
+  font-size:17px;
+  line-height:1.95;
+  margin:0 0 26px
+}
+.lab-question{
+  color:var(--accent);
+  font-weight:650;
+  font-size:15px;
+  margin:0 0 15px
+}
+.lab-choices{display:grid;gap:10px}
+.lab-choice{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  text-align:start;
+  width:100%;
+  padding:18px 20px;
+  border:1px solid var(--line);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  border-radius:3px;
+  transition:border-color .2s,background .2s
+}
+.lab-choice:hover,.lab-choice[aria-pressed="true"]{
+  border-color:var(--accent)
+}
+.lab-choice[aria-pressed="true"]{background:var(--alt)}
+.lab-choice-letter{
+  min-width:25px;
+  color:var(--accent);
+  font-weight:700;
+  font-size:13px;
+  direction:ltr
+}
+.lab-result{
+  margin-top:24px;
+  border-top:1px solid var(--line);
+  padding-top:25px
+}
+.lab-result p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.85
+}
+.lab-result-heading{
+  color:var(--accent);
+  font-size:12px;
+  font-weight:700;
+  margin:0 0 10px
+}
+.lab-reflection{
+  border-inline-start:2px solid var(--accent);
+  padding-inline-start:19px;
+  margin:21px 0;
+  color:var(--text)!important
+}
+.lab-actions{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:25px
+}
+.lab-action{
+  border:1px solid var(--line);
+  color:var(--accent);
+  background:transparent;
+  padding:10px 16px;
+  font-size:13px
+}
+.lab-action:hover{border-color:var(--accent)}
+.lab-disclaimer{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:20px;
+  line-height:1.8
+}
+.hero h1,
+.hero-motto,
+.section-content h2,
+.section-content h3,
+.timeline-item h4,
+.pub-item h4,
+.lab-case-title,
+.lab-result-heading{
+  white-space:nowrap!important;
+  overflow-x:auto;
+  overflow-y:hidden;
+  max-width:100%;
+  display:block;
+  scrollbar-width:thin;
+  overscroll-behavior-inline:contain;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:6px
+}
+.nav-links,.nav-links a,.nav-links a *,.brand{
+  white-space:nowrap!important
+}
+.heading-nowrap{
+  display:inline-block;
+  white-space:nowrap!important;
+  unicode-bidi:isolate
+}
+.heading-english{
+  direction:ltr;
+  unicode-bidi:isolate;
+  display:inline-block;
+  white-space:nowrap!important;
+  font-size:.65em;
+  font-weight:500;
+  color:var(--accent);
+  vertical-align:baseline
+}
+.nav-english{
+  direction:ltr;
+  unicode-bidi:isolate;
+  display:inline;
+  white-space:nowrap!important
+}
+html[dir="rtl"] .hero h1,
+html[dir="rtl"] .section-content h2,
+html[dir="rtl"] .section-content h3{
+  letter-spacing:0;
+  line-height:1.6
+}
+html[dir="rtl"] .eyebrow{letter-spacing:0}
+html[dir="rtl"] .paragraphs p{line-height:2.2}
+html[dir="rtl"] .brand{letter-spacing:0}
+html[dir="rtl"] .nav-links a{font-size:11px}
+html[dir="rtl"] .link-button{margin:20px 0 0 10px}
+@media(max-width:1150px){
+  .header-inner{
+    flex-wrap:wrap;
+    row-gap:0;
+    padding-block:10px
+  }
+  .nav-links{
+    order:3;
+    flex-basis:100%;
+    min-width:100%;
+    padding:5px 0
+  }
+  .section-layout{
+    grid-template-columns:160px minmax(0,1fr);
+    gap:40px
+  }
+}
+@media(max-width:680px){
+  .container,.header-inner{width:calc(100% - 36px)}
+  .header-inner{min-height:70px}
+  .brand{font-size:9px}
+  .hero{min-height:690px}
+  .hero-content{padding-block:80px}
+  .hero h1{font-size:clamp(39px,10vw,58px)}
+  .section{padding-block:74px}
+  .section-layout{display:block}
+  .section-number{display:block;margin-bottom:21px}
+  .section-content h2{margin-bottom:28px}
+  .paragraphs p{font-size:16px}
+  .timeline-item{grid-template-columns:1fr;gap:5px}
+  .skills{grid-template-columns:1fr}
+  .pub-toolbar{flex-direction:column}
+  .pub-item{grid-template-columns:1fr;gap:4px}
+  .footer-inner{flex-direction:column}
+  .lab-tabs{flex-direction:column}
+  .lab-tab{width:100%;overflow-x:auto}
+  .lab-choice{padding:15px}
+  html[dir="rtl"] .section-content h2{font-size:30px}
+  html[dir="rtl"] .section-content h3{font-size:23px}
+}
+@media(max-width:375px){
+  .brand-label{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .lab-choice{transition:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-symbol">◈</span>
+      <span class="brand-label">EXECUTIVE BIOGRAPHY</span>
+    </a>
+    <nav id="navLinks" class="nav-links" aria-label="Main navigation"></nav>
+    <div class="header-controls">
+      <div class="lang-switch" aria-label="Language selection">
+        <button data-lang="de" type="button">DE</button>
+        <button data-lang="en" type="button">EN</button>
+        <button data-lang="fa" type="button" lang="fa">فارسی</button>
+      </div>
+      <button id="themeToggle" class="theme-toggle"
+              type="button" aria-label="Change colour theme">◐</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="container hero-content">
+      <p class="eyebrow" id="heroKicker"></p>
+      <h1 id="heroTitle"></h1>
+      <p class="hero-intro" id="heroIntro"></p>
+      <div class="hero-line"></div>
+      <p class="hero-motto" id="heroMotto"></p>
+      <p class="hero-philosophy" id="heroPhilosophy"></p>
+      <a class="hero-cta" id="heroCTA" href="#profile"></a>
+    </div>
+  </section>
+
+  <section class="section" id="profile">
+    <div class="container section-layout">
+      <aside class="section-number">01 / PROFILE</aside>
+      <div class="section-content">
+        <h2 id="profileHeading"></h2>
+        <div id="profileText" class="paragraphs"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="education">
+    <div class="container section-layout">
+      <aside class="section-number">02 / EDUCATION</aside>
+      <div class="section-content">
+        <h2 id="educationHeading"></h2>
+        <div id="educationText" class="paragraphs"></div>
+        <div id="educationTimeline" class="timeline"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="career">
+    <div class="container section-layout">
+      <aside class="section-number">03 / EXPERIENCE</aside>
+      <div class="section-content">
+        <h2 id="careerHeading"></h2>
+        <div id="careerText" class="paragraphs"></div>
+        <h3 id="transformationHeading"></h3>
+        <div id="transformationText" class="paragraphs"></div>
+        <div id="careerTimeline" class="timeline"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="expertise">
+    <div class="container section-layout">
+      <aside class="section-number">04 / EXPERTISE</aside>
+      <div class="section-content">
+        <h2 id="expertiseHeading"></h2>
+        <div id="expertiseSkills" class="skills"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="publications">
+    <div class="container section-layout">
+      <aside class="section-number">05 / PUBLICATIONS</aside>
+      <div class="section-content">
+        <h2 id="publicationsHeading"></h2>
+        <p id="publicationsIntro"></p>
+        <div class="pub-toolbar">
+          <input id="pubSearch" type="search"
+                 aria-label="Search publications">
+          <select id="pubFilter" aria-label="Filter publications"></select>
+        </div>
+        <p id="pubCount" class="pub-count"></p>
+        <div id="pubList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="entrepreneurship">
+    <div class="container section-layout">
+      <aside class="section-number">06 / ENTREPRENEURSHIP</aside>
+      <div class="section-content">
+        <h2 id="entrepreneurshipHeading"></h2>
+        <p class="project-name">Ready Labs</p>
+        <div id="entrepreneurshipText" class="paragraphs"></div>
+        <a class="link-button" href="https://www.ready-tender.de/"
+           target="_blank" rel="noopener noreferrer">Ready Tender ↗</a>
+        <a class="link-button" href="https://www.ready-labs.ai/"
+           target="_blank" rel="noopener noreferrer">Ready Labs ↗</a>
+        <h3 id="motivationHeading"></h3>
+        <div id="motivationText" class="paragraphs"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lab">
+    <div class="container section-layout">
+      <aside class="section-number">07 / THINKING LAB</aside>
+      <div class="section-content">
+        <h2 id="labHeading"></h2>
+        <div id="labIntro" class="lab-intro paragraphs"></div>
+        <div id="labTabs" class="lab-tabs" role="group"
+             aria-label="Thinking Lab cases"></div>
+        <div id="labPanel" class="lab-panel"></div>
+        <p id="labDisclaimer" class="lab-disclaimer"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="contact">
+    <div class="container section-layout">
+      <aside class="section-number">08 / CONTACT</aside>
+      <div class="section-content">
+        <h2 id="contactHeading"></h2>
+        <p id="contactIntro"></p>
+        <a class="link-button" href="https://www.ready-labs.ai/"
+           target="_blank" rel="noopener noreferrer">Ready Labs ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span id="footerCopyright"></span>
+    <a href="https://www.ready-labs.ai/"
+       target="_blank" rel="noopener noreferrer">Ready Labs ↗</a>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+const publications=[
+  [2009,"Khakzad","Das Instrument der Financial Covenants und seine Bedeutung für das inländische Kreditgeschäft in der internationalen Finanzkrise","Josef Eul Verlag, Lohmar","ISBN 978-3-89936-848-2","book"],
+  [2008,"Khakzad","Die Rechtsprechung des Europäischen Gerichtshofs im Hinblick auf die ertragsteuerliche Organschaft in Deutschland","Tectum Verlag, Marburg","ISBN 978-3-8288-9659-8","book"],
+  [2010,"Bedau / Khakzad / Krakuhn","Anwendungsbereich und Grenzen der Critical Terms Match-Methode","IRZ","Heft 11/2010","article"],
+  [2011,"Bauer / Kalinowski / Khakzad","Bewertungseinheiten nach BilMoG – Sonderfragen im Rahmen der Umsetzung der gesetzlichen Regelungen","Deloitte","White Paper Nr. 45","paper"],
+  [2012,"Khakzad / Degelmann","Bewertungseinheiten nach BilMoG","Deloitte","White Paper Nr. 48","paper"],
+  [2012,"Bauer / Khakzad / Schildmann","Bilanzierung und Bewertung von anteilsbasierten Vergütungen – Eine Einführung nach HGB","Deloitte","White Paper Nr. 50","paper"],
+  [2012,"Khakzad / Bauer","Anteilsbasierte Mitarbeitervergütungen – eine praxisrelevante Betrachtung im Kontext nationaler und internationaler Rechnungslegungsvorschriften","IRZ","Heft 7/8/2012","article"],
+  [2013,"Bauer / Kanne / Khakzad","Anteilsbasierte Mitarbeitervergütungen – Anforderungen an die Bewertung im Kontext internationaler Rechnungsvorschriften","IRZ","Heft 2/2013","article"],
+  [2013,"Khakzad","Kontrahentenausfallrisiken nach IAS 39 und IFRS 13 – Mythen und Fakten","IRZ","Heft 7/8/2013","article"],
+  [2014,"Khakzad","IFRS 9, Phase 1 und ausgewählte praktische Probleme mit der „Nichtaufgriffsgrenze“ – Komplexitätsreduktion?","IRZ","Heft 3/2014","article"],
+  [2014,"Khakzad / Sundri","IFRS 9, Phase 3 – der Wirksamkeitsnachweis. Auch in neuer Verkleidung mit Potenzial für Kontroversen","IRZ","Heft 6/2014","article"],
+  [2014,"Khakzad","Makro Hedge Accounting und das Diskussionspapier des IASB – ist das der große Wurf?","IRZ","Heft 6/2014","article"],
+  [2014,"Khakzad / Sundri","Bilaterales Credit Valuation Adjustment, Offenlegungsanforderungen nach IFRS 13 und Asset Quality Review – ein Fallbeispiel zum bilateralen Credit Valuation Adjustment","IRZ","Heft 7/8/2014","article"],
+  [2015,"Khakzad / Peters","Aufsichtsrecht und Rechnungslegung – die Gesamtbanksteuerung unter Berücksichtigung bedeutender Einflussfaktoren von Basel III und IFRS 9","IRZ","Heft 2/2015","article"],
+  [2015,"Khakzad / Kimpel / Sundri","Infrastrukturinvestments – Ausweg aus dem „Renditeproblem“ der Versicherungsindustrie (…) ","IRZ","Heft 7/8/2015","article"],
+  [2016,"Khakzad / Sundri / Seres","Risikomodellierung und IFRS 9 (Expected Credit Losses) (…) ","IRZ","Heft 1/2016","article"],
+  [2016,"Bagheri / Khakzad / Sundri","CVA – The Never Ending Story","RiskNet","05/2016","article"],
+  [2016,"Arboleda / Bagheri / Khakzad","Model Risk","RiskNet","11/2016","article"],
+  [2017,"Cvijanovic / Khakzad","Digitale Transformation – Manche führen, manche folgen","BankingClub","05/2017","article"],
+  [2018,"Khakzad / Li / Arboleda","Some Thoughts on the Impact of Machine Learning on the Banking Industry – Beyond Myths","RiskNet","02/2018","article"],
+  [2019,"Khakzad et al.","Machine Learning in deutschen Unternehmen – Zwischen Aufbruchstimmung und Zaudern","Computerwoche","Interview · 01/2019","interview"],
+  [2019,"Khakzad / Sundri","Mit Künstlicher Intelligenz und SAP zum intelligenten Unternehmen","E-3, Printausgabe","10/2019","article"],
+  [2021,"Khakzad / Düren / Spitzer","Outlook for Germany in 2022 – Risk Scenarios SARS-CoV-2 (Covid-19)","RiskNet","12/2021","article"],
+  [2024,"Khakzad","ESG, Klima und Nachhaltigkeit: Entwirrung der regulatorischen Komplexität und Analyse möglicher Chancen und Risiken für die Banken-, Versicherungs- und Technologiebranche","RiskNet","07/2024","article"],
+  [2024,"Khakzad","What is the European Corporate Sustainable Due Diligence Directive Really About? A Snapshot!","RiskNet","08/2024","article"],
+  [2026,"Khakzad","The New Infrastructure of Artificial Intelligence","RiskNet","03/2026","article"],
+  [2026,"Khakzad","There Is No Globally Effective Risk Management for Iran’s Strategy in the Strait of Hormuz","RiskNet","04/2026","article"]
+];
+
+const labCases={
+  de:[
+    {
+      tab:"KI & Verantwortung",
+      title:"KI und Verantwortung",
+      scenario:"Ein Finanzinstitut möchte ein KI-System einsetzen, das komplexe Kundenentscheidungen vorbereitet. Das System liefert überzeugende Ergebnisse und verspricht deutlich schnellere Abläufe. Einige seiner Empfehlungen lassen sich jedoch nur eingeschränkt erklären. Der Wettbewerbsdruck steigt, während Aufsicht, Kunden und Vorstand nachvollziehbare Entscheidungen erwarten.",
+      question:"Sie tragen die Gesamtverantwortung. Wie entscheiden Sie?",
+      choices:[
+        {
+          label:"Das System schnell einführen, um den Wettbewerbsvorteil zu sichern.",
+          consequence:"Eine schnelle Einführung kann Effizienz und Wettbewerbsvorteile schaffen. Sie erhöht aber die Gefahr, dass Kontrollstrukturen, Dokumentation und Verantwortlichkeiten nicht mit der Geschwindigkeit der Technologieentwicklung Schritt halten. Entscheidend wäre, wer Entscheidungen tatsächlich freigibt, welche Eingriffsmöglichkeiten bestehen und wie Fehlentscheidungen überprüft werden."
+        },
+        {
+          label:"Die Einführung auf kontrollierte Anwendungsfälle begrenzen und schrittweise erweitern.",
+          consequence:"Ein gestufter Ansatz ermöglicht Lernen unter realen Bedingungen. Er verursacht zunächst zusätzlichen Aufwand und kann kurzfristige Vorteile verzögern. Seine Qualität hängt davon ab, ob klare Kontrollpunkte, unabhängige Prüfungen und verbindliche Verantwortlichkeiten definiert werden."
+        },
+        {
+          label:"Die Einführung zurückstellen, bis die Entscheidungen vollständig erklärbar sind.",
+          consequence:"Zurückhaltung schützt vor vorschnellen Verpflichtungen und begrenzt bestimmte Risiken. Vollständige Erklärbarkeit ist bei komplexen Modellen allerdings kein selbstverständlich erreichbarer Zustand. Auch die Entscheidung, eine Technologie nicht einzusetzen, kann wirtschaftliche und organisatorische Risiken erzeugen."
+        }
+      ],
+      reflection:"Wie viel Unsicherheit darf eine Organisation akzeptieren – und an welcher Stelle muss menschliche Verantwortung zwingend die letzte Instanz bleiben?",
+      context:"Anknüpfungspunkt: Arbeiten zu Machine Learning, Risikomodellen und KI im Finanzsektor."
+    },
+    {
+      tab:"Model Risk",
+      title:"Model Risk im Zeitalter der KI",
+      scenario:"Ein neues Prognosemodell liefert im historischen Vergleich bessere Ergebnisse als das bisher eingesetzte Verfahren. Gleichzeitig reagiert es empfindlich auf Veränderungen in den Eingangsdaten. Fachbereiche möchten das Modell produktiv einsetzen, während die unabhängige Validierung auf begrenzte Stabilität unter außergewöhnlichen Marktbedingungen hinweist.",
+      question:"Welcher Schritt ist strategisch angemessen?",
+      choices:[
+        {
+          label:"Das bessere Modell produktiv einsetzen und eng überwachen.",
+          consequence:"Die verbesserte Prognosequalität kann wirtschaftlichen Nutzen schaffen. Monitoring allein ersetzt jedoch keine belastbare Validierung. Gerade wenn sich die Datenverteilung verändert, kann die vermeintliche Überlegenheit eines Modells schnell verschwinden. Notwendig wären nachvollziehbare Schwellenwerte, Eskalationswege und ein belastbarer Rückfallmechanismus."
+        },
+        {
+          label:"Das Modell zunächst parallel betreiben und gezielt auf Robustheit prüfen.",
+          consequence:"Ein Parallelbetrieb schafft zusätzliche Evidenz, ohne die bisherige Entscheidungskette sofort abzulösen. Dafür steigen Kosten und operative Komplexität. Entscheidend ist, ob die Prüfphase klare Erfolgskriterien besitzt und tatsächliche Stressbedingungen berücksichtigt."
+        },
+        {
+          label:"Das neue Modell ablehnen, solange Robustheit nicht nachgewiesen ist.",
+          consequence:"Die Ablehnung begrenzt den Übergang zu einem möglicherweise instabilen Verfahren. Sie bedeutet jedoch nicht automatisch, dass das bestehende Modell weniger riskant ist. Auch etablierte Ansätze können systematische Schwächen besitzen. Die relevante Frage lautet daher, wie beide Modelle unter vergleichbaren Bedingungen beurteilt werden."
+        }
+      ],
+      reflection:"Ist das größte Modellrisiko ein unbekannter Fehler – oder das ungerechtfertigte Vertrauen in ein scheinbar erfolgreiches Modell?",
+      context:"Anknüpfungspunkt: Model Risk (2016), CVA und Expected Credit Losses."
+    },
+    {
+      tab:"Regulierung & Innovation",
+      title:"Regulierung versus Innovation",
+      scenario:"Ein Unternehmen entwickelt eine datengetriebene Lösung, die einen bestehenden Markt erheblich effizienter machen könnte. Die regulatorischen Anforderungen sind komplex, manche Auslegungsfragen ungeklärt. Während ein Wettbewerber bereits expandiert, warnen Compliance und Rechtsabteilung vor Risiken eines zu frühen Markteintritts.",
+      question:"Wie bringen Sie Innovation und regulatorische Verantwortung zusammen?",
+      choices:[
+        {
+          label:"Früh in den Markt gehen und die Compliance-Strukturen parallel ausbauen.",
+          consequence:"Ein früher Markteintritt kann Lernen, Kundenzugang und Skaleneffekte beschleunigen. Werden wesentliche rechtliche Anforderungen dabei unterschätzt, entstehen jedoch Risiken für Geschäftsmodell, Reputation und Finanzierung. Zwingende Vorgaben müssen vor dem Start erfüllt und offene Fragen ausdrücklich begrenzt sein."
+        },
+        {
+          label:"Das Produkt regulatorisch mitgestalten und in klar abgegrenzten Schritten einführen.",
+          consequence:"Ein abgestufter Marktzugang ermöglicht es, technische Entwicklung und rechtliche Prüfung enger zu verzahnen. Er erfordert disziplinierte Priorisierung und kann die Skalierung zunächst verlangsamen. Dafür schafft er die Chance, Compliance früh als Bestandteil der Produktarchitektur zu gestalten."
+        },
+        {
+          label:"Die vollständige regulatorische Klärung abwarten.",
+          consequence:"Abwarten reduziert die Gefahr, auf einer unzutreffenden Rechtsauffassung aufzubauen. Allerdings bleiben regulatorische Fragen in dynamischen Märkten teilweise auch langfristig offen. Eine Organisation muss unterscheiden, welche Unsicherheit tatsächlich untragbar ist und welche unter definierten Bedingungen verantwortungsvoll gesteuert werden kann."
+        }
+      ],
+      reflection:"Ist Regulierung nur eine Begrenzung von Innovation – oder kann sie selbst zum Wettbewerbsvorteil werden?",
+      context:"Anknüpfungspunkt: Veröffentlichungen zu IFRS 9, ESG und regulatorischer Komplexität."
+    },
+    {
+      tab:"Change & Transformation",
+      title:"Change & Transformation",
+      scenario:"Ein internationales Unternehmen hat ein Transformationsprogramm beschlossen. Die Technologie ist verfügbar, die Finanzierung gesichert und die strategische Zielsetzung klar. Dennoch verzögert sich die Umsetzung: Fachbereiche verteidigen bestehende Prozesse, Führungskräfte setzen unterschiedliche Prioritäten und Mitarbeitende bezweifeln den Nutzen der Veränderungen.",
+      question:"Wo würden Sie als verantwortliche Führungskraft zuerst ansetzen?",
+      choices:[
+        {
+          label:"Verbindliche Ziele, klare Verantwortlichkeiten und konsequente Umsetzung durchsetzen.",
+          consequence:"Klarheit in Steuerung und Verantwortlichkeit kann Blockaden lösen. Wird Widerstand jedoch ausschließlich als mangelnde Disziplin verstanden, bleiben strukturelle Zielkonflikte und berechtigte fachliche Einwände unsichtbar. Druck allein führt nicht automatisch zu Akzeptanz oder nachhaltiger Veränderung."
+        },
+        {
+          label:"Die Beteiligten einbinden, Anreize überprüfen und Veränderungen schrittweise verankern.",
+          consequence:"Beteiligung erhöht die Chance, operative Probleme früh zu erkennen und tragfähige Lösungen zu entwickeln. Gleichzeitig kann ein übermäßiger Konsensanspruch die Umsetzung verlangsamen. Wirksam wird der Ansatz erst dann, wenn Beteiligung mit eindeutigen Entscheidungen, messbaren Ergebnissen und konsequenter Führung verbunden ist."
+        },
+        {
+          label:"Das Programm neu bewerten und den Veränderungsumfang deutlich reduzieren.",
+          consequence:"Eine Reduzierung kann sinnvoll sein, wenn Ziele unrealistisch oder Abhängigkeiten unterschätzt wurden. Sie kann aber auch dazu führen, notwendige Veränderungen immer wieder zu verschieben. Entscheidend ist, zwischen einem fehlerhaften Programm und einer Organisation zu unterscheiden, die sich einer grundsätzlich richtigen Transformation widersetzt."
+        }
+      ],
+      reflection:"Scheitert Transformation häufiger an der Technologie – oder daran, dass sich Verantwortlichkeiten, Anreize und Verhalten nicht verändern?",
+      context:"Anknüpfungspunkt: internationale Transformationsprogramme, SAP, Governance und operative Führung."
+    }
+  ],
+  en:[
+    {
+      tab:"AI & Accountability",
+      title:"Artificial Intelligence & Accountability",
+      scenario:"A financial institution plans to introduce an AI system that supports complex customer decisions. Its results appear convincing and promise much faster processes. However, some recommendations are difficult to explain. Competitive pressure is mounting, while regulators, customers and the board expect accountable decisions.",
+      question:"You are ultimately responsible. What would you decide?",
+      choices:[
+        {
+          label:"Deploy rapidly to secure the competitive advantage.",
+          consequence:"Rapid deployment may generate efficiency gains and competitive advantages. It also risks leaving governance, documentation and accountability behind technological progress. The key questions are who actually authorises decisions, what interventions are possible and how errors are investigated."
+        },
+        {
+          label:"Begin with controlled use cases and expand gradually.",
+          consequence:"A phased approach supports learning in real operating conditions but involves additional effort and may delay short-term benefits. Its effectiveness depends on clear control points, independent review and explicit responsibilities."
+        },
+        {
+          label:"Postpone deployment until the decisions are fully explainable.",
+          consequence:"Caution reduces certain risks and avoids premature commitments. Yet complete explainability may not be attainable for complex models. Choosing not to use technology can itself create economic and organisational risks."
+        }
+      ],
+      reflection:"How much uncertainty should an organisation accept, and where must human accountability remain the final authority?",
+      context:"Related themes: machine learning, risk modelling and AI in financial services."
+    },
+    {
+      tab:"Model Risk",
+      title:"Model Risk in the Age of AI",
+      scenario:"A new forecasting model outperforms the existing approach in historical comparisons. Yet it is sensitive to shifts in input data. Business teams want to deploy it, while independent validation warns that it may be unstable under exceptional market conditions.",
+      question:"Which course of action is strategically justified?",
+      choices:[
+        {
+          label:"Deploy the higher-performing model with intensive monitoring.",
+          consequence:"Better predictive performance can create economic value, but monitoring does not replace robust validation. Model superiority can quickly vanish when data distributions shift. Clear thresholds, escalation procedures and an effective fallback are essential."
+        },
+        {
+          label:"Operate both models in parallel while testing robustness.",
+          consequence:"Parallel operation builds evidence without immediately replacing the existing decision process. It adds cost and complexity, however. The test must address credible stress conditions and have explicit success criteria."
+        },
+        {
+          label:"Reject the new model until its robustness is established.",
+          consequence:"This limits exposure to an unproven model, but does not establish that the existing approach is safer. Established models can also contain systematic weaknesses. Both should be assessed against comparable risks and conditions."
+        }
+      ],
+      reflection:"Is the greatest model risk an unknown error, or unjustified confidence in a seemingly successful model?",
+      context:"Related publications: Model Risk (2016), CVA and Expected Credit Losses."
+    },
+    {
+      tab:"Regulation & Innovation",
+      title:"Regulation versus Innovation",
+      scenario:"A company is developing a data-driven solution that could significantly improve market efficiency. Regulatory requirements are complex and some interpretations remain unsettled. A competitor is already expanding, while legal and compliance teams warn against launching too soon.",
+      question:"How would you reconcile innovation with regulatory responsibility?",
+      choices:[
+        {
+          label:"Enter the market early and develop compliance capabilities in parallel.",
+          consequence:"Early entry can accelerate learning, customer acquisition and scale. Misjudging material legal obligations, however, threatens the business model, reputation and funding. Mandatory requirements must be met before launch, and remaining uncertainties must be strictly bounded."
+        },
+        {
+          label:"Build regulation into the product and launch in controlled stages.",
+          consequence:"A staged launch brings technological development and legal assessment together. It requires disciplined priorities and may delay scaling. It also makes compliance part of the product architecture instead of a control imposed after the fact."
+        },
+        {
+          label:"Wait until the regulatory position is fully clarified.",
+          consequence:"Waiting reduces the risk of building on an incorrect legal interpretation. In dynamic markets, however, uncertainty may persist for years. Leadership must distinguish unacceptable uncertainty from risks that can be managed responsibly."
+        }
+      ],
+      reflection:"Is regulation merely a constraint on innovation, or can it become a source of competitive advantage?",
+      context:"Related publications: IFRS 9, ESG and regulatory complexity."
+    },
+    {
+      tab:"Change & Transformation",
+      title:"Change & Transformation",
+      scenario:"An international company has approved a major transformation programme. Technology is available, funding is secured and the strategic goal is clear. Yet execution stalls: departments protect existing processes, leaders pursue conflicting priorities and employees question the benefits of change.",
+      question:"Where would you begin as the accountable leader?",
+      choices:[
+        {
+          label:"Enforce clear targets, responsibilities and execution discipline.",
+          consequence:"Clear governance can remove obstacles. But treating all resistance as a lack of discipline hides structural conflicts and legitimate operational concerns. Pressure alone does not ensure acceptance or sustainable change."
+        },
+        {
+          label:"Involve stakeholders, revisit incentives and embed change gradually.",
+          consequence:"Engagement helps reveal operational challenges and improves the quality of solutions. Excessive consensus-seeking can slow execution. The approach only works when participation is paired with clear decisions, measurable outcomes and consistent leadership."
+        },
+        {
+          label:"Reassess the programme and substantially reduce its scope.",
+          consequence:"Reducing scope can be appropriate if the goals are unrealistic or dependencies have been underestimated. It may also become a way to postpone necessary change. The challenge is to distinguish a flawed programme from organisational resistance to a sound transformation."
+        }
+      ],
+      reflection:"Do transformations fail because of technology, or because responsibilities, incentives and behaviour remain unchanged?",
+      context:"Related experience: international transformation, SAP, governance and operational leadership."
+    }
+  ],
+  fa:[
+    {
+      tab:"هوش مصنوعی و مسئولیت (AI & Accountability)",
+      title:"هوش مصنوعی و مسئولیت‌پذیری (Artificial Intelligence & Accountability)",
+      scenario:"یک مؤسسهٔ مالی قصد دارد از سامانه‌ای مبتنی بر هوش مصنوعی برای پشتیبانی از تصمیم‌های پیچیده دربارهٔ مشتریان استفاده کند. نتایج امیدوارکننده است و فرایندها می‌توانند بسیار سریع‌تر شوند. بااین‌حال، توضیح برخی پیشنهادهای سامانه دشوار است. فشار رقابتی افزایش می‌یابد و نهادهای ناظر، مشتریان و هیئت‌مدیره خواهان تصمیم‌های پاسخ‌گو و قابل بررسی هستند.",
+      question:"اگر مسئولیت نهایی بر عهدهٔ شما باشد، چه تصمیمی می‌گیرید؟",
+      choices:[
+        {
+          label:"سامانه را برای دستیابی سریع به مزیت رقابتی اجرا می‌کنم.",
+          consequence:"اجرای سریع می‌تواند بهره‌وری و مزیت رقابتی ایجاد کند، اما ممکن است ساختارهای کنترل، مستندسازی و پاسخ‌گویی از توسعهٔ فناوری عقب بمانند. مسئلهٔ اصلی آن است که چه کسی تصمیم را تأیید می‌کند، امکان مداخله چگونه فراهم است و خطاها چگونه بررسی می‌شوند."
+        },
+        {
+          label:"ابتدا آن را در کاربردهای محدود و کنترل‌شده اجرا می‌کنم.",
+          consequence:"اجرای مرحله‌ای امکان یادگیری در شرایط واقعی را فراهم می‌کند، اما هزینهٔ بیشتری دارد و ممکن است منافع کوتاه‌مدت را به تأخیر اندازد. موفقیت آن به نقاط کنترل مشخص، ارزیابی مستقل و مسئولیت‌های روشن وابسته است."
+        },
+        {
+          label:"تا زمانی که تصمیم‌ها کاملاً توضیح‌پذیر نباشند، اجرا را به تعویق می‌اندازم.",
+          consequence:"احتیاط می‌تواند برخی ریسک‌ها را کاهش دهد. بااین‌حال، توضیح‌پذیری کامل در مدل‌های پیچیده همیشه دست‌یافتنی نیست. تصمیم به استفاده‌نکردن از فناوری نیز ممکن است ریسک اقتصادی و سازمانی ایجاد کند."
+        }
+      ],
+      reflection:"یک سازمان تا چه اندازه می‌تواند عدم‌قطعیت را بپذیرد و در کدام نقطه مسئولیت انسانی باید مرجع نهایی باقی بماند؟",
+      context:"موضوعات مرتبط: یادگیری ماشین، مدل‌های ریسک و هوش مصنوعی در خدمات مالی."
+    },
+    {
+      tab:"ریسک مدل (Model Risk)",
+      title:"ریسک مدل در عصر هوش مصنوعی (Model Risk in the Age of AI)",
+      scenario:"یک مدل پیش‌بینی جدید در مقایسه‌های تاریخی نتایج بهتری نسبت به روش موجود ارائه می‌دهد، اما نسبت به تغییر در داده‌های ورودی حساس است. واحدهای تجاری خواهان اجرای آن هستند، درحالی‌که ارزیابی مستقل دربارهٔ پایداری محدود مدل در شرایط غیرعادی بازار هشدار می‌دهد.",
+      question:"کدام اقدام از نظر راهبردی موجه‌تر است؟",
+      choices:[
+        {
+          label:"مدل بهتر را اجرا و به‌طور مستمر پایش می‌کنم.",
+          consequence:"عملکرد بهتر می‌تواند ارزش اقتصادی ایجاد کند، اما پایش جایگزین اعتبارسنجی دقیق نیست. با تغییر الگوی داده‌ها، برتری ظاهری مدل ممکن است از میان برود. آستانه‌های روشن، سازوکارهای ارجاع و راهکار جایگزین ضروری‌اند."
+        },
+        {
+          label:"هر دو مدل را هم‌زمان اجرا و پایداری مدل جدید را آزمایش می‌کنم.",
+          consequence:"اجرای موازی شواهد بیشتری ایجاد می‌کند، بدون آنکه فرایند موجود فوراً کنار گذاشته شود. البته هزینه و پیچیدگی عملیاتی افزایش می‌یابد. آزمایش باید شرایط تنش واقعی و معیارهای موفقیت مشخص داشته باشد."
+        },
+        {
+          label:"تا اثبات پایداری، مدل جدید را نمی‌پذیرم.",
+          consequence:"این رویکرد مواجهه با یک مدل اثبات‌نشده را محدود می‌کند، اما به معنای کم‌ریسک‌بودن مدل موجود نیست. روش‌های تثبیت‌شده نیز ممکن است ضعف‌های ساختاری داشته باشند. هر دو مدل باید بر اساس معیارهای قابل مقایسه ارزیابی شوند."
+        }
+      ],
+      reflection:"بزرگ‌ترین ریسک مدل، خطای ناشناخته است یا اعتماد بی‌دلیل به مدلی که ظاهراً موفق عمل می‌کند؟",
+      context:"انتشارات مرتبط: Model Risk در سال ۲۰۱۶، CVA و زیان اعتباری مورد انتظار."
+    },
+    {
+      tab:"مقررات و نوآوری (Regulation & Innovation)",
+      title:"مقررات در برابر نوآوری (Regulation versus Innovation)",
+      scenario:"شرکتی در حال توسعهٔ راهکاری مبتنی بر داده است که می‌تواند کارایی یک بازار را به‌طور چشمگیری افزایش دهد. الزامات نظارتی پیچیده‌اند و برخی تفسیرها هنوز روشن نیستند. یک رقیب در حال گسترش فعالیت است، درحالی‌که تیم‌های حقوقی و انطباق دربارهٔ ورود زودهنگام به بازار هشدار می‌دهند.",
+      question:"چگونه میان نوآوری و مسئولیت نظارتی تعادل برقرار می‌کنید؟",
+      choices:[
+        {
+          label:"زودتر وارد بازار می‌شوم و ساختارهای انطباق را هم‌زمان توسعه می‌دهم.",
+          consequence:"ورود زودهنگام می‌تواند یادگیری، جذب مشتری و مقیاس‌پذیری را تسریع کند، اما نادیده‌گرفتن الزامات اساسی حقوقی ممکن است مدل کسب‌وکار و اعتبار شرکت را تهدید کند. الزامات الزامی باید پیش از شروع رعایت شوند و عدم‌قطعیت‌های باقی‌مانده محدود و مشخص باشند."
+        },
+        {
+          label:"مقررات را در طراحی محصول لحاظ و آن را مرحله‌ای عرضه می‌کنم.",
+          consequence:"اجرای مرحله‌ای توسعهٔ فناوری و ارزیابی حقوقی را به یکدیگر نزدیک می‌کند. این روش به اولویت‌بندی دقیق نیاز دارد، اما می‌تواند انطباق را از ابتدا به بخشی از معماری محصول تبدیل کند."
+        },
+        {
+          label:"تا روشن‌شدن کامل وضعیت نظارتی صبر می‌کنم.",
+          consequence:"انتظار خطر تکیه بر تفسیر حقوقی نادرست را کاهش می‌دهد، اما در بازارهای پویا برخی ابهام‌ها ممکن است سال‌ها باقی بمانند. رهبران باید میان عدم‌قطعیت غیرقابل‌پذیرش و ریسک قابل مدیریت تمایز قائل شوند."
+        }
+      ],
+      reflection:"آیا مقررات فقط مانعی برای نوآوری هستند یا می‌توانند خود به مزیت رقابتی تبدیل شوند؟",
+      context:"موضوعات مرتبط: IFRS 9، ESG و پیچیدگی مقررات."
+    },
+    {
+      tab:"تغییر و تحول (Change & Transformation)",
+      title:"مدیریت تغییر و تحول (Change & Transformation)",
+      scenario:"یک شرکت بین‌المللی برنامهٔ تحول گسترده‌ای را تصویب کرده است. فناوری فراهم است، منابع مالی تأمین شده‌اند و هدف راهبردی روشن است. بااین‌حال، اجرا با تأخیر روبه‌رو می‌شود: واحدها از فرایندهای موجود دفاع می‌کنند، مدیران اولویت‌های متفاوتی دارند و کارکنان دربارهٔ مزایای تغییر تردید دارند.",
+      question:"اگر مسئول هدایت تحول باشید، از کجا آغاز می‌کنید؟",
+      choices:[
+        {
+          label:"اهداف روشن، مسئولیت‌های مشخص و اجرای منظم را الزام‌آور می‌کنم.",
+          consequence:"حاکمیت روشن می‌تواند موانع را برطرف کند، اما اگر هر نوع مقاومت صرفاً کمبود انضباط تلقی شود، تعارض‌های ساختاری و نگرانی‌های معتبر پنهان می‌مانند. فشار به‌تنهایی به پذیرش و تغییر پایدار منجر نمی‌شود."
+        },
+        {
+          label:"ذی‌نفعان را مشارکت می‌دهم، انگیزه‌ها را بازبینی و تغییر را مرحله‌ای تثبیت می‌کنم.",
+          consequence:"مشارکت می‌تواند مشکلات عملیاتی را آشکار و کیفیت راه‌حل‌ها را بهتر کند، اما تلاش بیش‌ازحد برای توافق عمومی ممکن است اجرا را کند سازد. این رویکرد زمانی مؤثر است که با تصمیم‌گیری روشن، نتایج قابل اندازه‌گیری و رهبری مستمر همراه باشد."
+        },
+        {
+          label:"برنامه را بازبینی و دامنهٔ تحول را به‌شکل قابل توجهی کاهش می‌دهم.",
+          consequence:"کاهش دامنه زمانی مفید است که اهداف غیرواقع‌بینانه باشند یا وابستگی‌ها نادیده گرفته شده باشند. بااین‌حال، ممکن است به ابزاری برای تعویق تغییر ضروری تبدیل شود. باید میان ضعف برنامه و مقاومت سازمان در برابر تحولی درست تمایز گذاشت."
+        }
+      ],
+      reflection:"آیا تحول به دلیل فناوری شکست می‌خورد یا به این دلیل که مسئولیت‌ها، انگیزه‌ها و رفتارها تغییر نمی‌کنند؟",
+      context:"تجربه‌های مرتبط: تحول بین‌المللی، SAP، حاکمیت و رهبری عملیاتی."
+    }
+  ]
+};
+
+const translations={
+  de:{
+    labels:[
+      "Über mich",
+      "Akademischer Werdegang",
+      "Berufliche Erfahrung",
+      "Expertise",
+      "Publikationen",
+      "Unternehmertum",
+      "Thinking Lab",
+      "Kontakt"
+    ],
+    headings:[
+      "Wo alles begann",
+      "Das akademische Fundament",
+      "Von der Finanzmarktpraxis zur internationalen Beratung",
+      "Expertise",
+      "Publikationen & Fachbeiträge",
+      "Unternehmertum",
+      "The Thinking Lab",
+      "Kontakt"
+    ],
+    hero:{
+      kicker:"BERLIN · ENDE DER 1990ER-JAHRE",
+      title:"Manchmal beginnt eine Reise mit einem Buch.",
+      intro:"Ein Sommertag. Ein Antiquariat. Eine zufällige Entdeckung, aus der eine lebenslange Faszination für wirtschaftliche Zusammenhänge entstehen sollte.",
+      motto:"Komplexität verstehen. Möglichkeiten schaffen.",
+      philosophy:"Wer fachliches und technologisches Wissen zielgerichtet zusammenführt, kann dazu beitragen, nachhaltigen Wohlstand für alle Menschen zu schaffen.",
+      cta:"Meine Geschichte entdecken ↓"
+    },
+    profile:[
+      "Berlin, Ende der 1990er-Jahre.",
+      "An einem Sommertag, während ich auf Freunde wartete, führte mich ein Spaziergang durch die Stadt eher zufällig in ein Antiquariat. Zwischen alten, zum Teil verstaubten Büchern entdeckte ich ein Werk über Volkswirtschaftslehre, das sich mit den Auswirkungen makroökonomischer Entwicklungen auf politische Entscheidungen beschäftigte.",
+      "Diese Begegnung sollte meine weitere Entwicklung prägen.",
+      "Mich faszinierte die Frage, wie Geld, Kapitalströme und wirtschaftliche Entscheidungen miteinander zusammenhängen – und wie sie politische Institutionen, Märkte und gesellschaftliche Entwicklungen beeinflussen.",
+      "Aus dieser Neugier erwuchs eine intensive Beschäftigung mit wirtschaftswissenschaftlichen Theorien, insbesondere Geldtheorie und internationalen Kapitalbewegungen. Sie wurde zum Ausgangspunkt meines akademischen und späteren beruflichen Weges."
+    ],
+    education:[
+      "Mein Studium begann an der Rechts- und Staatswissenschaftlichen Fakultät der Universität Bonn mit Rechtswissenschaften und Volkswirtschaftslehre. Dort beschäftigte ich mich unter anderem mit Spieltheorie und ökonomischen Entscheidungsmodellen am Lehrstuhl des Wirtschaftsnobelpreisträgers Reinhard Selten, dessen wissenschaftliche Mitarbeiter zu dieser Zeit die Lehre fortführten.",
+      "Zunehmend interessierte mich, wie wirtschaftliche Akteure Entscheidungen unter Unsicherheit treffen und wie sich die damit verbundenen Risiken verstehen und steuern lassen.",
+      "Dieses Interesse führte mich nach Köln. Am Schmalenbach Institut der Technischen Hochschule Köln studierte ich Versicherungswesen mit einem besonderen fachlichen Interesse an Risikotheorie und Risikomanagement. Mein Studium schloss ich 2005 nach sechs Semestern als Diplom-Kaufmann ab.",
+      "Da ich bereits in Bonn parallel Rechtswissenschaften studiert hatte, entschied ich mich, diese akademische Perspektive weiterzuentwickeln. 2008 erwarb ich einen Master of Laws (LL.M.) im Europäischen Recht im akademischen Kontext von RPTU Kaiserslautern & Universität des Saarlandes.",
+      "2012 ergänzte ich meine Ausbildung durch ein Leadership-Programm an der Harvard Business School mit Schwerpunkten in Verhandlungsstrategien und Spieltheorie.",
+      "So entwickelte sich ein interdisziplinäres Fundament aus Ökonomie, Recht, Risikomanagement und strategischer Entscheidungslehre, das meinen beruflichen Ansatz bis heute prägt."
+    ],
+    educationTimeline:[
+      ["2002","Rechts- und Staatswissenschaftliche Fakultät Universität Bonn","Rechtswissenschaften und Volkswirtschaftslehre · Spieltheorie"],
+      ["2005","Schmalenbach Institut Technische Hochschule Köln","Diplom-Kaufmann · Versicherungswesen · Risikotheorie und Risikomanagement"],
+      ["2008","RPTU Kaiserslautern & Universität des Saarlandes","Master of Laws (LL.M.) · Europäisches Recht"],
+      ["2012","Harvard Business School","Leadership-Programm · Verhandlungsstrategien und Spieltheorie"]
+    ],
+    career:[
+      "Bereits während meines Studiums arbeitete ich bei einer internationalen Investmentbank. Nach ersten Aufgaben im Privatkunden- und Kreditgeschäft wechselte ich in den Wertpapierhandel, wo ich überwiegend an der direkten Ausführung von Wertpapieraufträgen für Privatkunden beteiligt war.",
+      "Diese frühen Erfahrungen verbanden die akademische Auseinandersetzung mit Finanzmärkten und Risiken mit der operativen Realität des Bankgeschäfts.",
+      "Noch vor Abschluss meines Studiums erhielt ich die Zusage für den Einstieg bei einer internationalen Wirtschaftsprüfungs- und Beratungsgesellschaft.",
+      "2006 begann damit eine langjährige Karriere im Financial-Services-Sektor. Über verschiedene Gesellschaften, Funktionen und Verantwortungsbereiche hinweg entwickelte ich mich vom Associate zum Director.",
+      "Meine Arbeit umfasste zunächst insbesondere Rechnungslegung, Finanzinstrumente, Versicherungswirtschaft, Risikomanagement und regulatorische Fragestellungen. Im weiteren Verlauf übernahm ich zunehmend Verantwortung für komplexe Beratungsmandate, fachliche Kompetenzbereiche, strategische Geschäftsentwicklung und die Führung von Teams.",
+      "Dabei stand immer häufiger die Frage im Mittelpunkt, wie sich wirtschaftliche und regulatorische Anforderungen mit leistungsfähigen organisatorischen Strukturen und modernen Technologien verbinden lassen."
+    ],
+    transformationTitle:"Führung, Technologie und Transformation",
+    transformation:[
+      "Mit zunehmender Führungsverantwortung erweiterte sich mein Schwerpunkt von der Analyse und Beratung hin zur Gestaltung komplexer Veränderungsprozesse.",
+      "Insbesondere die Verbindung regulatorischer, quantitativer und technologischer Innovationsthemen wurde zu einem wesentlichen Bestandteil meiner Arbeit. Bereits viele Jahre zuvor hatte ich begonnen, mich mit Machine-Learning-Ansätzen, datenbasierten Risikomodellen und technologischen Lösungen für komplexe regulatorische Fragestellungen auseinanderzusetzen.",
+      "Ab 2018 rückten Technologie- und Transformationsprogramme noch stärker in den Mittelpunkt meiner Tätigkeit. Meine Verantwortung umfasste unter anderem komplexe Transformationen auf Basis von SAP-Technologien, KI-gestützte Anwendungsfälle, strategische Portfolioentwicklung und die Führung hoch spezialisierter Teams.",
+      "In den folgenden Jahren arbeitete ich an internationalen Transformationsinitiativen, analytischen Plattformen, Governance-Strukturen sowie kommerziellen und vertraglichen Steuerungsfragen – in einem globalen Umfeld, das sich über vier Kontinente erstreckte.",
+      "Damit verband sich technologische Gestaltung zunehmend mit unternehmerischer Verantwortung.",
+      "Die Beschäftigung mit künstlicher Intelligenz war für mich dabei nie Selbstzweck. Entscheidend war und ist die Frage, welchen konkreten wirtschaftlichen Nutzen Technologie schaffen kann – und unter welchen organisatorischen und regulatorischen Bedingungen dieser Nutzen tatsächlich entsteht."
+    ],
+    careerTimeline:[
+      ["","Internationale Investmentbank","Studienbegleitend · Privatkundenbanking, Kreditgeschäft und Wertpapierhandel"],
+      ["2006–2018","Internationale Wirtschaftsprüfung und Unternehmensberatung","Financial Services · Vom Associate zum Director"],
+      ["2018–2019","Internationale Technologieberatung","Director · SAP & Risk Analytics · Transformation"],
+      ["2019–2025","Internationale Technologie- und Transformationsberatung","Principal Business Analyst; ab 2022 auch COO mit Schwerpunkt Commercial & Contract Management · KI und ESG"],
+      ["2025","Ready Labs","Mitgründer · Strategy, Finance & Growth"]
+    ],
+    skills:[
+      "Finanzwirtschaft & Kapitalmärkte",
+      "Risikomanagement & Governance",
+      "Regulierung & Compliance",
+      "Digitale Transformation",
+      "Künstliche Intelligenz & Analytics",
+      "Strategie, Finanzen & Wachstum"
+    ],
+    publicationsIntro:"Nationale und internationale Veröffentlichungen",
+    search:"Publikationen durchsuchen ...",
+    all:"Alle Kategorien",
+    categories:["Bücher","Fachartikel","White Papers","Interviews"],
+    count:"Veröffentlichungen",
+    noResults:"Keine passenden Veröffentlichungen gefunden.",
+    venture:[
+      "2025 gründete ich gemeinsam mit Kollegen Ready Labs.",
+      "Die Motivation entstand aus einer Erfahrung, die ich über viele Jahre in unterschiedlichen Organisationen gemacht hatte:",
+      "Wirtschaftliche Chancen bleiben häufig ungenutzt, nicht weil es an Nachfrage oder Kompetenz fehlt, sondern weil der Zugang zu relevanten Informationen und ihre Bewertung mit erheblichem Aufwand verbunden sind.",
+      "Besonders sichtbar ist dieses Problem im öffentlichen Beschaffungswesen. Aus meiner eigenen Erfahrung mit komplexen Vergabeverfahren kannte ich sowohl die wirtschaftliche Bedeutung des Marktes als auch die Ressourcen, die erforderlich sind, um geeignete Geschäftsmöglichkeiten zu identifizieren und zu verfolgen.",
+      "Mit Ready Labs wollen wir diese Komplexität reduzieren.",
+      "Unser erstes Produkt, Ready Tender, nutzt künstliche Intelligenz, um Unternehmensprofile mit passenden öffentlichen Ausschreibungen zu verbinden und Recherche- sowie Bewertungsprozesse zu vereinfachen.",
+      "Unsere langfristige Vision geht weit darüber hinaus. Perspektivisch könnten Ready Grant und Ready Connect Unternehmen zusätzliche Zugänge zu Finanzierungsmöglichkeiten und Geschäftspartnern eröffnen. Beide gehören zur künftigen Produktvision, nicht zum gegenwärtigen Funktionsumfang von Ready Tender.",
+      "Als Mitgründer beschäftige ich mich insbesondere mit Strategie, Finanzen und Wachstum. In einem jungen Unternehmen verstehen wir diese Bereiche jedoch nicht als starre Zuständigkeitsgrenzen, sondern als Teil einer gemeinsamen unternehmerischen Verantwortung.",
+      "Mein persönlicher Schwerpunkt liegt darauf, strategische Klarheit, wirtschaftliche Tragfähigkeit und skalierbares Wachstum miteinander zu verbinden."
+    ],
+    motivationTitle:"Was mich heute antreibt",
+    motivation:[
+      "Rückblickend verbindet meine akademischen, beruflichen und unternehmerischen Stationen eine grundlegende Frage:",
+      "Wie lassen sich komplexe wirtschaftliche Systeme so verstehen und gestalten, dass daraus bessere Entscheidungen und neue Möglichkeiten entstehen?",
+      "Aus dem Interesse an Geldtheorie und Kapitalströmen wurde eine intensive Auseinandersetzung mit Risiko, Regulierung und Unternehmenssteuerung. Daraus entwickelte sich die Beschäftigung mit technologischer Transformation, künstlicher Intelligenz und schließlich dem Aufbau eines eigenen Unternehmens.",
+      "Was sich seither verändert hat, sind meine Aufgaben, meine Verantwortung und die Möglichkeiten, Dinge zu gestalten.",
+      "Geblieben ist die Neugier auf die Mechanismen hinter komplexen Systemen – dieselbe Neugier, die mich damals in Berlin dazu brachte, ein verstaubtes Buch aus dem Regal eines Antiquariats zu nehmen.",
+      "Und der Anspruch, aus diesem Verständnis konkrete wirtschaftliche Wirkung entstehen zu lassen."
+    ],
+    labIntro:[
+      "Vier strategische Entscheidungen. Keine einfachen Antworten.",
+      "Wie würden Sie handeln, wenn technologische Möglichkeiten, wirtschaftlicher Druck, regulatorische Verantwortung und menschliches Verhalten aufeinandertreffen?",
+      "Wählen Sie ein Szenario und treffen Sie eine Entscheidung. Anschließend erfahren Sie, welche Spannungsfelder Ihre Wahl eröffnet."
+    ],
+    labCase:"STRATEGISCHES ENTSCHEIDUNGSEXPERIMENT",
+    labConsequence:"Die strategischen Konsequenzen",
+    labReflection:"Die entscheidende Frage",
+    labContext:"Fachlicher Hintergrund",
+    labReset:"Andere Entscheidung prüfen",
+    labNext:"Nächstes Szenario →",
+    labDisclaimer:"Die Fälle sind illustrative Gedankenexperimente, keine realen Kundenmandate oder individuellen Handlungsempfehlungen. Ihre Auswahl wird nicht erfasst oder versendet.",
+    contactIntro:"Für fachlichen Austausch und ausgewählte Kooperationen.",
+    footer:"Alle Rechte vorbehalten."
+  },
+  en:{
+    labels:[
+      "About",
+      "Academic Background",
+      "Professional Experience",
+      "Expertise",
+      "Publications",
+      "Entrepreneurship",
+      "Thinking Lab",
+      "Contact"
+    ],
+    headings:[
+      "Where It All Began",
+      "Academic Foundations",
+      "From Financial Markets to International Advisory",
+      "Expertise",
+      "Publications & Contributions",
+      "Entrepreneurship",
+      "The Thinking Lab",
+      "Contact"
+    ],
+    hero:{
+      kicker:"BERLIN · LATE 1990s",
+      title:"Sometimes a journey begins with a book.",
+      intro:"A summer's day. An antiquarian bookshop. An unexpected discovery that sparked a lasting fascination with economic systems.",
+      motto:"Understanding Complexity. Creating Opportunity.",
+      philosophy:"Bringing specialist expertise and technological knowledge together with purpose can help create lasting prosperity for everyone.",
+      cta:"Discover my story ↓"
+    },
+    profile:[
+      "Berlin, in the late 1990s.",
+      "On a summer's day, while waiting for friends, I found myself wandering through the city and, quite by chance, into an antiquarian bookshop. Among its old and sometimes dusty volumes, I discovered a work on economics exploring the effects of macroeconomic developments on political decisions.",
+      "That encounter would shape the course of my life.",
+      "I became fascinated by the connections between money, capital flows and economic decisions – and by the ways in which these forces influence political institutions, markets and society.",
+      "Curiosity developed into a sustained interest in economic theory, particularly monetary theory and international capital movements. It became the starting point for my academic and professional journey."
+    ],
+    education:[
+      "My academic journey began at the Faculty of Law and Political Science (Rechts- und Staatswissenschaftliche Fakultät), University of Bonn, where I studied law and economics. There, I explored game theory and economic decision-making at the chair associated with Nobel laureate Reinhard Selten, where teaching was conducted by his academic staff at the time.",
+      "I became increasingly interested in how economic actors make decisions under uncertainty, and how the resulting risks can be understood and managed.",
+      "This interest took me to Cologne. At the Schmalenbach Institute, Technische Hochschule Köln, I studied insurance with a particular focus on risk theory and risk management, completing the Diplom-Kaufmann qualification in six semesters in 2005.",
+      "Having also pursued legal studies in Bonn, I decided to develop that academic perspective further. In 2008, I earned a Master of Laws (LL.M.) in European Law in the academic context of RPTU Kaiserslautern & Universität des Saarlandes.",
+      "In 2012, I complemented my education with a leadership programme at Harvard Business School focusing on negotiation strategies and game theory.",
+      "Together, economics, law, risk management and strategic decision theory formed an interdisciplinary foundation that continues to inform my professional approach."
+    ],
+    educationTimeline:[
+      ["2002","Rechts- und Staatswissenschaftliche Fakultät Universität Bonn","Law and Economics · Game Theory"],
+      ["2005","Schmalenbach Institut Technische Hochschule Köln","Diplom-Kaufmann · Insurance · Risk Theory and Management"],
+      ["2008","RPTU Kaiserslautern & Universität des Saarlandes","Master of Laws (LL.M.) · European Law"],
+      ["2012","Harvard Business School","Leadership Programme · Negotiation Strategies and Game Theory"]
+    ],
+    career:[
+      "I began working at an international investment bank while still a student. My initial responsibilities were in retail banking and lending, before I moved into securities trading, where I was primarily involved in the direct execution of orders for private clients.",
+      "These early experiences connected academic thinking about financial markets and risk with the operational realities of banking.",
+      "Before completing my degree, I had already received an offer to join an international audit and advisory firm.",
+      "In 2006, I began a long-standing career in financial services. Across different firms, functions and responsibilities, I progressed from Associate to Director.",
+      "My initial work included financial reporting, financial instruments, insurance, risk management and regulatory issues. Over time, I assumed greater responsibility for complex advisory engagements, specialist practices, business development and team leadership.",
+      "Increasingly, my work focused on bringing economic and regulatory requirements together with effective operating structures and modern technology."
+    ],
+    transformationTitle:"Leadership, Technology & Strategic Transformation",
+    transformation:[
+      "As my leadership responsibilities grew, my focus broaden from analysis and advisory to shaping complex organisational change.",
+      "The intersection of regulatory, quantitative and technological innovation became central to my work. Many years earlier, I had already begun exploring machine-learning approaches, data-driven risk models and technological solutions to complex regulatory questions.",
+      "From 2018 onwards, technology and transformation programmes moved further to the centre of my responsibilities, including complex transformations built on SAP technologies, AI-enabled use cases, strategic portfolio development and the leadership of highly specialised teams.",
+      "In subsequent years, I worked on international transformation initiatives, analytical platforms, governance frameworks and commercial and contractual matters across a global environment spanning four continents.",
+      "Technological transformation became increasingly intertwined with entrepreneurial responsibility.",
+      "Artificial intelligence has never been an end in itself for me. What matters is the tangible economic value technology can create – and the organisational and regulatory conditions required to realise that value."
+    ],
+    careerTimeline:[
+      ["","International Investment Bank","During studies · Retail banking, lending and securities order execution"],
+      ["2006–2018","International Audit and Advisory","Financial Services · Progression from Associate to Director"],
+      ["2018–2019","International Technology Consulting","Director · SAP & Risk Analytics · Transformation"],
+      ["2019–2025","International Technology and Transformation Consulting","Principal Business Analyst; from 2022 also COO focusing on commercial and contract management · AI and ESG"],
+      ["2025","Ready Labs","Co-Founder · Strategy, Finance & Growth"]
+    ],
+    skills:[
+      "Financial Services & Capital Markets",
+      "Risk Management & Governance",
+      "Regulation & Compliance",
+      "Digital Transformation",
+      "Artificial Intelligence & Analytics",
+      "Strategy, Finance & Growth"
+    ],
+    publicationsIntro:"National and international publications",
+    search:"Search publications ...",
+    all:"All categories",
+    categories:["Books","Articles","White Papers","Interviews"],
+    count:"publications",
+    noResults:"No matching publications found.",
+    venture:[
+      "In 2025, I co-founded Ready Labs with colleagues.",
+      "Our motivation arose from an observation I had made repeatedly over many years:",
+      "Economic opportunities are often missed not because demand or expertise is lacking, but because finding relevant information and assessing it requires disproportionate effort.",
+      "This challenge is particularly evident in public procurement. My own experience of complex tender processes had shown me both the economic significance of the market and the resources required to identify and pursue suitable opportunities.",
+      "Through Ready Labs, we aim to reduce this complexity.",
+      "Our first product, Ready Tender, uses artificial intelligence to match company profiles with relevant public tenders and simplify research and assessment processes.",
+      "Our longer-term vision goes substantially further. Future concepts, including Ready Grant and Ready Connect, could make funding opportunities and business partnerships more accessible. These are part of our vision rather than current Ready Tender features.",
+      "As a co-founder, I focus particularly on strategy, finance and growth. In a young company, however, these are not rigid boundaries of responsibility but part of our shared entrepreneurial commitment.",
+      "My personal focus is on combining strategic clarity, financial viability and scalable growth."
+    ],
+    motivationTitle:"Purpose, Perspective & Long-Term Vision",
+    motivation:[
+      "Looking back, a fundamental question connects my academic, professional and entrepreneurial experiences:",
+      "How can we understand and shape complex economic systems in ways that enable better decisions and create new opportunities?",
+      "An early interest in monetary theory and capital flows evolved into a sustained engagement with risk, regulation and corporate governance. This, in turn, led to technological transformation, artificial intelligence and ultimately building a company of our own.",
+      "What has changed is the nature of my work, the responsibilities I carry and the opportunities I have to shape outcomes.",
+      "What remains is the curiosity about the mechanisms underlying complex systems – the same curiosity that led me to pick up a dusty book in a Berlin antiquarian bookshop.",
+      "And the ambition to turn that understanding into tangible economic impact."
+    ],
+    labIntro:[
+      "Four strategic decisions. No easy answers.",
+      "How would you act when technological opportunity, economic pressure, regulatory responsibility and human behaviour collide?",
+      "Explore a scenario, make a decision and examine the strategic tensions that follow."
+    ],
+    labCase:"STRATEGIC DECISION EXPERIMENT",
+    labConsequence:"Strategic consequences",
+    labReflection:"The question that matters",
+    labContext:"Related expertise",
+    labReset:"Explore another choice",
+    labNext:"Next scenario →",
+    labDisclaimer:"These are illustrative thought experiments, not real client engagements or individual professional advice. Your selections are neither collected nor transmitted.",
+    contactIntro:"For professional exchange and selected collaborations.",
+    footer:"All rights reserved."
+  },
+  fa:{
+    labels:[
+      "دربارهٔ من (Personal Profile)",
+      "تحصیلات (Academic Background)",
+      "سوابق حرفه‌ای (Professional Track Record)",
+      "تخصص‌ها (Areas of Expertise)",
+      "انتشارات (Selected Publications & Thought Leadership)",
+      "کارآفرینی (Entrepreneurial Ventures)",
+      "آزمایشگاه تفکر (The Thinking Lab)",
+      "تماس (Professional Enquiries)"
+    ],
+    headings:[
+      "آغاز داستان (The Origins of an Intellectual Journey)",
+      "بنیان علمی (Academic Foundations & Intellectual Development)",
+      "از بازارهای مالی تا مشاورهٔ بین‌المللی (Financial Services, Leadership & Global Transformation)",
+      "تخصص‌ها (Areas of Expertise)",
+      "انتشارات و مقالات تخصصی (Selected Publications & Thought Leadership)",
+      "کارآفرینی (Entrepreneurial Ventures)",
+      "آزمایشگاه تفکر (The Thinking Lab)",
+      "تماس (Professional Enquiries)"
+    ],
+    hero:{
+      kicker:"برلین · اواخر دههٔ ۱۹۹۰",
+      title:"گاهی یک سفر با یک کتاب آغاز می‌شود.",
+      intro:"یک روز تابستانی، یک کتاب‌فروشی قدیمی و کشفی اتفاقی که آغازگر علاقه‌ای پایدار به سازوکارهای اقتصادی شد.",
+      motto:"درک پیچیدگی‌ها. آفرینش فرصت‌ها.",
+      philosophy:"پیوند هدفمند دانش تخصصی و دانش فناورانه می‌تواند به ایجاد رفاه پایدار برای همهٔ انسان‌ها کمک کند.",
+      cta:"آشنایی با داستان من ↓"
+    },
+    profile:[
+      "برلین، اواخر دههٔ ۱۹۹۰.",
+      "در یک روز تابستانی، زمانی که منتظر دوستانم بودم، هنگام قدم‌زدن در خیابان‌های شهر به‌طور اتفاقی وارد یک کتاب‌فروشی قدیمی شدم. میان کتاب‌های کهنه و گاه غبارگرفته، اثری دربارهٔ علم اقتصاد یافتم که به تأثیر تحولات اقتصاد کلان بر تصمیم‌های سیاسی می‌پرداخت.",
+      "آن مواجهه مسیر فکری و حرفه‌ای مرا عمیقاً تحت تأثیر قرار داد.",
+      "پرسشی که ذهنم را درگیر کرد، رابطهٔ پول، جریان سرمایه و تصمیم‌های اقتصادی با یکدیگر و تأثیر آن‌ها بر نهادهای سیاسی، بازارها و تحولات اجتماعی بود.",
+      "این کنجکاوی به مطالعه‌ای جدی دربارهٔ نظریه‌های اقتصادی، به‌ویژه نظریهٔ پول و جریان‌های بین‌المللی سرمایه تبدیل شد و نقطهٔ آغاز مسیر دانشگاهی و حرفه‌ای من شد."
+    ],
+    education:[
+      "مسیر دانشگاهی من با تحصیل در رشته‌های حقوق و اقتصاد در دانشکدهٔ حقوق و علوم سیاسی دانشگاه بن (Rechts- und Staatswissenschaftliche Fakultät Universität Bonn) آغاز شد. در آنجا با نظریهٔ بازی‌ها و الگوهای تصمیم‌گیری اقتصادی در کرسی علمی مرتبط با راینهارد زلتن، برندهٔ جایزهٔ نوبل اقتصاد، آشنا شدم. در آن زمان تدریس توسط همکاران علمی او انجام می‌شد.",
+      "به‌تدریج پرسش دربارهٔ چگونگی تصمیم‌گیری کنشگران اقتصادی در شرایط عدم‌قطعیت و شیوهٔ شناخت و مدیریت ریسک برایم اهمیت بیشتری پیدا کرد.",
+      "این علاقه مرا به کلن برد. در مؤسسهٔ شمالنباخ دانشگاه فنی کلن (Schmalenbach Institut Technische Hochschule Köln)، در رشتهٔ بیمه با تمرکز ویژه بر نظریهٔ ریسک و مدیریت ریسک تحصیل کردم و در سال ۲۰۰۵ دورهٔ دیپلم بازرگانی آلمان (Diplom-Kaufmann) را پس از شش نیمسال به پایان رساندم. این مدرک در نظام قدیم آموزش عالی آلمان در سطحی معادل فوق‌لیسانس (Fogh-e Lisans) قرار دارد؛ عنوان رسمی مدرک همچنان Diplom-Kaufmann است.",
+      "از آنجا که تحصیل حقوق را نیز در بن آغاز کرده بودم، تصمیم گرفتم این مسیر علمی را ادامه دهم. در سال ۲۰۰۸ مدرک فوق‌لیسانس (Fogh-e Lisans / LL.M.) را در رشتهٔ حقوق اروپا در چارچوب دانشگاهی دانشگاه فنی کایزرسلاوترن (RPTU Kaiserslautern) و دانشگاه زارلاند (Universität des Saarlandes) دریافت کردم.",
+      "در سال ۲۰۱۲ تحصیلات خود را با برنامهٔ رهبری در مدرسهٔ کسب‌وکار هاروارد، با محوریت راهبردهای مذاکره و نظریهٔ بازی‌ها، تکمیل کردم.",
+      "به این ترتیب، اقتصاد، حقوق، مدیریت ریسک و نظریهٔ تصمیم‌گیری راهبردی بنیانی میان‌رشته‌ای ساختند که همچنان رویکرد حرفه‌ای مرا شکل می‌دهد."
+    ],
+    educationTimeline:[
+      ["2002","دانشکدهٔ حقوق و علوم سیاسی دانشگاه بن (Rechts- und Staatswissenschaftliche Fakultät Universität Bonn)","حقوق و اقتصاد · نظریهٔ بازی‌ها"],
+      ["2005","مؤسسهٔ شمالنباخ دانشگاه فنی کلن (Schmalenbach Institut Technische Hochschule Köln)","دیپلم بازرگانی آلمان (Diplom-Kaufmann) · معادل فوق‌لیسانس (Fogh-e Lisans) · بیمه و مدیریت ریسک"],
+      ["2008","دانشگاه فنی کایزرسلاوترن (RPTU Kaiserslautern) و دانشگاه زارلاند (Universität des Saarlandes)","فوق‌لیسانس (Fogh-e Lisans / LL.M.) · حقوق اروپا"],
+      ["2012","مدرسهٔ کسب‌وکار هاروارد","برنامهٔ رهبری · مذاکره و نظریهٔ بازی‌ها"]
+    ],
+    career:[
+      "فعالیت حرفه‌ای من از دوران دانشجویی و در یک بانک سرمایه‌گذاری بین‌المللی آغاز شد. ابتدا در بانکداری مشتریان حقیقی و امور اعتباری فعالیت داشتم و سپس وارد معاملات اوراق بهادار شدم؛ جایی که عمدتاً در اجرای مستقیم سفارش‌های مشتریان حقیقی مشارکت می‌کردم.",
+      "این تجربه‌های اولیه، مطالعات نظری من دربارهٔ بازارهای مالی و ریسک را با واقعیت عملی فعالیت بانکی پیوند داد.",
+      "پیش از پایان تحصیلاتم، پیشنهاد همکاری از یک مؤسسهٔ بین‌المللی حسابرسی و مشاوره دریافت کرده بودم.",
+      "از سال ۲۰۰۶ فعالیتی طولانی در حوزهٔ خدمات مالی آغاز کردم و در شرکت‌ها، نقش‌ها و مسئولیت‌های مختلف، از جایگاه Associate تا Director پیش رفتم.",
+      "حوزهٔ کار من در ابتدا شامل گزارشگری مالی، ابزارهای مالی، صنعت بیمه، مدیریت ریسک و موضوعات نظارتی بود. به‌مرور مسئولیت هدایت مأموریت‌های پیچیدهٔ مشاوره‌ای، توسعهٔ حوزه‌های تخصصی، رشد کسب‌وکار و رهبری تیم‌ها را بر عهده گرفتم.",
+      "در این مسیر، پیوند الزامات اقتصادی و نظارتی با ساختارهای سازمانی کارآمد و فناوری‌های نوین به یکی از موضوعات اصلی کارم تبدیل شد."
+    ],
+    transformationTitle:"رهبری، فناوری و تحول (Leadership, Technology & Strategic Transformation)",
+    transformation:[
+      "با افزایش مسئولیت‌های مدیریتی، تمرکز من از تحلیل و مشاوره به طراحی و هدایت تحولات پیچیدهٔ سازمانی گسترش یافت.",
+      "پیوند نوآوری‌های نظارتی، کمّی و فناورانه بخش مهمی از فعالیت من شد. سال‌ها پیش‌تر نیز بررسی رویکردهای یادگیری ماشین، مدل‌های ریسک مبتنی بر داده و راهکارهای فناورانه برای مسائل پیچیدهٔ نظارتی را آغاز کرده بودم.",
+      "از سال ۲۰۱۸ برنامه‌های فناوری و تحول جایگاه پررنگ‌تری در مسئولیت‌هایم یافتند؛ از جمله تحولات پیچیده بر پایهٔ فناوری‌های SAP، کاربردهای هوش مصنوعی، توسعهٔ راهبردی سبد خدمات و رهبری تیم‌های بسیار تخصصی.",
+      "در سال‌های بعد، در طرح‌های بین‌المللی تحول، پلتفرم‌های تحلیلی، ساختارهای حاکمیتی و موضوعات تجاری و قراردادی در محیطی جهانی شامل چهار قاره فعالیت کردم.",
+      "در نتیجه، طراحی تحولات فناورانه بیش‌ازپیش با مسئولیت‌های کارآفرینانه پیوند خورد.",
+      "برای من هوش مصنوعی هرگز هدفی مستقل نبوده است. آنچه اهمیت دارد، ارزش اقتصادی ملموسی است که فناوری می‌تواند ایجاد کند و شرایط سازمانی و نظارتی لازم برای تحقق این ارزش."
+    ],
+    careerTimeline:[
+      ["","بانک سرمایه‌گذاری بین‌المللی","دوران تحصیل · بانکداری، اعتبار و معاملات اوراق بهادار"],
+      ["2006–2018","حسابرسی و مشاورهٔ بین‌المللی","خدمات مالی · پیشرفت از Associate تا Director"],
+      ["2018–2019","مشاورهٔ فناوری بین‌المللی","Director · تحلیل ریسک و SAP · تحول"],
+      ["2019–2025","مشاورهٔ فناوری و تحول بین‌المللی","Principal Business Analyst؛ از سال ۲۰۲۲ همچنین COO با تمرکز بر مدیریت تجاری و قراردادها · هوش مصنوعی و ESG"],
+      ["2025","Ready Labs","هم‌بنیان‌گذار · راهبرد، امور مالی و رشد"]
+    ],
+    skills:[
+      "خدمات مالی و بازارهای سرمایه",
+      "مدیریت ریسک و حاکمیت",
+      "مقررات و انطباق",
+      "تحول دیجیتال",
+      "هوش مصنوعی و تحلیل داده",
+      "راهبرد، امور مالی و رشد"
+    ],
+    publicationsIntro:"انتشارات ملی و بین‌المللی",
+    search:"جست‌وجوی انتشارات ...",
+    all:"همهٔ دسته‌ها",
+    categories:[
+      "کتاب‌ها (Books)",
+      "مقالات تخصصی (Professional Articles)",
+      "گزارش‌های تحلیلی (White Papers)",
+      "مصاحبه‌ها (Interviews)"
+    ],
+    count:"اثر",
+    noResults:"اثری مطابق با جست‌وجو یافت نشد.",
+    venture:[
+      "در سال ۲۰۲۵ به همراه همکارانم Ready Labs را بنیان گذاشتم.",
+      "انگیزهٔ ما از مشاهده‌ای شکل گرفت که طی سال‌ها در سازمان‌های گوناگون تکرار می‌شد:",
+      "فرصت‌های اقتصادی اغلب نه به دلیل نبود تقاضا یا تخصص، بلکه به سبب دشواری دسترسی به اطلاعات مرتبط و هزینهٔ بالای ارزیابی آن‌ها از دست می‌روند.",
+      "این چالش در تدارکات و مناقصات عمومی به‌ویژه آشکار است. تجربهٔ شخصی من در فرایندهای پیچیدهٔ مناقصه، هم اهمیت اقتصادی این بازار و هم منابع لازم برای شناسایی و پیگیری فرصت‌های مناسب را نشان داده بود.",
+      "با Ready Labs می‌خواهیم این پیچیدگی را کاهش دهیم.",
+      "نخستین محصول ما، Ready Tender، از هوش مصنوعی برای تطبیق پروفایل شرکت‌ها با مناقصات عمومی مرتبط و ساده‌سازی فرایندهای جست‌وجو و ارزیابی استفاده می‌کند.",
+      "چشم‌انداز بلندمدت ما بسیار فراتر از این محصول است. طرح‌های آینده، از جمله Ready Grant و Ready Connect، می‌توانند دسترسی شرکت‌ها به فرصت‌های تأمین مالی و همکاری‌های تجاری را آسان‌تر کنند. این طرح‌ها بخشی از چشم‌انداز آینده هستند و در حال حاضر قابلیت‌های Ready Tender محسوب نمی‌شوند.",
+      "به‌عنوان یکی از بنیان‌گذاران، به‌ویژه بر راهبرد، امور مالی و رشد تمرکز دارم. بااین‌حال، در یک شرکت جوان این حوزه‌ها مرزهای خشک مسئولیت نیستند، بلکه بخشی از تعهد مشترک کارآفرینانهٔ ما به شمار می‌روند.",
+      "تمرکز شخصی من بر پیوند شفافیت راهبردی، پایداری اقتصادی و رشد مقیاس‌پذیر است."
+    ],
+    motivationTitle:"آنچه امروز به من انگیزه می‌دهد (Purpose, Perspective & Long-Term Vision)",
+    motivation:[
+      "وقتی به گذشته نگاه می‌کنم، پرسشی بنیادی تمام مراحل علمی، حرفه‌ای و کارآفرینانهٔ مرا به هم پیوند می‌دهد:",
+      "چگونه می‌توان نظام‌های پیچیدهٔ اقتصادی را شناخت و به‌گونه‌ای شکل داد که تصمیم‌های بهتر و فرصت‌های تازه‌ای به وجود آیند؟",
+      "علاقهٔ نخستین من به نظریهٔ پول و جریان سرمایه به مطالعهٔ عمیق ریسک، مقررات و راهبری سازمانی انجامید. سپس به تحول فناورانه، هوش مصنوعی و سرانجام ایجاد شرکتی مستقل رسید.",
+      "آنچه در این سال‌ها تغییر کرده، ماهیت وظایف، سطح مسئولیت و امکانات من برای اثرگذاری بوده است.",
+      "اما کنجکاوی دربارهٔ سازوکارهای پنهان نظام‌های پیچیده همچنان باقی مانده است؛ همان کنجکاوی که روزی در برلین مرا واداشت کتابی غبارگرفته را از قفسهٔ یک کتاب‌فروشی قدیمی بردارم.",
+      "و همچنین تلاش برای تبدیل این شناخت به اثری واقعی در اقتصاد."
+    ],
+    labIntro:[
+      "چهار تصمیم راهبردی؛ بدون پاسخ‌های ساده.",
+      "اگر فرصت‌های فناورانه، فشار اقتصادی، مسئولیت نظارتی و رفتار انسانی هم‌زمان مطرح باشند، چگونه تصمیم می‌گیرید؟",
+      "یکی از سناریوها را انتخاب کنید، تصمیم بگیرید و پیامدهای راهبردی آن را بررسی کنید."
+    ],
+    labCase:"آزمایش تصمیم‌گیری راهبردی (Strategic Decision Experiment)",
+    labConsequence:"پیامدهای راهبردی (Strategic Consequences)",
+    labReflection:"پرسش اساسی (The Question That Matters)",
+    labContext:"پیشینهٔ تخصصی (Related Expertise)",
+    labReset:"بررسی تصمیمی دیگر",
+    labNext:"سناریوی بعدی ←",
+    labDisclaimer:"این سناریوها صرفاً آزمایش‌های فکری فرضی هستند و به پرونده‌های واقعی مشتریان یا توصیه‌های حرفه‌ای فردی اشاره ندارند. انتخاب‌های شما ثبت یا ارسال نمی‌شوند.",
+    contactIntro:"برای گفت‌وگوهای تخصصی و همکاری‌های منتخب.",
+    footer:"تمام حقوق محفوظ است."
+  }
+};
+
+const sectionIDs=[
+  "profile",
+  "education",
+  "career",
+  "expertise",
+  "publications",
+  "entrepreneurship",
+  "lab",
+  "contact"
+];
+
+let currentLang="de";
+let activeCase=0;
+let choices=[null,null,null,null];
+
+function setText(id,value){
+  document.getElementById(id).textContent=value;
+}
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,ch=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[ch]);
+}
+
+function paragraphsHTML(lines){
+  return lines.map(line=>`<p>${escapeHTML(line)}</p>`).join("");
+}
+
+function timelineHTML(items){
+  return items.map(([year,heading,detail])=>`
+    <article class="timeline-item">
+      <div class="timeline-year" dir="ltr">${escapeHTML(year)}</div>
+      <div>
+        <h4>${escapeHTML(heading)}</h4>
+        <p>${escapeHTML(detail)}</p>
+      </div>
+    </article>
+  `).join("");
+}
+
+function bilingualHeadingHTML(label){
+  const match=label.match(/^(.*?)\s+\(([^()]*)\)$/);
+  if(!match)return escapeHTML(label);
+  return `<span class="heading-nowrap">`+
+    `<span lang="fa" dir="rtl">${escapeHTML(match[1])}</span> `+
+    `<bdi class="heading-english" lang="en" dir="ltr">`+
+    `(${escapeHTML(match[2])})</bdi></span>`;
+}
+
+function bilingualNavHTML(label){
+  const match=label.match(/^(.*?)\s+\(([^()]*)\)$/);
+  if(!match)return escapeHTML(label);
+  return `<span lang="fa">${escapeHTML(match[1])}</span> `+
+    `<bdi class="nav-english" lang="en" dir="ltr">`+
+    `(${escapeHTML(match[2])})</bdi>`;
+}
+
+function setHeading(id,value,lang){
+  const element=document.getElementById(id);
+  if(lang==="fa"){
+    element.innerHTML=bilingualHeadingHTML(value);
+  }else{
+    element.textContent=value;
+  }
+}
+
+function renderPublications(){
+  const t=translations[currentLang];
+  const query=document.getElementById("pubSearch")
+    .value.trim().toLocaleLowerCase();
+  const category=document.getElementById("pubFilter").value;
+  const results=publications.filter(pub=>{
+    const searchable=[pub[1],pub[2],pub[3],pub[4]]
+      .join(" ").toLocaleLowerCase();
+    return searchable.includes(query)&&
+      (category==="all"||pub[5]===category);
+  }).sort((a,b)=>b[0]-a[0]);
+
+  setText("pubCount",results.length+" "+t.count);
+  const list=document.getElementById("pubList");
+
+  if(!results.length){
+    list.innerHTML=`<p class="empty">${escapeHTML(t.noResults)}</p>`;
+    return;
+  }
+
+  list.innerHTML=results.map(pub=>`
+    <article class="pub-item">
+      <div class="pub-year" dir="ltr">${escapeHTML(pub[0])}</div>
+      <div>
+        <p>${escapeHTML(pub[3])}</p>
+        <h4>${escapeHTML(pub[2])}</h4>
+        <p>${escapeHTML(pub[1])}</p>
+        <p>${escapeHTML(pub[4])}</p>
+      </div>
+    </article>
+  `).join("");
+}
+
+function renderLab(){
+  const t=translations[currentLang];
+  const cases=labCases[currentLang];
+  const item=cases[activeCase];
+  const selected=choices[activeCase];
+  const tabs=document.getElementById("labTabs");
+  const panel=document.getElementById("labPanel");
+
+  tabs.innerHTML=cases.map((entry,index)=>`
+    <button type="button"
+      class="lab-tab ${index===activeCase?"active":""}"
+      data-case="${index}"
+      aria-pressed="${index===activeCase}">
+      ${escapeHTML(entry.tab)}
+    </button>
+  `).join("");
+
+  tabs.querySelectorAll("[data-case]").forEach(button=>{
+    button.addEventListener("click",()=>{
+      activeCase=Number(button.dataset.case);
+      renderLab();
+    });
+  });
+
+  const result=selected===null?"":`
+    <div class="lab-result" id="labResult">
+      <p class="lab-result-heading">
+        ${currentLang==="fa"
+          ?bilingualHeadingHTML(t.labConsequence)
+          :escapeHTML(t.labConsequence)}
+      </p>
+      <p>${escapeHTML(item.choices[selected].consequence)}</p>
+
+      <p class="lab-result-heading">
+        ${currentLang==="fa"
+          ?bilingualHeadingHTML(t.labReflection)
+          :escapeHTML(t.labReflection)}
+      </p>
+      <p class="lab-reflection">${escapeHTML(item.reflection)}</p>
+
+      <p class="lab-result-heading">
+        ${currentLang==="fa"
+          ?bilingualHeadingHTML(t.labContext)
+          :escapeHTML(t.labContext)}
+      </p>
+      <p>${escapeHTML(item.context)}</p>
+
+      <div class="lab-actions">
+        <button type="button" class="lab-action" id="labReset">
+          ${escapeHTML(t.labReset)}
+        </button>
+        <button type="button" class="lab-action" id="labNext">
+          ${escapeHTML(t.labNext)}
+        </button>
+      </div>
+    </div>
+  `;
+
+  panel.innerHTML=`
+    <div class="lab-case-label">
+      ${currentLang==="fa"
+        ?bilingualHeadingHTML(t.labCase)
+        :escapeHTML(t.labCase)}
+      · <span dir="ltr">${activeCase+1} / ${cases.length}</span>
+    </div>
+
+    <h3 class="lab-case-title">
+      ${currentLang==="fa"
+        ?bilingualHeadingHTML(item.title)
+        :escapeHTML(item.title)}
+    </h3>
+
+    <p class="lab-scenario">${escapeHTML(item.scenario)}</p>
+    <p class="lab-question">${escapeHTML(item.question)}</p>
+
+    <div class="lab-choices" role="group"
+         aria-label="${escapeHTML(item.question)}">
+      ${item.choices.map((choice,index)=>`
+        <button type="button"
+          class="lab-choice"
+          data-choice="${index}"
+          aria-pressed="${selected===index}">
+          <span class="lab-choice-letter">${["A","B","C"][index]}</span>
+          <span>${escapeHTML(choice.label)}</span>
+        </button>
+      `).join("")}
+    </div>
+
+    ${result}
+  `;
+
+  panel.querySelectorAll("[data-choice]").forEach(button=>{
+    button.addEventListener("click",()=>{
+      choices[activeCase]=Number(button.dataset.choice);
+      renderLab();
+      const resultElement=document.getElementById("labResult");
+      if(resultElement){
+        resultElement.scrollIntoView({
+          behavior:"auto",
+          block:"nearest"
+        });
+      }
+    });
+  });
+
+  if(selected!==null){
+    document.getElementById("labReset")
+      .addEventListener("click",()=>{
+        choices[activeCase]=null;
+        renderLab();
+      });
+
+    document.getElementById("labNext")
+      .addEventListener("click",()=>{
+        activeCase=(activeCase+1)%cases.length;
+        renderLab();
+        document.getElementById("labTabs")
+          .scrollIntoView({behavior:"auto",block:"nearest"});
+      });
+  }
+}
+
+function renderLanguage(lang){
+  if(!translations[lang])lang="de";
+  currentLang=lang;
+  const t=translations[lang];
+
+  document.documentElement.lang=lang==="en"?"en-GB":lang;
+  document.documentElement.dir=lang==="fa"?"rtl":"ltr";
+  document.title=t.hero.motto+" | Executive Biography";
+
+  document.querySelectorAll("[data-lang]").forEach(button=>{
+    const active=button.dataset.lang===lang;
+    button.classList.toggle("active",active);
+    button.setAttribute("aria-pressed",String(active));
+  });
+
+  document.getElementById("navLinks").innerHTML=
+    sectionIDs.map((id,i)=>{
+      const label=lang==="fa"
+        ?bilingualNavHTML(t.labels[i])
+        :escapeHTML(t.labels[i]);
+      return `<a href="#${id}">${label}</a>`;
+    }).join("");
+
+  setText("heroKicker",t.hero.kicker);
+  setText("heroTitle",t.hero.title);
+  setText("heroIntro",t.hero.intro);
+  setText("heroMotto",t.hero.motto);
+  setText("heroPhilosophy",t.hero.philosophy);
+  setText("heroCTA",t.hero.cta);
+
+  sectionIDs.forEach((id,i)=>{
+    setHeading(id+"Heading",t.headings[i],lang);
+  });
+
+  document.getElementById("profileText").innerHTML=
+    paragraphsHTML(t.profile);
+
+  document.getElementById("educationText").innerHTML=
+    paragraphsHTML(t.education);
+
+  document.getElementById("educationTimeline").innerHTML=
+    timelineHTML(t.educationTimeline);
+
+  document.getElementById("careerText").innerHTML=
+    paragraphsHTML(t.career);
+
+  setHeading("transformationHeading",t.transformationTitle,lang);
+
+  document.getElementById("transformationText").innerHTML=
+    paragraphsHTML(t.transformation);
+
+  document.getElementById("careerTimeline").innerHTML=
+    timelineHTML(t.careerTimeline);
+
+  document.getElementById("expertiseSkills").innerHTML=
+    t.skills.map(skill=>
+      `<div class="skill">${escapeHTML(skill)}</div>`
+    ).join("");
+
+  setText("publicationsIntro",t.publicationsIntro);
+
+  const search=document.getElementById("pubSearch");
+  search.placeholder=t.search;
+  search.setAttribute("aria-label",t.search);
+  search.value="";
+
+  const filter=document.getElementById("pubFilter");
+  const types=["book","article","paper","interview"];
+
+  filter.innerHTML=`
+    <option value="all">${escapeHTML(t.all)}</option>
+    ${types.map((type,i)=>
+      `<option value="${type}">${escapeHTML(t.categories[i])}</option>`
+    ).join("")}
+  `;
+
+  renderPublications();
+
+  document.getElementById("entrepreneurshipText").innerHTML=
+    paragraphsHTML(t.venture);
+
+  setHeading("motivationHeading",t.motivationTitle,lang);
+
+  document.getElementById("motivationText").innerHTML=
+    t.motivation.map((paragraph,i)=>{
+      if(i===1){
+        return `<blockquote class="quote">${escapeHTML(paragraph)}</blockquote>`;
+      }
+      return `<p>${escapeHTML(paragraph)}</p>`;
+    }).join("");
+
+  document.getElementById("labIntro").innerHTML=
+    paragraphsHTML(t.labIntro);
+
+  setText("labDisclaimer",t.labDisclaimer);
+
+  choices=[null,null,null,null];
+  renderLab();
+
+  setText("contactIntro",t.contactIntro);
+  setText("footerCopyright","© 2026 · "+t.footer);
+
+  try{
+    localStorage.setItem("cv-language",lang);
+  }catch(error){}
+}
+
+document.querySelectorAll("[data-lang]").forEach(button=>{
+  button.addEventListener("click",()=>{
+    renderLanguage(button.dataset.lang);
+  });
+});
+
+document.getElementById("pubSearch")
+  .addEventListener("input",renderPublications);
+
+document.getElementById("pubFilter")
+  .addEventListener("change",renderPublications);
+
+document.getElementById("themeToggle")
+  .addEventListener("click",()=>{
+    const next=document.documentElement.dataset.theme==="light"
+      ?"dark":"light";
+
+    document.documentElement.dataset.theme=next;
+
+    try{
+      localStorage.setItem("cv-theme",next);
+    }catch(error){}
+  });
+
+let initialTheme="dark";
+let initialLanguage="de";
+
+try{
+  initialTheme=localStorage.getItem("cv-theme")||"dark";
+  initialLanguage=localStorage.getItem("cv-language")||"de";
+}catch(error){}
+
+document.documentElement.dataset.theme=
+  initialTheme==="light"?"light":"dark";
+
+renderLanguage(
+  translations[initialLanguage]?initialLanguage:"de"
+);
+</script>
+</body>
+</html>
