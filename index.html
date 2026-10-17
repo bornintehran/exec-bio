@@ -5,500 +5,331 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
-<meta name="description" content="A deep dive into my executive biography.">
-<title>Executive Biography</title>
+<meta name="description" content="Khakzad – Finanzwirtschaft, Risikomanagement, internationale Transformation, künstliche Intelligenz und Unternehmertum. Ein persönlicher Einblick in meinen Werdegang.">
+<meta name="theme-color" content="#0b1020">
+<title>Khakzad | Finanzwirtschaft, Technologie & Transformation</title>
+
 <style>
-:root{
-  color-scheme:dark;
-  --bg:#0b1020;
-  --alt:#111b2e;
-  --surface:#16233b;
-  --text:#edf2fa;
-  --muted:#adbed4;
-  --accent:#91b6ff;
-  --line:#2a3a55;
-  --header:rgba(11,16,32,.96)
-}
-html[data-theme="light"]{
-  color-scheme:light;
-  --bg:#f8fafd;
-  --alt:#edf2f8;
-  --surface:#e6edf6;
-  --text:#17253e;
-  --muted:#536782;
-  --accent:#285caa;
-  --line:#d1dce9;
-  --header:rgba(248,250,253,.96)
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:145px}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Tahoma,sans-serif;
-  font-size:16px;
-  line-height:1.85;
-  -webkit-font-smoothing:antialiased
-}
-html[lang="fa"] body{
-  font-family:Tahoma,"Geeza Pro",Arial,sans-serif;
-  line-height:2.1
-}
-a{color:inherit;text-decoration:none}
-a:hover{color:var(--accent)}
-button,input,select{font:inherit}
-button{cursor:pointer}
-[hidden]{display:none!important}
-:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.container{width:min(1140px,calc(100% - 44px));margin-inline:auto}
-.skip{
-  position:absolute;
-  top:-100px;
-  left:12px;
-  z-index:100;
-  background:var(--accent);
-  color:var(--bg);
-  padding:10px
-}
-.skip:focus{top:10px}
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:30;
-  background:var(--header);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line)
-}
-.header-inner{
-  width:min(1360px,calc(100% - 32px));
-  margin:auto;
-  min-height:83px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px
-}
-.brand{
-  font-size:10px;
-  font-weight:750;
-  letter-spacing:.08em;
-  white-space:nowrap;
-  flex-shrink:0
-}
-.brand-symbol{
-  color:var(--accent);
-  font-size:20px;
-  margin-inline-end:7px
-}
-.nav-links{
-  display:flex;
-  flex-wrap:nowrap;
-  white-space:nowrap;
-  align-items:center;
-  gap:clamp(9px,1.1vw,19px);
-  min-width:0;
-  overflow-x:auto;
-  scrollbar-width:thin;
-  padding:8px 0;
-  flex:1
-}
-.nav-links a{
-  font-size:clamp(10px,.78vw,12px);
-  font-weight:600;
-  color:var(--muted);
-  flex-shrink:0;
-  white-space:nowrap
-}
-.nav-links a:hover{color:var(--accent)}
-.header-controls{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  flex-shrink:0
-}
-.lang-switch{display:flex;align-items:center;gap:5px}
-.lang-switch button{
-  color:var(--muted);
-  border:0;
-  background:transparent;
-  font-size:11px;
-  padding:5px
-}
-.lang-switch button.active{
-  color:var(--accent);
-  font-weight:800
-}
-.theme-toggle{
-  background:transparent;
-  color:var(--text);
-  border:1px solid var(--line);
-  border-radius:50%;
-  width:36px;
-  height:36px
-}
-.hero{
-  min-height:85svh;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-  border-bottom:1px solid var(--line);
-  background:radial-gradient(
-    ellipse at 80% 25%,
-    rgba(76,117,193,.18),
-    transparent 46%
-  ),var(--bg)
-}
-.hero::before,.hero::after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  border:1px solid rgba(145,182,255,.10);
-  pointer-events:none;
-  z-index:-1
-}
-.hero::before{
-  width:700px;
-  height:700px;
-  inset-inline-end:-260px;
-  top:-100px
-}
-.hero::after{
-  width:450px;
-  height:450px;
-  inset-inline-end:-135px;
-  top:25px
-}
-.hero-content{
-  padding-block:105px 115px;
-  min-width:0
-}
-.eyebrow,.section-number{
-  color:var(--accent);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.1em
-}
-.hero h1{
-  max-width:100%;
-  font-size:clamp(42px,7vw,87px);
-  line-height:1.14;
-  font-weight:500;
-  letter-spacing:-.05em;
-  margin:25px 0 32px
-}
-.hero-intro{
-  max-width:690px;
-  font-size:clamp(17px,2vw,20px);
-  color:var(--muted)
-}
-.hero-line{
-  width:85px;
-  height:1px;
-  background:var(--accent);
-  margin:43px 0 28px
-}
-.hero-motto{
-  font-size:clamp(24px,3vw,35px);
-  line-height:1.4;
-  margin:0
-}
-.hero-philosophy{
-  max-width:790px;
-  color:var(--muted);
-  font-size:clamp(16px,1.8vw,19px);
-  margin-top:21px;
-  line-height:1.75
-}
-.hero-cta{
-  display:inline-block;
-  margin-top:37px;
-  color:var(--accent);
-  font-size:13px;
-  font-weight:700
-}
-.section{
-  padding-block:105px;
-  border-bottom:1px solid var(--line)
-}
-.section.alt{background:var(--alt)}
-.section-layout{
-  display:grid;
-  grid-template-columns:200px minmax(0,1fr);
-  gap:65px
-}
-.section-content{max-width:795px;min-width:0}
-.section-content h2{
-  font-size:clamp(31px,4vw,51px);
-  font-weight:500;
-  line-height:1.3;
-  letter-spacing:-.035em;
-  margin:0 0 35px
-}
-.section-content h3{
-  font-size:27px;
-  font-weight:500;
-  line-height:1.4;
-  margin:55px 0 25px
-}
-.paragraphs p,.section-content>p{
-  font-size:17px;
-  color:var(--muted);
-  margin:0 0 23px;
-  line-height:1.98
-}
-.paragraphs p:first-child{color:var(--text)}
-.timeline{
-  margin-top:43px;
-  border-top:1px solid var(--line)
-}
-.timeline-item{
-  display:grid;
-  grid-template-columns:135px minmax(0,1fr);
-  gap:24px;
-  padding:25px 0;
-  border-bottom:1px solid var(--line)
-}
-.timeline-year{
-  direction:ltr;
-  text-align:start;
-  color:var(--accent);
-  font-size:14px;
-  font-weight:700
-}
-.timeline-item h4{
-  font-size:18px;
-  font-weight:600;
-  margin:0 0 5px
-}
-.timeline-item p{
-  font-size:14px;
-  color:var(--muted);
-  margin:0
-}
-.skills{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px
-}
-.skill{
-  padding:22px;
-  background:var(--surface);
-  border:1px solid var(--line);
-  font-size:14px
-}
-.skill::before{
-  content:"◆";
-  font-size:8px;
-  color:var(--accent);
-  margin-inline-end:13px
-}
-.pub-toolbar{
-  display:flex;
-  gap:12px;
-  margin:30px 0
-}
-.pub-toolbar input,.pub-toolbar select{
-  min-height:46px;
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:3px;
-  color:var(--text);
-  padding:10px 13px
-}
-.pub-toolbar input{flex:1;min-width:0}
-.pub-count{
-  font-size:13px;
-  color:var(--muted)
-}
-.pub-item{
-  display:grid;
-  grid-template-columns:90px minmax(0,1fr);
-  gap:18px;
-  padding:24px 0;
-  border-top:1px solid var(--line)
-}
-.pub-year{
-  direction:ltr;
-  text-align:start;
-  color:var(--accent);
-  font-size:14px;
-  font-weight:700
-}
-.pub-item h4{
-  margin:4px 0 8px;
-  font-size:17px;
-  font-weight:500;
-  line-height:1.55
-}
-.pub-item p{
-  margin:3px 0;
-  color:var(--muted);
-  font-size:13px
-}
-.link-button{
-  display:inline-flex;
-  gap:12px;
-  align-items:center;
-  margin:20px 10px 0 0;
-  border:1px solid var(--line);
-  padding:12px 20px;
-  font-size:13px;
-  background:transparent;
-  color:var(--text)
-}
-.link-button:hover{
-  border-color:var(--accent);
-  color:var(--accent)
-}
-.project-name{
-  font-size:28px!important;
-  color:var(--accent)!important;
-  font-weight:600
-}
-.quote{
-  border-inline-start:2px solid var(--accent);
-  padding-inline-start:25px;
-  font-size:25px;
-  line-height:1.65;
-  margin:35px 0
-}
-.empty{
-  color:var(--muted);
-  font-size:15px;
-  padding:20px 0
-}
-footer{
-  padding:30px 0;
-  background:var(--alt);
-  color:var(--muted);
-  font-size:12px
-}
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  gap:20px
-}
-.lab-intro{max-width:720px}
-.lab-tabs{
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-  margin:35px 0 23px
-}
-.lab-tab{
-  padding:11px 15px;
-  background:transparent;
-  border:1px solid var(--line);
-  color:var(--muted);
-  border-radius:3px;
-  font-size:13px;
-  text-align:start;
-  white-space:nowrap
-}
-.lab-tab:hover,.lab-tab.active{
-  color:var(--accent);
-  border-color:var(--accent);
-  background:var(--surface)
-}
-.lab-panel{
-  border:1px solid var(--line);
-  background:var(--surface);
-  padding:clamp(22px,4vw,42px)
-}
-.lab-case-label{
-  color:var(--accent);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.08em
-}
-.lab-case-title{
-  font-size:clamp(22px,3vw,32px)!important;
-  margin:12px 0 19px!important;
-  font-weight:500!important
-}
-.lab-scenario{
-  color:var(--text);
-  font-size:17px;
-  line-height:1.95;
-  margin:0 0 26px
-}
-.lab-question{
-  color:var(--accent);
-  font-weight:650;
-  font-size:15px;
-  margin:0 0 15px
-}
-.lab-choices{display:grid;gap:10px}
-.lab-choice{
-  display:flex;
-  align-items:flex-start;
-  gap:14px;
-  text-align:start;
-  width:100%;
-  padding:18px 20px;
-  border:1px solid var(--line);
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
-  border-radius:3px;
-  transition:border-color .2s,background .2s
-}
-.lab-choice:hover,.lab-choice[aria-pressed="true"]{
-  border-color:var(--accent)
-}
-.lab-choice[aria-pressed="true"]{background:var(--alt)}
-.lab-choice-letter{
-  min-width:25px;
-  color:var(--accent);
-  font-weight:700;
-  font-size:13px;
-  direction:ltr
-}
-.lab-result{
-  margin-top:24px;
-  border-top:1px solid var(--line);
-  padding-top:25px
-}
-.lab-result p{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.85
-}
-.lab-result-heading{
-  color:var(--accent);
-  font-size:12px;
-  font-weight:700;
-  margin:0 0 10px
-}
-.lab-reflection{
-  border-inline-start:2px solid var(--accent);
-  padding-inline-start:19px;
-  margin:21px 0;
-  color:var(--text)!important
-}
-.lab-actions{
-  display:flex;
-  gap:13px;
-  flex-wrap:wrap;
-  margin-top:25px
-}
-.lab-action{
-  border:1px solid var(--line);
-  color:var(--accent);
-  background:transparent;
-  padding:10px 16px;
-  font-size:13px
-}
-.lab-action:hover{border-color:var(--accent)}
-.lab-disclaimer{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:20px;
-  line-height:1.8
-}
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --alt: #111b2e;
+  --surface: #16233b;
+  --text: #edf2fa;
+  --muted: #adbed4;
+  --accent: #91b6ff;
+  --line: #2a3a55;
+  --header: rgba(11,16,32,.97);
+  --shadow: rgba(0,0,0,.25);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f8fafd;
+  --alt: #edf2f8;
+  --surface: #e6edf6;
+  --text: #17253e;
+  --muted: #536782;
+  --accent: #285caa;
+  --line: #d1dce9;
+  --header: rgba(248,250,253,.97);
+  --shadow: rgba(23,37,62,.12);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 145px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[lang="fa"] body {
+  font-family: Tahoma, "Geeza Pro", Arial, sans-serif;
+  line-height: 2;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(1140px, calc(100% - 44px));
+  margin-inline: auto;
+}
+
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 15px;
+  background: var(--accent);
+  color: var(--bg);
+}
+.skip:focus { top: 10px; }
+
+/* HEADER */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--header);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  width: min(1360px, calc(100% - 36px));
+  margin: auto;
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-block: 12px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .09em;
+}
+
+.brand-symbol {
+  color: var(--accent);
+  font-size: 24px;
+}
+
+.nav-links {
+  order: 3;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px 24px;
+  min-width: 0;
+  padding: 7px 0 2px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--accent);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-inline-start: auto;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.lang-switch button {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 8px;
+  min-height: 40px;
+  font-size: 12px;
+}
+
+.lang-switch button.active {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.theme-toggle,
+.menu-toggle {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 21px;
+}
+
+.menu-toggle { display: none; }
+
+/* HERO */
+
+.hero {
+  min-height: 78svh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(
+      ellipse at 80% 25%,
+      rgba(76,117,193,.18),
+      transparent 47%
+    ), var(--bg);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(145,182,255,.10);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero::before {
+  width: 680px;
+  height: 680px;
+  inset-inline-end: -250px;
+  top: -115px;
+}
+
+.hero::after {
+  width: 450px;
+  height: 450px;
+  inset-inline-end: -130px;
+  top: 20px;
+}
+
+.hero-content {
+  min-width: 0;
+  padding-block: 100px 110px;
+}
+
+.eyebrow,
+.section-number,
+.small-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .09em;
+}
+
+.hero h1 {
+  max-width: 950px;
+  font-size: clamp(40px, 6.4vw, 82px);
+  line-height: 1.17;
+  font-weight: 500;
+  letter-spacing: -.045em;
+  margin: 25px 0 30px;
+}
+
+.hero-intro {
+  max-width: 710px;
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.8;
+}
+
+.hero-line {
+  width: 82px;
+  height: 1px;
+  background: var(--accent);
+  margin: 41px 0 29px;
+}
+
+.hero-motto {
+  font-size: clamp(24px, 3vw, 35px);
+  font-weight: 450;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.hero-philosophy {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+  margin-top: 22px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  margin-top: 36px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* SECTIONS */
+
+.section {
+  padding-block: clamp(72px, 8vw, 108px);
+  border-bottom: 1px solid var(--line);
+}
+
+.section.alt { background: var(--alt); }
+
+.section-layout {
+  display: grid;
+  grid-template-columns: 185px minmax(0, 1fr);
+  gap: clamp(30px, 5vw, 65px);
+}
+
+.section-number { padding-top: 13px; }
+
+.section-content {
+  max-width: 820px;
+  min-width: 0;
+}
+
+.section-content h2 {
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -.032em;
+  margin: 0 0 34px;
+}
+
+.section-content h3 {
+  font-size: clamp(23px, 2.7vw, 30px);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 52px 0 23px;
+}
+
 .hero h1,
 .hero-motto,
 .section-content h2,
@@ -506,125 +337,531 @@ footer{
 .timeline-item h4,
 .pub-item h4,
 .lab-case-title,
-.lab-result-heading{
-  white-space:nowrap!important;
-  overflow-x:auto;
-  overflow-y:hidden;
-  max-width:100%;
-  display:block;
-  scrollbar-width:thin;
-  overscroll-behavior-inline:contain;
-  -webkit-overflow-scrolling:touch;
-  padding-bottom:6px
+.lab-result-heading {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  max-width: 100%;
 }
-.nav-links,.nav-links a,.nav-links a *,.brand{
-  white-space:nowrap!important
+
+.heading-primary { display: block; }
+
+.heading-english {
+  display: block;
+  direction: ltr;
+  text-align: end;
+  color: var(--accent);
+  font-size: .52em;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
 }
-.heading-nowrap{
-  display:inline-block;
-  white-space:nowrap!important;
-  unicode-bidi:isolate
+
+.paragraphs { max-width: 72ch; }
+
+.paragraphs p,
+.section-content > p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.88;
+  margin: 0 0 23px;
+  overflow-wrap: break-word;
 }
-.heading-english{
-  direction:ltr;
-  unicode-bidi:isolate;
-  display:inline-block;
-  white-space:nowrap!important;
-  font-size:.65em;
-  font-weight:500;
-  color:var(--accent);
-  vertical-align:baseline
-}
-.nav-english{
-  direction:ltr;
-  unicode-bidi:isolate;
-  display:inline;
-  white-space:nowrap!important
-}
-html[dir="rtl"] .hero h1,
+
+.paragraphs p:first-child { color: var(--text); }
+
 html[dir="rtl"] .section-content h2,
-html[dir="rtl"] .section-content h3{
-  letter-spacing:0;
-  line-height:1.6
+html[dir="rtl"] .section-content h3,
+html[dir="rtl"] .hero h1 {
+  letter-spacing: 0;
+  line-height: 1.55;
 }
-html[dir="rtl"] .eyebrow{letter-spacing:0}
-html[dir="rtl"] .paragraphs p{line-height:2.2}
-html[dir="rtl"] .brand{letter-spacing:0}
-html[dir="rtl"] .nav-links a{font-size:11px}
-html[dir="rtl"] .link-button{margin:20px 0 0 10px}
-@media(max-width:1150px){
-  .header-inner{
-    flex-wrap:wrap;
-    row-gap:0;
-    padding-block:10px
+
+html[dir="rtl"] .paragraphs p { line-height: 2.15; }
+
+/* TIMELINE */
+
+.timeline {
+  margin-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 135px minmax(0, 1fr);
+  gap: 25px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-year {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.timeline-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 6px;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* EXPERTISE */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.skill {
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 6px;
+  min-width: 0;
+}
+
+.skill-symbol {
+  display: block;
+  color: var(--accent);
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.skill h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+.skill p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* PUBLICATIONS */
+
+.pub-toolbar {
+  display: flex;
+  gap: 12px;
+  margin: 28px 0 18px;
+}
+
+.pub-toolbar input,
+.pub-toolbar select {
+  min-height: 48px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 10px 14px;
+}
+
+.pub-toolbar input {
+  flex: 1;
+  min-width: 0;
+}
+
+.pub-toolbar select { max-width: 100%; }
+
+.pub-count {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 85px minmax(0, 1fr);
+  gap: 20px;
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+}
+
+.pub-year {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.pub-item h4 {
+  font-size: 17px;
+  font-weight: 550;
+  line-height: 1.55;
+  margin: 5px 0 10px;
+}
+
+.pub-item p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 3px 0;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 22px 0;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 19px;
+  margin-top: 21px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.link-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.project-name {
+  font-size: 27px !important;
+  font-weight: 600;
+  color: var(--accent) !important;
+}
+
+.quote {
+  border-inline-start: 2px solid var(--accent);
+  padding-inline-start: 24px;
+  font-size: clamp(20px, 2.4vw, 27px);
+  font-weight: 450;
+  line-height: 1.7;
+  margin: 32px 0;
+}
+
+/* THINKING LAB */
+
+.lab-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 34px 0 22px;
+}
+
+.lab-tab {
+  background: transparent;
+  color: var(--muted);
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 13px;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.lab-tab:hover,
+.lab-tab.active {
+  color: var(--accent);
+  background: var(--surface);
+  border-color: var(--accent);
+}
+
+.lab-panel {
+  padding: clamp(23px, 4vw, 40px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 5px;
+}
+
+.lab-case-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+.lab-case-title {
+  font-size: clamp(23px, 3vw, 32px);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 13px 0 20px;
+}
+
+.lab-scenario {
+  font-size: 17px;
+  line-height: 1.9;
+  margin: 0 0 26px;
+}
+
+.lab-question {
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.lab-choices {
+  display: grid;
+  gap: 10px;
+}
+
+.lab-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 17px 19px;
+  line-height: 1.65;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.lab-choice:hover,
+.lab-choice[aria-pressed="true"] {
+  border-color: var(--accent);
+}
+
+.lab-choice[aria-pressed="true"] {
+  background: var(--alt);
+}
+
+.lab-choice-letter {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 750;
+  min-width: 23px;
+  direction: ltr;
+}
+
+.lab-result {
+  border-top: 1px solid var(--line);
+  margin-top: 25px;
+  padding-top: 25px;
+}
+
+.lab-result p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.lab-result-heading {
+  color: var(--accent) !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  margin: 22px 0 10px;
+}
+
+.lab-reflection {
+  color: var(--text) !important;
+  border-inline-start: 2px solid var(--accent);
+  padding-inline-start: 18px;
+}
+
+.lab-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.lab-action {
+  border: 1px solid var(--line);
+  color: var(--accent);
+  background: transparent;
+  border-radius: 4px;
+  padding: 11px 16px;
+  font-size: 13px;
+}
+
+.lab-action:hover { border-color: var(--accent); }
+
+.lab-disclaimer {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--alt);
+  color: var(--muted);
+  padding: 30px 0;
+  font-size: 12px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+  .header-inner {
+    position: relative;
+    flex-wrap: nowrap;
+    min-height: 70px;
+    gap: 8px;
   }
-  .nav-links{
-    order:3;
-    flex-basis:100%;
-    min-width:100%;
-    padding:5px 0
+
+  .brand-label { display: none; }
+
+  .menu-toggle { display: inline-flex; }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 7px);
+    inset-inline: 0;
+    order: unset;
+    flex: none;
+    width: 100%;
+    max-height: 72svh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px;
+    background: var(--alt);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 18px 38px var(--shadow);
   }
-  .section-layout{
-    grid-template-columns:160px minmax(0,1fr);
-    gap:40px
+
+  .nav-links.is-open { display: flex; }
+
+  .nav-links a {
+    display: block;
+    padding: 12px;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .section-layout {
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 32px;
   }
 }
-@media(max-width:680px){
-  .container,.header-inner{width:calc(100% - 36px)}
-  .header-inner{min-height:70px}
-  .brand{font-size:9px}
-  .hero{min-height:690px}
-  .hero-content{padding-block:80px}
-  .hero h1{font-size:clamp(39px,10vw,58px)}
-  .section{padding-block:74px}
-  .section-layout{display:block}
-  .section-number{display:block;margin-bottom:21px}
-  .section-content h2{margin-bottom:28px}
-  .paragraphs p{font-size:16px}
-  .timeline-item{grid-template-columns:1fr;gap:5px}
-  .skills{grid-template-columns:1fr}
-  .pub-toolbar{flex-direction:column}
-  .pub-item{grid-template-columns:1fr;gap:4px}
-  .footer-inner{flex-direction:column}
-  .lab-tabs{flex-direction:column}
-  .lab-tab{width:100%;overflow-x:auto}
-  .lab-choice{padding:15px}
-  html[dir="rtl"] .section-content h2{font-size:30px}
-  html[dir="rtl"] .section-content h3{font-size:23px}
+
+@media (max-width: 680px) {
+  .container,
+  .header-inner {
+    width: calc(100% - 36px);
+  }
+
+  .header-controls { gap: 5px; }
+  .lang-switch { gap: 0; }
+  .lang-switch button { padding: 5px; }
+
+  .hero { min-height: auto; }
+
+  .hero-content { padding-block: 75px 85px; }
+
+  .hero h1 {
+    font-size: clamp(35px, 9vw, 54px);
+  }
+
+  .hero-philosophy { font-size: 16px; }
+  .section-layout { display: block; }
+
+  .section-number {
+    display: block;
+    margin-bottom: 22px;
+    padding-top: 0;
+  }
+
+  .section-content h2 { margin-bottom: 28px; }
+  .paragraphs p { font-size: 16px; }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .skills { grid-template-columns: 1fr; }
+  .pub-toolbar { flex-direction: column; }
+
+  .pub-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .lab-tabs { flex-direction: column; }
+  .lab-tab { width: 100%; }
+  .lab-choice { padding: 15px; }
+
+  html[dir="rtl"] .section-content h2 { font-size: 30px; }
+  html[dir="rtl"] .section-content h3 { font-size: 24px; }
 }
-@media(max-width:375px){
-  .brand-label{display:none}
+
+@media (max-width: 350px) {
+  .header-inner { gap: 4px; }
+  .lang-switch button { min-width: 27px; padding: 3px; }
+  .menu-toggle, .theme-toggle { width: 39px; height: 39px; }
 }
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .lab-choice{transition:none}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 </style>
 </head>
+
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
+<a href="#main" class="skip" id="skipLink">Zum Inhalt springen</a>
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="#top">
-      <span class="brand-symbol">◈</span>
+    <a href="#top" class="brand" aria-label="Zur Startseite">
+      <span class="brand-symbol" aria-hidden="true">◈</span>
       <span class="brand-label">EXECUTIVE BIOGRAPHY</span>
     </a>
-    <nav id="navLinks" class="nav-links" aria-label="Main navigation"></nav>
+
+    <nav id="navLinks" class="nav-links" aria-label="Hauptnavigation"></nav>
+
     <div class="header-controls">
-      <div class="lang-switch" aria-label="Language selection">
-        <button data-lang="de" type="button">DE</button>
-        <button data-lang="en" type="button">EN</button>
-        <button data-lang="fa" type="button" lang="fa">فارسی</button>
+      <div class="lang-switch" role="group" aria-label="Sprache">
+        <button type="button" data-lang="de">DE</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="fa" lang="fa">فارسی</button>
       </div>
-      <button id="themeToggle" class="theme-toggle"
-              type="button" aria-label="Change colour theme">◐</button>
+
+      <button type="button" id="themeToggle" class="theme-toggle"
+              aria-label="Farbschema ändern">◐</button>
+
+      <button type="button" id="menuToggle" class="menu-toggle"
+              aria-controls="navLinks"
+              aria-expanded="false"
+              aria-label="Menü öffnen">☰</button>
     </div>
   </div>
 </header>
 
 <main id="main">
+
   <section class="hero" id="top">
     <div class="container hero-content">
       <p class="eyebrow" id="heroKicker"></p>
@@ -633,13 +870,13 @@ html[dir="rtl"] .link-button{margin:20px 0 0 10px}
       <div class="hero-line"></div>
       <p class="hero-motto" id="heroMotto"></p>
       <p class="hero-philosophy" id="heroPhilosophy"></p>
-      <a class="hero-cta" id="heroCTA" href="#profile"></a>
+      <a class="hero-cta" href="#profile" id="heroCTA"></a>
     </div>
   </section>
 
   <section class="section" id="profile">
     <div class="container section-layout">
-      <aside class="section-number">01 / PROFILE</aside>
+      <aside class="section-number"></aside>
       <div class="section-content">
         <h2 id="profileHeading"></h2>
         <div id="profileText" class="paragraphs"></div>
@@ -649,7 +886,7 @@ html[dir="rtl"] .link-button{margin:20px 0 0 10px}
 
   <section class="section alt" id="education">
     <div class="container section-layout">
-      <aside class="section-number">02 / EDUCATION</aside>
+      <aside class="section-number"></aside>
       <div class="section-content">
         <h2 id="educationHeading"></h2>
         <div id="educationText" class="paragraphs"></div>
@@ -660,7 +897,7 @@ html[dir="rtl"] .link-button{margin:20px 0 0 10px}
 
   <section class="section" id="career">
     <div class="container section-layout">
-      <aside class="section-number">03 / EXPERIENCE</aside>
+      <aside class="section-number"></aside>
       <div class="section-content">
         <h2 id="careerHeading"></h2>
         <div id="careerText" class="paragraphs"></div>
@@ -673,7 +910,7 @@ html[dir="rtl"] .link-button{margin:20px 0 0 10px}
 
   <section class="section alt" id="expertise">
     <div class="container section-layout">
-      <aside class="section-number">04 / EXPERTISE</aside>
+      <aside class="section-number"></aside>
       <div class="section-content">
         <h2 id="expertiseHeading"></h2>
         <div id="expertiseSkills" class="skills"></div>
@@ -683,32 +920,35 @@ html[dir="rtl"] .link-button{margin:20px 0 0 10px}
 
   <section class="section" id="publications">
     <div class="container section-layout">
-      <aside class="section-number">05 / PUBLICATIONS</aside>
+      <aside class="section-number"></aside>
       <div class="section-content">
         <h2 id="publicationsHeading"></h2>
         <p id="publicationsIntro"></p>
         <div class="pub-toolbar">
-          <input id="pubSearch" type="search"
-                 aria-label="Search publications">
-          <select id="pubFilter" aria-label="Filter publications"></select>
+          <input type="search" id="pubSearch">
+          <select id="pubFilter"></select>
         </div>
-        <p id="pubCount" class="pub-count"></p>
+        <p id="pubCount" class="pub-count" role="status"></p>
         <div id="pubList"></div>
+        <button type="button" id="pubMore" class="link-button" hidden></button>
       </div>
     </div>
   </section>
 
   <section class="section alt" id="entrepreneurship">
     <div class="container section-layout">
-      <aside class="section-number">06 / ENTREPRENEURSHIP</aside>
+      <aside class="section-number"></aside>
       <div class="section-content">
         <h2 id="entrepreneurshipHeading"></h2>
         <p class="project-name">Ready Labs</p>
         <div id="entrepreneurshipText" class="paragraphs"></div>
-        <a class="link-button" href="https://www.ready-tender.de/"
-           target="_blank" rel="noopener noreferrer">Ready Tender ↗</a>
-        <a class="link-button" href="https://www.ready-labs.ai/"
-           target="_blank" rel="noopener noreferrer">Ready Labs ↗</a>
+
+        <a id="readyTenderLink" class="link-button"
+           href="https://www.ready-tender.de/"
+           target="_blank" rel="noopener noreferrer">
+          Ready Tender ↗
+        </a>
+
         <h3 id="motivationHeading"></h3>
         <div id="motivationText" class="paragraphs"></div>
       </div>
@@ -717,12 +957,11 @@ html[dir="rtl"] .link-button{margin:20px 0 0 10px}
 
   <section class="section" id="lab">
     <div class="container section-layout">
-      <aside class="section-number">07 / THINKING LAB</aside>
+      <aside class="section-number"></aside>
       <div class="section-content">
         <h2 id="labHeading"></h2>
-        <div id="labIntro" class="lab-intro paragraphs"></div>
-        <div id="labTabs" class="lab-tabs" role="group"
-             aria-label="Thinking Lab cases"></div>
+        <div id="labIntro" class="paragraphs"></div>
+        <div id="labTabs" class="lab-tabs" role="group"></div>
         <div id="labPanel" class="lab-panel"></div>
         <p id="labDisclaimer" class="lab-disclaimer"></p>
       </div>
@@ -731,29 +970,36 @@ html[dir="rtl"] .link-button{margin:20px 0 0 10px}
 
   <section class="section alt" id="contact">
     <div class="container section-layout">
-      <aside class="section-number">08 / CONTACT</aside>
+      <aside class="section-number"></aside>
       <div class="section-content">
         <h2 id="contactHeading"></h2>
         <p id="contactIntro"></p>
-        <a class="link-button" href="https://www.ready-labs.ai/"
-           target="_blank" rel="noopener noreferrer">Ready Labs ↗</a>
+        <a id="readyLabsLink" class="link-button"
+           href="https://www.ready-labs.ai/"
+           target="_blank" rel="noopener noreferrer">
+          Ready Labs ↗
+        </a>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="container footer-inner">
     <span id="footerCopyright"></span>
-    <a href="https://www.ready-labs.ai/"
-       target="_blank" rel="noopener noreferrer">Ready Labs ↗</a>
+    <a id="footerTop" href="#top">Nach oben ↑</a>
   </div>
 </footer>
 
 <script>
 "use strict";
 
-const publications=[
+/* =====================================================
+   PUBLICATIONS – COMPLETE BIBLIOGRAPHY
+   ===================================================== */
+
+const publications = [
   [2009,"Khakzad","Das Instrument der Financial Covenants und seine Bedeutung für das inländische Kreditgeschäft in der internationalen Finanzkrise","Josef Eul Verlag, Lohmar","ISBN 978-3-89936-848-2","book"],
   [2008,"Khakzad","Die Rechtsprechung des Europäischen Gerichtshofs im Hinblick auf die ertragsteuerliche Organschaft in Deutschland","Tectum Verlag, Marburg","ISBN 978-3-8288-9659-8","book"],
   [2010,"Bedau / Khakzad / Krakuhn","Anwendungsbereich und Grenzen der Critical Terms Match-Methode","IRZ","Heft 11/2010","article"],
@@ -783,8 +1029,363 @@ const publications=[
   [2026,"Khakzad","There Is No Globally Effective Risk Management for Iran’s Strategy in the Strait of Hormuz","RiskNet","04/2026","article"]
 ];
 
-const labCases={
-  de:[
+/* =====================================================
+   TRANSLATIONS
+   ===================================================== */
+
+const translations = {
+  de: {
+    nav: ["Über mich","Karriere","Expertise","Publikationen","Unternehmertum","Thinking Lab","Kontakt"],
+    side: ["PROFIL","AUSBILDUNG","KARRIERE","EXPERTISE","PUBLIKATIONEN","UNTERNEHMERTUM","THINKING LAB","KONTAKT"],
+    headings: [
+      "Wo alles begann",
+      "Das akademische Fundament",
+      "Von der Finanzmarktpraxis zur internationalen Beratung",
+      "Expertise",
+      "Publikationen & Fachbeiträge",
+      "Unternehmertum",
+      "The Thinking Lab",
+      "Kontakt"
+    ],
+    hero: {
+      kicker:"BERLIN · ENDE DER 1990ER-JAHRE",
+      title:"Manchmal beginnt eine Reise mit einem Buch.",
+      intro:"Ein zufälliger Fund in einem Berliner Antiquariat weckte meine Neugier auf wirtschaftliche Zusammenhänge. Sie führte mich von Finanzmärkten und Risikomanagement über internationale Transformation bis zur Mitgründung eines eigenen Unternehmens.",
+      motto:"Komplexität verstehen. Möglichkeiten schaffen.",
+      philosophy:"Mich beschäftigt die Frage, wie wirtschaftliche, regulatorische und technologische Perspektiven zusammenwirken – und wie daraus bessere Entscheidungen und neue Möglichkeiten entstehen können.",
+      cta:"Meine Geschichte entdecken ↓"
+    },
+    profile: [
+      "Berlin, Ende der 1990er-Jahre.",
+      "An einem Sommertag wartete ich auf Freunde und nutzte die Zeit für einen Spaziergang durch die Stadt. Eher zufällig betrat ich ein Antiquariat. Zwischen alten, teilweise verstaubten Büchern entdeckte ich ein Werk über Volkswirtschaftslehre, das sich mit dem Einfluss makroökonomischer Entwicklungen auf politische Entscheidungen beschäftigte.",
+      "Was als beiläufige Entdeckung begann, wurde zum Ausgangspunkt einer nachhaltigen Faszination: Wie hängen Geld, Kapitalströme und wirtschaftliche Entscheidungen zusammen? Welche Kräfte bestimmen das Verhalten von Märkten und Institutionen? Und wie beeinflussen sie politische und gesellschaftliche Entwicklungen?",
+      "Aus diesen Fragen entstand eine intensive Beschäftigung mit wirtschaftswissenschaftlichen Theorien, insbesondere Geldtheorie und internationalen Kapitalbewegungen. Die Neugier auf die Mechanismen komplexer Systeme sollte meinen akademischen und späteren beruflichen Weg entscheidend prägen."
+    ],
+    education: [
+      "Mein akademischer Weg begann an der Rechts- und Staatswissenschaftlichen Fakultät der Universität Bonn, wo ich Rechtswissenschaften und Volkswirtschaftslehre studierte. Besonders interessierten mich Spieltheorie und ökonomische Entscheidungsmodelle. Am Lehrstuhl des Wirtschaftsnobelpreisträgers Reinhard Selten, dessen wissenschaftliche Mitarbeiter damals die Lehre fortführten, beschäftigte ich mich mit der Frage, wie Menschen und Institutionen unter Unsicherheit Entscheidungen treffen.",
+      "Dieses Interesse führte mich nach Köln. Am Schmalenbach Institut der Technischen Hochschule Köln studierte ich Versicherungswesen mit den Schwerpunkten Risikotheorie und Risikomanagement. 2005 schloss ich das Studium nach sechs Semestern als Diplom-Kaufmann ab.",
+      "Die Verbindung von Ökonomie und Recht beschäftigte mich weiterhin. 2008 erwarb ich einen Master of Laws (LL.M.) im Europäischen Recht im akademischen Kontext von RPTU Kaiserslautern und Universität des Saarlandes. 2012 ergänzte ich meine Ausbildung durch ein Leadership-Programm an der Harvard Business School mit Schwerpunkten in Verhandlungsstrategien und Spieltheorie.",
+      "Aus diesen unterschiedlichen Perspektiven entwickelte sich ein interdisziplinäres Fundament, das meine Arbeit bis heute prägt: wirtschaftliche Zusammenhänge analysieren, Risiken verstehen und fundierte Entscheidungen unter komplexen Bedingungen ermöglichen."
+    ],
+    educationTimeline: [
+      ["2002","Rechts- und Staatswissenschaftliche Fakultät Universität Bonn","Rechtswissenschaften und Volkswirtschaftslehre · Spieltheorie"],
+      ["2005","Schmalenbach Institut Technische Hochschule Köln","Diplom-Kaufmann · Versicherungswesen · Risikotheorie und Risikomanagement"],
+      ["2008","RPTU Kaiserslautern & Universität des Saarlandes","Master of Laws (LL.M.) · Europäisches Recht"],
+      ["2012","Harvard Business School","Leadership-Programm · Verhandlungsstrategien und Spieltheorie"]
+    ],
+    career: [
+      "Bereits während meines Studiums arbeitete ich bei einer internationalen Investmentbank. Nach ersten Aufgaben im Privatkunden- und Kreditgeschäft wechselte ich in den Wertpapierhandel, wo ich insbesondere an der Ausführung von Wertpapieraufträgen für Privatkunden beteiligt war.",
+      "Die unmittelbare Arbeit mit Finanzmärkten gab mir früh Gelegenheit, theoretische Konzepte mit der operativen Realität des Bankgeschäfts zu verbinden.",
+      "Noch vor Abschluss meines Studiums erhielt ich die Zusage einer internationalen Wirtschaftsprüfungs- und Beratungsgesellschaft. Mit meinem Einstieg im Jahr 2006 begann eine langjährige Tätigkeit im Financial-Services-Sektor, in deren Verlauf ich mich über verschiedene Funktionen und Verantwortungsbereiche vom Associate zum Director entwickelte.",
+      "Meine fachlichen Schwerpunkte lagen zunächst in der Rechnungslegung, Finanzinstrumenten, Versicherungswirtschaft, im Risikomanagement und in regulatorischen Fragestellungen. Mit wachsender Erfahrung übernahm ich zunehmend Verantwortung für anspruchsvolle Beratungsmandate, die Entwicklung fachlicher Kompetenzbereiche, strategische Geschäftsentwicklung und die Führung von Teams.",
+      "Dabei wurde eine Frage immer wichtiger: Wie lassen sich wirtschaftliche und regulatorische Anforderungen so mit organisatorischen Strukturen und modernen Technologien verbinden, dass daraus dauerhaft tragfähige Lösungen entstehen?"
+    ],
+    transformationTitle:"Führung, Technologie und Transformation",
+    transformation: [
+      "Mit zunehmender Führungsverantwortung erweiterte sich mein Schwerpunkt von der fachlichen Analyse und Beratung hin zur Gestaltung und Steuerung komplexer Veränderungsprozesse.",
+      "Etwa ab 2013 rückten Technologie- und Transformationsprogramme zunehmend in den Mittelpunkt meiner beruflichen Tätigkeit. Bereits zuvor hatte ich mich mit datenbasierten Risikomodellen, Machine Learning und technologischen Lösungsansätzen für regulatorische Herausforderungen beschäftigt.",
+      "Im weiteren Verlauf umfassten meine Verantwortungsbereiche unter anderem komplexe Transformationen auf Basis von SAP-Technologien, KI-gestützte Anwendungsfälle, strategische Portfolioentwicklung und die Führung hoch spezialisierter Teams.",
+      "In den folgenden Jahren war ich an internationalen Transformationsinitiativen, analytischen Plattformen und Governance-Strukturen beteiligt. Meine Aufgaben umfassten ebenso wirtschaftliche, kommerzielle und vertragliche Steuerungsfragen in einem globalen Umfeld über vier Kontinente hinweg.",
+      "Technologie verstand ich dabei nie als Selbstzweck. Entscheidend war und ist, welchen konkreten wirtschaftlichen Nutzen sie schaffen kann – und welche organisatorischen, menschlichen und regulatorischen Voraussetzungen erforderlich sind, um diesen Nutzen verantwortungsvoll zu realisieren."
+    ],
+    careerTimeline: [
+      ["","Internationale Investmentbank","Studienbegleitend · Privatkundenbanking, Kreditgeschäft und Wertpapierhandel"],
+      ["2006–2018","Internationale Wirtschaftsprüfung und Unternehmensberatung","Financial Services · Vom Associate zum Director"],
+      ["2018–2019","Internationale Technologieberatung","Director · SAP & Risk Analytics · Transformation"],
+      ["2019–2025","Internationale Technologie- und Transformationsberatung","Principal Business Analyst; ab 2022 auch COO mit Schwerpunkt Commercial & Contract Management · KI und ESG"],
+      ["2025","Ready Labs","Mitgründer · Strategy, Finance & Growth"]
+    ],
+    skills: [
+      ["Finanzwirtschaft & Kapitalmärkte","Finanzinstrumente, Rechnungslegung und wirtschaftliche Zusammenhänge internationaler Finanzmärkte."],
+      ["Risikomanagement & Governance","Quantitative Risikomodelle, Risikosteuerung und wirksame Governance-Strukturen."],
+      ["Regulierung & Compliance","Regulatorische Anforderungen, internationale Rechnungslegungsstandards und ESG."],
+      ["Technologie & Transformation","Internationale Veränderungsprogramme, SAP-Technologien und organisatorischer Wandel."],
+      ["Künstliche Intelligenz & Analytics","Machine Learning, datenbasierte Analysen und der verantwortungsvolle Einsatz von KI."],
+      ["Strategie, Finanzen & Wachstum","Strategische Geschäftsentwicklung, wirtschaftliche Steuerung und skalierbare Geschäftsmodelle."]
+    ],
+    publicationsIntro:"Nationale und internationale Veröffentlichungen",
+    search:"Publikationen durchsuchen …",
+    all:"Alle Kategorien",
+    categories:["Bücher","Fachartikel","White Papers","Interviews"],
+    count:"Veröffentlichungen",
+    noResults:"Keine passenden Veröffentlichungen gefunden.",
+    more:"Weitere Veröffentlichungen anzeigen",
+    venture: [
+      "2025 gründete ich gemeinsam mit Kollegen Ready Labs. Ausgangspunkt war die Erfahrung, dass wirtschaftliche Möglichkeiten häufig schwer zugänglich bleiben, weil die Suche nach relevanten Informationen und ihre Bewertung erheblichen Aufwand erfordern.",
+      "Besonders deutlich zeigt sich diese Herausforderung im öffentlichen Beschaffungswesen, dessen wirtschaftliche Bedeutung und operative Komplexität ich aus eigener Erfahrung mit Vergabeverfahren kannte.",
+      "Mit Ready Labs wollen wir diese Informations- und Bewertungshürden reduzieren. Unser erstes Produkt, Ready Tender, setzt künstliche Intelligenz ein, um Unternehmensprofile mit geeigneten öffentlichen Ausschreibungen zu verbinden und Recherche- sowie Bewertungsprozesse zu vereinfachen.",
+      "Unsere langfristige Perspektive reicht darüber hinaus. Die geplanten Konzepte Ready Grant und Ready Connect könnten Unternehmen künftig zusätzliche Zugänge zu Finanzierungsmöglichkeiten und Geschäftspartnern eröffnen. Sie sind Teil unserer Produktvision und ausdrücklich noch keine bestehenden Funktionen von Ready Tender.",
+      "Als Mitgründer konzentriere ich mich insbesondere auf Strategie, Finanzen und Wachstum. Gleichzeitig verstehen wir die Entwicklung eines jungen Unternehmens als gemeinsame Verantwortung, in der strategische Klarheit, wirtschaftliche Tragfähigkeit und die Fähigkeit zur Umsetzung zusammenkommen müssen."
+    ],
+    motivationTitle:"Was mich heute antreibt",
+    motivation: [
+      "Rückblickend verbindet meine akademischen, beruflichen und unternehmerischen Erfahrungen eine zentrale Frage:",
+      "Wie lassen sich komplexe wirtschaftliche Systeme so verstehen und gestalten, dass daraus bessere Entscheidungen und neue Möglichkeiten entstehen?",
+      "Aus dem anfänglichen Interesse an Geldtheorie und Kapitalströmen entwickelte sich die Auseinandersetzung mit Risiko, Regulierung und Unternehmenssteuerung. Später kamen technologische Transformation, künstliche Intelligenz und schließlich die Gründung eines eigenen Unternehmens hinzu.",
+      "Die Aufgaben haben sich verändert, ebenso die Verantwortung und die Möglichkeiten, selbst etwas zu gestalten. Geblieben ist die Neugier auf die Zusammenhänge hinter komplexen Systemen – und der Anspruch, aus diesem Verständnis konkrete wirtschaftliche Wirkung entstehen zu lassen."
+    ],
+    labIntro: [
+      "Vier strategische Entscheidungen. Keine einfachen Antworten.",
+      "Wie würden Sie handeln, wenn technologische Möglichkeiten, wirtschaftlicher Druck, regulatorische Verantwortung und menschliches Verhalten aufeinandertreffen?",
+      "Wählen Sie ein Szenario und treffen Sie eine Entscheidung. Anschließend erfahren Sie, welche Spannungsfelder Ihre Wahl eröffnet."
+    ],
+    labCase:"STRATEGISCHES ENTSCHEIDUNGSEXPERIMENT",
+    labConsequence:"Die strategischen Konsequenzen",
+    labReflection:"Die entscheidende Frage",
+    labContext:"Fachlicher Hintergrund",
+    labReset:"Andere Entscheidung prüfen",
+    labNext:"Nächstes Szenario →",
+    labDisclaimer:"Die Fälle sind illustrative Gedankenexperimente, keine realen Kundenmandate oder individuellen Handlungsempfehlungen. Ihre Auswahl wird nicht erfasst oder versendet.",
+    contactIntro:"Für fachlichen Austausch und ausgewählte Kooperationen.",
+    readyTender:"Ready Tender entdecken ↗",
+    readyLabs:"Ready Labs ↗",
+    backTop:"Nach oben ↑",
+    footer:"Alle Rechte vorbehalten.",
+    menuOpen:"Menü öffnen",
+    menuClose:"Menü schließen",
+    navigation:"Hauptnavigation",
+    skip:"Zum Inhalt springen",
+    theme:"Farbschema ändern",
+    meta:"Vom Interesse an wirtschaftlichen Zusammenhängen über Finanzwirtschaft und internationale Transformation bis zum Unternehmertum. Ein persönlicher Einblick in meinen Werdegang."
+  },
+
+  en: {
+    nav:["About","Career","Expertise","Publications","Entrepreneurship","Thinking Lab","Contact"],
+    side:["PROFILE","EDUCATION","EXPERIENCE","EXPERTISE","PUBLICATIONS","ENTREPRENEURSHIP","THINKING LAB","CONTACT"],
+    headings:[
+      "Where It All Began",
+      "Academic Foundations",
+      "From Financial Markets to International Advisory",
+      "Expertise",
+      "Publications & Contributions",
+      "Entrepreneurship",
+      "The Thinking Lab",
+      "Contact"
+    ],
+    hero:{
+      kicker:"BERLIN · LATE 1990s",
+      title:"Sometimes a journey begins with a book.",
+      intro:"An unexpected discovery in a Berlin antiquarian bookshop sparked my curiosity about economic systems. It led from financial markets and risk management through international transformation to co-founding a company.",
+      motto:"Understanding Complexity. Creating Opportunity.",
+      philosophy:"What interests me is how economic, regulatory and technological perspectives can come together to enable better decisions and create new opportunities.",
+      cta:"Discover my story ↓"
+    },
+    profile:[
+      "Berlin, in the late 1990s.",
+      "On a summer's day, while waiting for friends, I wandered through the city and found myself, quite by chance, in an antiquarian bookshop. Among its old and dusty volumes, I discovered a work on economics exploring the effects of macroeconomic developments on political decisions.",
+      "That unexpected encounter sparked a lasting fascination. How are money, capital flows and economic decisions connected? What shapes the behaviour of markets and institutions? And how do these forces influence politics and society?",
+      "My curiosity developed into a sustained interest in economic theory, particularly monetary theory and international capital movements. It became the foundation of my academic and professional journey."
+    ],
+    education:[
+      "My academic journey began at the Faculty of Law and Political Science of the University of Bonn, where I studied law and economics. I was particularly interested in game theory and economic decision models. At the chair associated with Nobel laureate Reinhard Selten, where his academic staff conducted teaching at the time, I explored how individuals and institutions make decisions under uncertainty.",
+      "This interest took me to Cologne. At the Schmalenbach Institute, Technische Hochschule Köln, I studied insurance with a focus on risk theory and risk management, completing the Diplom-Kaufmann qualification in six semesters in 2005.",
+      "The intersection of economics and law remained important to me. In 2008, I earned a Master of Laws (LL.M.) in European Law in the academic context of RPTU Kaiserslautern and Universität des Saarlandes. In 2012, I complemented my education with a leadership programme at Harvard Business School focusing on negotiation strategies and game theory.",
+      "Together, economics, law, risk management and strategic decision-making formed an interdisciplinary foundation that continues to inform my professional approach."
+    ],
+    educationTimeline:[
+      ["2002","Faculty of Law and Political Science, University of Bonn","Law and Economics · Game Theory"],
+      ["2005","Schmalenbach Institute, Technische Hochschule Köln","Diplom-Kaufmann · Insurance · Risk Theory and Management"],
+      ["2008","RPTU Kaiserslautern & Universität des Saarlandes","Master of Laws (LL.M.) · European Law"],
+      ["2012","Harvard Business School","Leadership Programme · Negotiation Strategies and Game Theory"]
+    ],
+    career:[
+      "I began working at an international investment bank while still a student. My initial responsibilities were in retail banking and lending, before I moved into securities trading, where I was primarily involved in the execution of orders for private clients.",
+      "These early experiences connected academic thinking about financial markets and risk with the operational realities of banking.",
+      "Before completing my degree, I had already received an offer to join an international audit and advisory firm. My entry in 2006 marked the beginning of a long-standing career in financial services, progressing through different functions and responsibilities from Associate to Director.",
+      "My initial areas of work included financial reporting, financial instruments, insurance, risk management and regulatory matters. Over time, I assumed increasing responsibility for complex advisory engagements, specialist practices, business development and team leadership.",
+      "A central question emerged: How can economic and regulatory requirements be combined with effective organisational structures and modern technologies to create sustainable solutions?"
+    ],
+    transformationTitle:"Leadership, Technology & Strategic Transformation",
+    transformation:[
+      "As my leadership responsibilities grew, my focus expanded beyond specialist analysis and advisory towards shaping and managing complex organisational change.",
+      "Around 2013, technology and transformation programmes began to play an increasingly important role in my professional work. I had already explored data-driven risk models, machine learning and technological solutions to regulatory challenges.",
+      "Over the following years, my responsibilities came to include complex transformations involving SAP technologies, AI-enabled use cases, strategic portfolio development and the leadership of highly specialised teams.",
+      "My work also encompassed international transformation initiatives, analytical platforms, governance frameworks, and commercial and contractual management across a global environment spanning four continents.",
+      "Technology has never been an end in itself for me. What matters is the tangible economic value it can create – and the organisational, human and regulatory conditions required to realise that value responsibly."
+    ],
+    careerTimeline:[
+      ["","International Investment Bank","During studies · Retail banking, lending and securities order execution"],
+      ["2006–2018","International Audit and Advisory","Financial Services · Progression from Associate to Director"],
+      ["2018–2019","International Technology Consulting","Director · SAP & Risk Analytics · Transformation"],
+      ["2019–2025","International Technology and Transformation Consulting","Principal Business Analyst; from 2022 also COO focusing on commercial and contract management · AI and ESG"],
+      ["2025","Ready Labs","Co-Founder · Strategy, Finance & Growth"]
+    ],
+    skills:[
+      ["Financial Services & Capital Markets","Financial instruments, reporting and the dynamics of international financial markets."],
+      ["Risk Management & Governance","Quantitative risk models, risk management and effective governance structures."],
+      ["Regulation & Compliance","Regulatory requirements, international accounting standards and ESG."],
+      ["Technology & Transformation","International transformation programmes, SAP technologies and organisational change."],
+      ["Artificial Intelligence & Analytics","Machine learning, data-driven analytics and responsible applications of AI."],
+      ["Strategy, Finance & Growth","Business strategy, financial management and scalable growth models."]
+    ],
+    publicationsIntro:"National and international publications",
+    search:"Search publications …",
+    all:"All categories",
+    categories:["Books","Articles","White Papers","Interviews"],
+    count:"publications",
+    noResults:"No matching publications found.",
+    more:"Show more publications",
+    venture:[
+      "In 2025, I co-founded Ready Labs with colleagues. Our motivation arose from the observation that economic opportunities often remain inaccessible because finding and evaluating relevant information requires disproportionate effort.",
+      "This challenge is particularly evident in public procurement. My experience of complex tender processes had shown me both the economic significance of the market and the resources required to identify and pursue suitable opportunities.",
+      "Through Ready Labs, we aim to reduce these barriers. Our first product, Ready Tender, uses artificial intelligence to match company profiles with relevant public tenders and simplify research and assessment processes.",
+      "Our longer-term vision extends beyond this first product. Future concepts including Ready Grant and Ready Connect could make funding opportunities and business partnerships more accessible. They are part of our vision rather than existing Ready Tender features.",
+      "As a co-founder, I focus particularly on strategy, finance and growth. In a young company, however, these are not rigid boundaries of responsibility but part of a shared commitment to strategic clarity, financial viability and effective execution."
+    ],
+    motivationTitle:"What Drives Me Today",
+    motivation:[
+      "Looking back, a fundamental question connects my academic, professional and entrepreneurial experiences:",
+      "How can we understand and shape complex economic systems in ways that enable better decisions and create new opportunities?",
+      "An early interest in monetary theory and capital flows evolved into a sustained engagement with risk, regulation and corporate governance. This, in turn, led to technological transformation, artificial intelligence and ultimately building a company.",
+      "The responsibilities and opportunities to shape outcomes have changed. What remains is a curiosity about the mechanisms underlying complex systems – and the ambition to turn that understanding into tangible economic impact."
+    ],
+    labIntro:[
+      "Four strategic decisions. No easy answers.",
+      "How would you act when technological opportunity, economic pressure, regulatory responsibility and human behaviour collide?",
+      "Explore a scenario, make a decision and examine the strategic tensions that follow."
+    ],
+    labCase:"STRATEGIC DECISION EXPERIMENT",
+    labConsequence:"Strategic consequences",
+    labReflection:"The question that matters",
+    labContext:"Related expertise",
+    labReset:"Explore another choice",
+    labNext:"Next scenario →",
+    labDisclaimer:"These are illustrative thought experiments, not real client engagements or individual professional advice. Your selections are neither collected nor transmitted.",
+    contactIntro:"For professional exchange and selected collaborations.",
+    readyTender:"Explore Ready Tender ↗",
+    readyLabs:"Ready Labs ↗",
+    backTop:"Back to top ↑",
+    footer:"All rights reserved.",
+    menuOpen:"Open menu",
+    menuClose:"Close menu",
+    navigation:"Main navigation",
+    skip:"Skip to content",
+    theme:"Change colour theme",
+    meta:"From financial markets and risk management to international transformation and entrepreneurship. Explore a personal professional journey."
+  },
+
+  fa: {
+    nav:["دربارهٔ من","سوابق حرفه‌ای","تخصص‌ها","انتشارات","کارآفرینی","آزمایشگاه تفکر","تماس"],
+    side:["دربارهٔ من","تحصیلات","سوابق حرفه‌ای","تخصص‌ها","انتشارات","کارآفرینی","آزمایشگاه تفکر","تماس"],
+    headings:[
+      "آغاز داستان (The Origins of an Intellectual Journey)",
+      "بنیان علمی (Academic Foundations)",
+      "از بازارهای مالی تا مشاورهٔ بین‌المللی (Financial Services, Leadership & Global Transformation)",
+      "تخصص‌ها (Areas of Expertise)",
+      "انتشارات و مقالات تخصصی (Selected Publications & Thought Leadership)",
+      "کارآفرینی (Entrepreneurship)",
+      "آزمایشگاه تفکر (The Thinking Lab)",
+      "تماس (Professional Enquiries)"
+    ],
+    hero:{
+      kicker:"برلین · اواخر دههٔ ۱۹۹۰",
+      title:"گاهی یک سفر با یک کتاب آغاز می‌شود.",
+      intro:"کشفی اتفاقی در یک کتاب‌فروشی قدیمی در برلین، علاقهٔ مرا به سازوکارهای اقتصادی برانگیخت؛ علاقه‌ای که مسیر مرا از بازارهای مالی و مدیریت ریسک تا تحول بین‌المللی و کارآفرینی شکل داد.",
+      motto:"درک پیچیدگی‌ها. آفرینش فرصت‌ها.",
+      philosophy:"پرسش اصلی برای من این است که چگونه می‌توان دانش اقتصادی، نظارتی و فناورانه را برای تصمیم‌گیری بهتر و ایجاد فرصت‌های تازه به یکدیگر پیوند داد.",
+      cta:"آشنایی با داستان من ↓"
+    },
+    profile:[
+      "برلین، اواخر دههٔ ۱۹۹۰.",
+      "در یک روز تابستانی، زمانی که منتظر دوستانم بودم، هنگام قدم‌زدن در خیابان‌های شهر به‌طور اتفاقی وارد یک کتاب‌فروشی قدیمی شدم. میان کتاب‌های کهنه و غبارگرفته، اثری دربارهٔ اقتصاد یافتم که به تأثیر تحولات اقتصاد کلان بر تصمیم‌های سیاسی می‌پرداخت.",
+      "این برخورد اتفاقی آغازگر پرسش‌هایی ماندگار شد: پول، جریان سرمایه و تصمیم‌های اقتصادی چگونه به یکدیگر مرتبط‌اند؟ چه عواملی رفتار بازارها و نهادها را شکل می‌دهند؟ و این نیروها چگونه بر سیاست و جامعه تأثیر می‌گذارند؟",
+      "این کنجکاوی به مطالعه‌ای جدی دربارهٔ نظریه‌های اقتصادی، به‌ویژه نظریهٔ پول و جریان‌های بین‌المللی سرمایه تبدیل شد و مبنای مسیر دانشگاهی و حرفه‌ای من قرار گرفت."
+    ],
+    education:[
+      "مسیر دانشگاهی من در دانشکدهٔ حقوق و علوم سیاسی دانشگاه بن با تحصیل در رشته‌های حقوق و اقتصاد آغاز شد. نظریهٔ بازی‌ها و مدل‌های تصمیم‌گیری اقتصادی از حوزه‌های مورد علاقهٔ من بودند. در کرسی مرتبط با رینهارد زلتن، برندهٔ جایزهٔ نوبل اقتصاد، که در آن زمان اعضای علمی او تدریس را ادامه می‌دادند، به مسئلهٔ تصمیم‌گیری در شرایط عدم‌قطعیت پرداختم.",
+      "این علاقه مرا به کلن کشاند. در مؤسسهٔ اشمالنباخ دانشگاه علوم کاربردی کلن، رشتهٔ بیمه را با تمرکز بر نظریهٔ ریسک و مدیریت ریسک مطالعه کردم و در سال ۲۰۰۵ پس از شش ترم مدرک Diplom-Kaufmann را دریافت کردم.",
+      "پیوند اقتصاد و حقوق همچنان برایم اهمیت داشت. در سال ۲۰۰۸ مدرک Master of Laws (LL.M.) در حقوق اروپا را در چارچوب دانشگاهی RPTU Kaiserslautern و دانشگاه زارلاند دریافت کردم. در سال ۲۰۱۲ نیز در یک برنامهٔ رهبری در Harvard Business School با تمرکز بر راهبردهای مذاکره و نظریهٔ بازی‌ها شرکت کردم.",
+      "ترکیب اقتصاد، حقوق، مدیریت ریسک و نظریهٔ تصمیم‌گیری، بنیانی میان‌رشته‌ای پدید آورد که همچنان رویکرد حرفه‌ای مرا شکل می‌دهد."
+    ],
+    educationTimeline:[
+      ["2002","دانشگاه بن","حقوق و اقتصاد · نظریهٔ بازی‌ها"],
+      ["2005","مؤسسهٔ اشمالنباخ، دانشگاه علوم کاربردی کلن","Diplom-Kaufmann · بیمه · نظریه و مدیریت ریسک"],
+      ["2008","RPTU Kaiserslautern & Universität des Saarlandes","Master of Laws (LL.M.) · حقوق اروپا"],
+      ["2012","Harvard Business School","برنامهٔ رهبری · راهبردهای مذاکره و نظریهٔ بازی‌ها"]
+    ],
+    career:[
+      "در دوران تحصیل در یک بانک سرمایه‌گذاری بین‌المللی فعالیت می‌کردم. پس از تجربه‌هایی در خدمات بانکی مشتریان خصوصی و اعتبارات، به حوزهٔ معاملات اوراق بهادار منتقل شدم و عمدتاً در اجرای سفارش‌های مشتریان خصوصی مشارکت داشتم.",
+      "این تجربه‌های اولیه فرصتی فراهم کردند تا مفاهیم نظری بازارهای مالی و ریسک را در عمل مشاهده کنم.",
+      "پیش از پایان تحصیلاتم، پیشنهاد همکاری با یک مؤسسهٔ بین‌المللی حسابرسی و مشاوره را دریافت کردم. ورود من در سال ۲۰۰۶ آغاز مسیری طولانی در حوزهٔ خدمات مالی بود که طی آن از Associate به Director ارتقا یافتم.",
+      "زمینه‌های اولیهٔ فعالیتم شامل گزارشگری مالی، ابزارهای مالی، صنعت بیمه، مدیریت ریسک و موضوعات نظارتی بود. به‌تدریج مسئولیت پروژه‌های پیچیدهٔ مشاوره‌ای، توسعهٔ حوزه‌های تخصصی، توسعهٔ کسب‌وکار و هدایت تیم‌ها را بر عهده گرفتم.",
+      "در این مسیر یک پرسش اهمیت بیشتری یافت: چگونه می‌توان الزامات اقتصادی و نظارتی را با ساختارهای سازمانی کارآمد و فناوری‌های نوین پیوند داد؟"
+    ],
+    transformationTitle:"رهبری، فناوری و تحول راهبردی (Leadership & Transformation)",
+    transformation:[
+      "با گسترش مسئولیت‌های مدیریتی، تمرکز من از تحلیل تخصصی و مشاوره فراتر رفت و طراحی و هدایت فرایندهای پیچیدهٔ تحول سازمانی را نیز دربر گرفت.",
+      "از حدود سال ۲۰۱۳، برنامه‌های فناورانه و تحول سازمانی به‌تدریج جایگاه پررنگ‌تری در فعالیت حرفه‌ای من یافتند. پیش از آن نیز به یادگیری ماشین، مدل‌های ریسک مبتنی بر داده و راهکارهای فناورانه برای چالش‌های پیچیدهٔ نظارتی پرداخته بودم.",
+      "در سال‌های بعد، حوزهٔ مسئولیت‌های من گسترش یافت و از جمله شامل برنامه‌های پیچیدهٔ تحول مبتنی بر فناوری‌های SAP، کاربردهای هوش مصنوعی، توسعهٔ راهبردی سبد خدمات و هدایت تیم‌های بسیار تخصصی شد.",
+      "فعالیت‌های من همچنین طرح‌های بین‌المللی تحول، پلتفرم‌های تحلیلی، ساختارهای حاکمیتی و مدیریت امور تجاری و قراردادی را در محیطی جهانی شامل چهار قاره دربر می‌گرفت.",
+      "فناوری برای من هرگز هدفی مستقل نبوده است. آنچه اهمیت دارد، ارزش اقتصادی ملموسی است که فناوری می‌تواند ایجاد کند و شرایط سازمانی، انسانی و نظارتی لازم برای تحقق مسئولانهٔ این ارزش است."
+    ],
+    careerTimeline:[
+      ["","بانک سرمایه‌گذاری بین‌المللی","هم‌زمان با تحصیل · بانکداری مشتریان خصوصی، اعتبارات و اوراق بهادار"],
+      ["2006–2018","حسابرسی و مشاورهٔ بین‌المللی","خدمات مالی · پیشرفت از Associate تا Director"],
+      ["2018–2019","مشاورهٔ فناوری بین‌المللی","Director · SAP & Risk Analytics · تحول"],
+      ["2019–2025","مشاورهٔ فناوری و تحول بین‌المللی","Principal Business Analyst؛ از ۲۰۲۲ همچنین COO با تمرکز بر مدیریت تجاری و قراردادها · هوش مصنوعی و ESG"],
+      ["2025","Ready Labs","هم‌بنیان‌گذار · راهبرد، امور مالی و رشد"]
+    ],
+    skills:[
+      ["امور مالی و بازارهای سرمایه","ابزارهای مالی، گزارشگری مالی و سازوکارهای بازارهای مالی بین‌المللی."],
+      ["مدیریت ریسک و حاکمیت","مدل‌های کمی ریسک، مدیریت ریسک و ساختارهای مؤثر حاکمیتی."],
+      ["مقررات و انطباق","الزامات نظارتی، استانداردهای بین‌المللی حسابداری و ESG."],
+      ["فناوری و تحول سازمانی","برنامه‌های تحول بین‌المللی، فناوری‌های SAP و تغییر سازمانی."],
+      ["هوش مصنوعی و تحلیل داده‌ها","یادگیری ماشین، تحلیل داده‌ها و کاربرد مسئولانهٔ هوش مصنوعی."],
+      ["راهبرد، امور مالی و رشد","توسعهٔ راهبردی کسب‌وکار، مدیریت مالی و مدل‌های رشد مقیاس‌پذیر."]
+    ],
+    publicationsIntro:"انتشارات و مقالات تخصصی در سطح ملی و بین‌المللی",
+    search:"جست‌وجوی انتشارات …",
+    all:"همهٔ دسته‌ها",
+    categories:["کتاب‌ها","مقالات","گزارش‌های تخصصی","مصاحبه‌ها"],
+    count:"انتشار",
+    noResults:"نتیجه‌ای یافت نشد.",
+    more:"نمایش انتشارات بیشتر",
+    venture:[
+      "در سال ۲۰۲۵ به همراه همکارانم شرکت Ready Labs را تأسیس کردم. انگیزهٔ اصلی ما تجربه‌ای بود که طی سال‌ها به دست آورده بودیم: فرصت‌های اقتصادی اغلب به دلیل دشواری دسترسی به اطلاعات مناسب و هزینهٔ بالای ارزیابی آن‌ها از دست می‌روند.",
+      "این چالش به‌ویژه در حوزهٔ مناقصه‌ها و تدارکات عمومی آشکار است؛ بازاری که اهمیت اقتصادی و پیچیدگی عملیاتی آن را از تجربهٔ شخصی خود می‌شناختم.",
+      "با Ready Labs می‌خواهیم این موانع را کاهش دهیم. نخستین محصول ما، Ready Tender، از هوش مصنوعی برای تطبیق پروفایل شرکت‌ها با مناقصه‌های عمومی مرتبط و ساده‌سازی فرایندهای جست‌وجو و ارزیابی استفاده می‌کند.",
+      "چشم‌انداز بلندمدت ما فراتر از این محصول است. طرح‌های آیندهٔ Ready Grant و Ready Connect می‌توانند دسترسی شرکت‌ها به فرصت‌های تأمین مالی و شرکای تجاری را آسان‌تر کنند. این‌ها بخشی از چشم‌انداز محصول هستند و در حال حاضر از قابلیت‌های Ready Tender محسوب نمی‌شوند.",
+      "به‌عنوان هم‌بنیان‌گذار، تمرکز من به‌ویژه بر راهبرد، امور مالی و رشد است. بااین‌حال، توسعهٔ یک شرکت نوپا را مسئولیتی مشترک می‌دانیم که به شفافیت راهبردی، پایداری اقتصادی و توانایی اجرا نیاز دارد."
+    ],
+    motivationTitle:"آنچه امروز به من انگیزه می‌دهد",
+    motivation:[
+      "با نگاهی به گذشته، پرسشی بنیادین تجربه‌های دانشگاهی، حرفه‌ای و کارآفرینانهٔ مرا به یکدیگر پیوند می‌دهد:",
+      "چگونه می‌توان نظام‌های پیچیدهٔ اقتصادی را به‌گونه‌ای درک و طراحی کرد که تصمیم‌های بهتر و فرصت‌های تازه ایجاد شوند؟",
+      "علاقهٔ اولیه به نظریهٔ پول و جریان سرمایه به مطالعهٔ ریسک، مقررات و حاکمیت شرکتی گسترش یافت و سپس به تحول فناورانه، هوش مصنوعی و تأسیس شرکت انجامید.",
+      "ماهیت فعالیت‌ها و مسئولیت‌ها تغییر کرده است، اما کنجکاوی نسبت به سازوکارهای نظام‌های پیچیده و تلاش برای تبدیل این شناخت به ارزش اقتصادی ملموس همچنان باقی مانده است."
+    ],
+    labIntro:[
+      "چهار تصمیم راهبردی. بدون پاسخ ساده.",
+      "وقتی فرصت‌های فناورانه، فشار اقتصادی، مسئولیت نظارتی و رفتار انسانی با یکدیگر روبه‌رو می‌شوند، چگونه عمل می‌کنید؟",
+      "یک سناریو انتخاب کنید، تصمیم بگیرید و پیامدهای راهبردی آن را بررسی کنید."
+    ],
+    labCase:"آزمایش تصمیم‌گیری راهبردی",
+    labConsequence:"پیامدهای راهبردی",
+    labReflection:"پرسش اساسی",
+    labContext:"پیشینهٔ تخصصی",
+    labReset:"بررسی تصمیمی دیگر",
+    labNext:"سناریوی بعدی →",
+    labDisclaimer:"این سناریوها آزمایش‌های فکری فرضی هستند و به پروژه‌های واقعی مشتریان یا توصیه‌های حرفه‌ای فردی اشاره ندارند. انتخاب‌های شما ثبت یا ارسال نمی‌شوند.",
+    contactIntro:"برای تبادل نظر تخصصی و همکاری‌های منتخب.",
+    readyTender:"آشنایی با Ready Tender ↗",
+    readyLabs:"Ready Labs ↗",
+    backTop:"بازگشت به بالا ↑",
+    footer:"تمامی حقوق محفوظ است.",
+    menuOpen:"باز کردن منو",
+    menuClose:"بستن منو",
+    navigation:"فهرست اصلی",
+    skip:"رفتن به محتوا",
+    theme:"تغییر حالت رنگ",
+    meta:"نگاهی به مسیر حرفه‌ای از بازارهای مالی و مدیریت ریسک تا تحول بین‌المللی، هوش مصنوعی و کارآفرینی."
+  }
+};
+
+/* =====================================================
+   THINKING LAB – FOUR SCENARIOS IN THREE LANGUAGES
+   ===================================================== */
+
+const labCases = {
+  de: [
     {
       tab:"KI & Verantwortung",
       title:"KI und Verantwortung",
@@ -874,7 +1475,8 @@ const labCases={
       context:"Anknüpfungspunkt: internationale Transformationsprogramme, SAP, Governance und operative Führung."
     }
   ],
-  en:[
+
+  en: [
     {
       tab:"AI & Accountability",
       title:"Artificial Intelligence & Accountability",
@@ -964,10 +1566,11 @@ const labCases={
       context:"Related experience: international transformation, SAP, governance and operational leadership."
     }
   ],
-  fa:[
+
+  fa: [
     {
-      tab:"هوش مصنوعی و مسئولیت (AI & Accountability)",
-      title:"هوش مصنوعی و مسئولیت‌پذیری (Artificial Intelligence & Accountability)",
+      tab:"هوش مصنوعی و مسئولیت",
+      title:"هوش مصنوعی و مسئولیت‌پذیری",
       scenario:"یک مؤسسهٔ مالی قصد دارد از سامانه‌ای مبتنی بر هوش مصنوعی برای پشتیبانی از تصمیم‌های پیچیده دربارهٔ مشتریان استفاده کند. نتایج امیدوارکننده است و فرایندها می‌توانند بسیار سریع‌تر شوند. بااین‌حال، توضیح برخی پیشنهادهای سامانه دشوار است. فشار رقابتی افزایش می‌یابد و نهادهای ناظر، مشتریان و هیئت‌مدیره خواهان تصمیم‌های پاسخ‌گو و قابل بررسی هستند.",
       question:"اگر مسئولیت نهایی بر عهدهٔ شما باشد، چه تصمیمی می‌گیرید؟",
       choices:[
@@ -988,8 +1591,8 @@ const labCases={
       context:"موضوعات مرتبط: یادگیری ماشین، مدل‌های ریسک و هوش مصنوعی در خدمات مالی."
     },
     {
-      tab:"ریسک مدل (Model Risk)",
-      title:"ریسک مدل در عصر هوش مصنوعی (Model Risk in the Age of AI)",
+      tab:"ریسک مدل",
+      title:"ریسک مدل در عصر هوش مصنوعی",
       scenario:"یک مدل پیش‌بینی جدید در مقایسه‌های تاریخی نتایج بهتری نسبت به روش موجود ارائه می‌دهد، اما نسبت به تغییر در داده‌های ورودی حساس است. واحدهای تجاری خواهان اجرای آن هستند، درحالی‌که ارزیابی مستقل دربارهٔ پایداری محدود مدل در شرایط غیرعادی بازار هشدار می‌دهد.",
       question:"کدام اقدام از نظر راهبردی موجه‌تر است؟",
       choices:[
@@ -1010,8 +1613,8 @@ const labCases={
       context:"انتشارات مرتبط: Model Risk در سال ۲۰۱۶، CVA و زیان اعتباری مورد انتظار."
     },
     {
-      tab:"مقررات و نوآوری (Regulation & Innovation)",
-      title:"مقررات در برابر نوآوری (Regulation versus Innovation)",
+      tab:"مقررات و نوآوری",
+      title:"مقررات در برابر نوآوری",
       scenario:"شرکتی در حال توسعهٔ راهکاری مبتنی بر داده است که می‌تواند کارایی یک بازار را به‌طور چشمگیری افزایش دهد. الزامات نظارتی پیچیده‌اند و برخی تفسیرها هنوز روشن نیستند. یک رقیب در حال گسترش فعالیت است، درحالی‌که تیم‌های حقوقی و انطباق دربارهٔ ورود زودهنگام به بازار هشدار می‌دهند.",
       question:"چگونه میان نوآوری و مسئولیت نظارتی تعادل برقرار می‌کنید؟",
       choices:[
@@ -1032,8 +1635,8 @@ const labCases={
       context:"موضوعات مرتبط: IFRS 9، ESG و پیچیدگی مقررات."
     },
     {
-      tab:"تغییر و تحول (Change & Transformation)",
-      title:"مدیریت تغییر و تحول (Change & Transformation)",
+      tab:"تغییر و تحول",
+      title:"مدیریت تغییر و تحول",
       scenario:"یک شرکت بین‌المللی برنامهٔ تحول گسترده‌ای را تصویب کرده است. فناوری فراهم است، منابع مالی تأمین شده‌اند و هدف راهبردی روشن است. بااین‌حال، اجرا با تأخیر روبه‌رو می‌شود: واحدها از فرایندهای موجود دفاع می‌کنند، مدیران اولویت‌های متفاوتی دارند و کارکنان دربارهٔ مزایای تغییر تردید دارند.",
       question:"اگر مسئول هدایت تحول باشید، از کجا آغاز می‌کنید؟",
       choices:[
@@ -1056,418 +1659,49 @@ const labCases={
   ]
 };
 
-const translations={
-  de:{
-    labels:[
-      "Über mich",
-      "Akademischer Werdegang",
-      "Berufliche Erfahrung",
-      "Expertise",
-      "Publikationen",
-      "Unternehmertum",
-      "Thinking Lab",
-      "Kontakt"
-    ],
-    headings:[
-      "Wo alles begann",
-      "Das akademische Fundament",
-      "Von der Finanzmarktpraxis zur internationalen Beratung",
-      "Expertise",
-      "Publikationen & Fachbeiträge",
-      "Unternehmertum",
-      "The Thinking Lab",
-      "Kontakt"
-    ],
-    hero:{
-      kicker:"BERLIN · ENDE DER 1990ER-JAHRE",
-      title:"Manchmal beginnt eine Reise mit einem Buch.",
-      intro:"Ein Sommertag. Ein Antiquariat. Eine zufällige Entdeckung, aus der eine lebenslange Faszination für wirtschaftliche Zusammenhänge entstehen sollte.",
-      motto:"Komplexität verstehen. Möglichkeiten schaffen.",
-      philosophy:"Wer fachliches und technologisches Wissen zielgerichtet zusammenführt, kann dazu beitragen, nachhaltigen Wohlstand für alle Menschen zu schaffen.",
-      cta:"Meine Geschichte entdecken ↓"
-    },
-    profile:[
-      "Berlin, Ende der 1990er-Jahre.",
-      "An einem Sommertag, während ich auf Freunde wartete, führte mich ein Spaziergang durch die Stadt eher zufällig in ein Antiquariat. Zwischen alten, zum Teil verstaubten Büchern entdeckte ich ein Werk über Volkswirtschaftslehre, das sich mit den Auswirkungen makroökonomischer Entwicklungen auf politische Entscheidungen beschäftigte.",
-      "Diese Begegnung sollte meine weitere Entwicklung prägen.",
-      "Mich faszinierte die Frage, wie Geld, Kapitalströme und wirtschaftliche Entscheidungen miteinander zusammenhängen – und wie sie politische Institutionen, Märkte und gesellschaftliche Entwicklungen beeinflussen.",
-      "Aus dieser Neugier erwuchs eine intensive Beschäftigung mit wirtschaftswissenschaftlichen Theorien, insbesondere Geldtheorie und internationalen Kapitalbewegungen. Sie wurde zum Ausgangspunkt meines akademischen und späteren beruflichen Weges."
-    ],
-    education:[
-      "Mein Studium begann an der Rechts- und Staatswissenschaftlichen Fakultät der Universität Bonn mit Rechtswissenschaften und Volkswirtschaftslehre. Dort beschäftigte ich mich unter anderem mit Spieltheorie und ökonomischen Entscheidungsmodellen am Lehrstuhl des Wirtschaftsnobelpreisträgers Reinhard Selten, dessen wissenschaftliche Mitarbeiter zu dieser Zeit die Lehre fortführten.",
-      "Zunehmend interessierte mich, wie wirtschaftliche Akteure Entscheidungen unter Unsicherheit treffen und wie sich die damit verbundenen Risiken verstehen und steuern lassen.",
-      "Dieses Interesse führte mich nach Köln. Am Schmalenbach Institut der Technischen Hochschule Köln studierte ich Versicherungswesen mit einem besonderen fachlichen Interesse an Risikotheorie und Risikomanagement. Mein Studium schloss ich 2005 nach sechs Semestern als Diplom-Kaufmann ab.",
-      "Da ich bereits in Bonn parallel Rechtswissenschaften studiert hatte, entschied ich mich, diese akademische Perspektive weiterzuentwickeln. 2008 erwarb ich einen Master of Laws (LL.M.) im Europäischen Recht im akademischen Kontext von RPTU Kaiserslautern & Universität des Saarlandes.",
-      "2012 ergänzte ich meine Ausbildung durch ein Leadership-Programm an der Harvard Business School mit Schwerpunkten in Verhandlungsstrategien und Spieltheorie.",
-      "So entwickelte sich ein interdisziplinäres Fundament aus Ökonomie, Recht, Risikomanagement und strategischer Entscheidungslehre, das meinen beruflichen Ansatz bis heute prägt."
-    ],
-    educationTimeline:[
-      ["2002","Rechts- und Staatswissenschaftliche Fakultät Universität Bonn","Rechtswissenschaften und Volkswirtschaftslehre · Spieltheorie"],
-      ["2005","Schmalenbach Institut Technische Hochschule Köln","Diplom-Kaufmann · Versicherungswesen · Risikotheorie und Risikomanagement"],
-      ["2008","RPTU Kaiserslautern & Universität des Saarlandes","Master of Laws (LL.M.) · Europäisches Recht"],
-      ["2012","Harvard Business School","Leadership-Programm · Verhandlungsstrategien und Spieltheorie"]
-    ],
-    career:[
-      "Bereits während meines Studiums arbeitete ich bei einer internationalen Investmentbank. Nach ersten Aufgaben im Privatkunden- und Kreditgeschäft wechselte ich in den Wertpapierhandel, wo ich überwiegend an der direkten Ausführung von Wertpapieraufträgen für Privatkunden beteiligt war.",
-      "Diese frühen Erfahrungen verbanden die akademische Auseinandersetzung mit Finanzmärkten und Risiken mit der operativen Realität des Bankgeschäfts.",
-      "Noch vor Abschluss meines Studiums erhielt ich die Zusage für den Einstieg bei einer internationalen Wirtschaftsprüfungs- und Beratungsgesellschaft.",
-      "2006 begann damit eine langjährige Karriere im Financial-Services-Sektor. Über verschiedene Gesellschaften, Funktionen und Verantwortungsbereiche hinweg entwickelte ich mich vom Associate zum Director.",
-      "Meine Arbeit umfasste zunächst insbesondere Rechnungslegung, Finanzinstrumente, Versicherungswirtschaft, Risikomanagement und regulatorische Fragestellungen. Im weiteren Verlauf übernahm ich zunehmend Verantwortung für komplexe Beratungsmandate, fachliche Kompetenzbereiche, strategische Geschäftsentwicklung und die Führung von Teams.",
-      "Dabei stand immer häufiger die Frage im Mittelpunkt, wie sich wirtschaftliche und regulatorische Anforderungen mit leistungsfähigen organisatorischen Strukturen und modernen Technologien verbinden lassen."
-    ],
-    transformationTitle:"Führung, Technologie und Transformation",
-    transformation:[
-      "Mit zunehmender Führungsverantwortung erweiterte sich mein Schwerpunkt von der Analyse und Beratung hin zur Gestaltung komplexer Veränderungsprozesse.",
-      "Insbesondere die Verbindung regulatorischer, quantitativer und technologischer Innovationsthemen wurde zu einem wesentlichen Bestandteil meiner Arbeit. Bereits viele Jahre zuvor hatte ich begonnen, mich mit Machine-Learning-Ansätzen, datenbasierten Risikomodellen und technologischen Lösungen für komplexe regulatorische Fragestellungen auseinanderzusetzen.",
-      "Ab 2018 rückten Technologie- und Transformationsprogramme noch stärker in den Mittelpunkt meiner Tätigkeit. Meine Verantwortung umfasste unter anderem komplexe Transformationen auf Basis von SAP-Technologien, KI-gestützte Anwendungsfälle, strategische Portfolioentwicklung und die Führung hoch spezialisierter Teams.",
-      "In den folgenden Jahren arbeitete ich an internationalen Transformationsinitiativen, analytischen Plattformen, Governance-Strukturen sowie kommerziellen und vertraglichen Steuerungsfragen – in einem globalen Umfeld, das sich über vier Kontinente erstreckte.",
-      "Damit verband sich technologische Gestaltung zunehmend mit unternehmerischer Verantwortung.",
-      "Die Beschäftigung mit künstlicher Intelligenz war für mich dabei nie Selbstzweck. Entscheidend war und ist die Frage, welchen konkreten wirtschaftlichen Nutzen Technologie schaffen kann – und unter welchen organisatorischen und regulatorischen Bedingungen dieser Nutzen tatsächlich entsteht."
-    ],
-    careerTimeline:[
-      ["","Internationale Investmentbank","Studienbegleitend · Privatkundenbanking, Kreditgeschäft und Wertpapierhandel"],
-      ["2006–2018","Internationale Wirtschaftsprüfung und Unternehmensberatung","Financial Services · Vom Associate zum Director"],
-      ["2018–2019","Internationale Technologieberatung","Director · SAP & Risk Analytics · Transformation"],
-      ["2019–2025","Internationale Technologie- und Transformationsberatung","Principal Business Analyst; ab 2022 auch COO mit Schwerpunkt Commercial & Contract Management · KI und ESG"],
-      ["2025","Ready Labs","Mitgründer · Strategy, Finance & Growth"]
-    ],
-    skills:[
-      "Finanzwirtschaft & Kapitalmärkte",
-      "Risikomanagement & Governance",
-      "Regulierung & Compliance",
-      "Digitale Transformation",
-      "Künstliche Intelligenz & Analytics",
-      "Strategie, Finanzen & Wachstum"
-    ],
-    publicationsIntro:"Nationale und internationale Veröffentlichungen",
-    search:"Publikationen durchsuchen ...",
-    all:"Alle Kategorien",
-    categories:["Bücher","Fachartikel","White Papers","Interviews"],
-    count:"Veröffentlichungen",
-    noResults:"Keine passenden Veröffentlichungen gefunden.",
-    venture:[
-      "2025 gründete ich gemeinsam mit Kollegen Ready Labs.",
-      "Die Motivation entstand aus einer Erfahrung, die ich über viele Jahre in unterschiedlichen Organisationen gemacht hatte:",
-      "Wirtschaftliche Chancen bleiben häufig ungenutzt, nicht weil es an Nachfrage oder Kompetenz fehlt, sondern weil der Zugang zu relevanten Informationen und ihre Bewertung mit erheblichem Aufwand verbunden sind.",
-      "Besonders sichtbar ist dieses Problem im öffentlichen Beschaffungswesen. Aus meiner eigenen Erfahrung mit komplexen Vergabeverfahren kannte ich sowohl die wirtschaftliche Bedeutung des Marktes als auch die Ressourcen, die erforderlich sind, um geeignete Geschäftsmöglichkeiten zu identifizieren und zu verfolgen.",
-      "Mit Ready Labs wollen wir diese Komplexität reduzieren.",
-      "Unser erstes Produkt, Ready Tender, nutzt künstliche Intelligenz, um Unternehmensprofile mit passenden öffentlichen Ausschreibungen zu verbinden und Recherche- sowie Bewertungsprozesse zu vereinfachen.",
-      "Unsere langfristige Vision geht weit darüber hinaus. Perspektivisch könnten Ready Grant und Ready Connect Unternehmen zusätzliche Zugänge zu Finanzierungsmöglichkeiten und Geschäftspartnern eröffnen. Beide gehören zur künftigen Produktvision, nicht zum gegenwärtigen Funktionsumfang von Ready Tender.",
-      "Als Mitgründer beschäftige ich mich insbesondere mit Strategie, Finanzen und Wachstum. In einem jungen Unternehmen verstehen wir diese Bereiche jedoch nicht als starre Zuständigkeitsgrenzen, sondern als Teil einer gemeinsamen unternehmerischen Verantwortung.",
-      "Mein persönlicher Schwerpunkt liegt darauf, strategische Klarheit, wirtschaftliche Tragfähigkeit und skalierbares Wachstum miteinander zu verbinden."
-    ],
-    motivationTitle:"Was mich heute antreibt",
-    motivation:[
-      "Rückblickend verbindet meine akademischen, beruflichen und unternehmerischen Stationen eine grundlegende Frage:",
-      "Wie lassen sich komplexe wirtschaftliche Systeme so verstehen und gestalten, dass daraus bessere Entscheidungen und neue Möglichkeiten entstehen?",
-      "Aus dem Interesse an Geldtheorie und Kapitalströmen wurde eine intensive Auseinandersetzung mit Risiko, Regulierung und Unternehmenssteuerung. Daraus entwickelte sich die Beschäftigung mit technologischer Transformation, künstlicher Intelligenz und schließlich dem Aufbau eines eigenen Unternehmens.",
-      "Was sich seither verändert hat, sind meine Aufgaben, meine Verantwortung und die Möglichkeiten, Dinge zu gestalten.",
-      "Geblieben ist die Neugier auf die Mechanismen hinter komplexen Systemen – dieselbe Neugier, die mich damals in Berlin dazu brachte, ein verstaubtes Buch aus dem Regal eines Antiquariats zu nehmen.",
-      "Und der Anspruch, aus diesem Verständnis konkrete wirtschaftliche Wirkung entstehen zu lassen."
-    ],
-    labIntro:[
-      "Vier strategische Entscheidungen. Keine einfachen Antworten.",
-      "Wie würden Sie handeln, wenn technologische Möglichkeiten, wirtschaftlicher Druck, regulatorische Verantwortung und menschliches Verhalten aufeinandertreffen?",
-      "Wählen Sie ein Szenario und treffen Sie eine Entscheidung. Anschließend erfahren Sie, welche Spannungsfelder Ihre Wahl eröffnet."
-    ],
-    labCase:"STRATEGISCHES ENTSCHEIDUNGSEXPERIMENT",
-    labConsequence:"Die strategischen Konsequenzen",
-    labReflection:"Die entscheidende Frage",
-    labContext:"Fachlicher Hintergrund",
-    labReset:"Andere Entscheidung prüfen",
-    labNext:"Nächstes Szenario →",
-    labDisclaimer:"Die Fälle sind illustrative Gedankenexperimente, keine realen Kundenmandate oder individuellen Handlungsempfehlungen. Ihre Auswahl wird nicht erfasst oder versendet.",
-    contactIntro:"Für fachlichen Austausch und ausgewählte Kooperationen.",
-    footer:"Alle Rechte vorbehalten."
-  },
-  en:{
-    labels:[
-      "About",
-      "Academic Background",
-      "Professional Experience",
-      "Expertise",
-      "Publications",
-      "Entrepreneurship",
-      "Thinking Lab",
-      "Contact"
-    ],
-    headings:[
-      "Where It All Began",
-      "Academic Foundations",
-      "From Financial Markets to International Advisory",
-      "Expertise",
-      "Publications & Contributions",
-      "Entrepreneurship",
-      "The Thinking Lab",
-      "Contact"
-    ],
-    hero:{
-      kicker:"BERLIN · LATE 1990s",
-      title:"Sometimes a journey begins with a book.",
-      intro:"A summer's day. An antiquarian bookshop. An unexpected discovery that sparked a lasting fascination with economic systems.",
-      motto:"Understanding Complexity. Creating Opportunity.",
-      philosophy:"Bringing specialist expertise and technological knowledge together with purpose can help create lasting prosperity for everyone.",
-      cta:"Discover my story ↓"
-    },
-    profile:[
-      "Berlin, in the late 1990s.",
-      "On a summer's day, while waiting for friends, I found myself wandering through the city and, quite by chance, into an antiquarian bookshop. Among its old and sometimes dusty volumes, I discovered a work on economics exploring the effects of macroeconomic developments on political decisions.",
-      "That encounter would shape the course of my life.",
-      "I became fascinated by the connections between money, capital flows and economic decisions – and by the ways in which these forces influence political institutions, markets and society.",
-      "Curiosity developed into a sustained interest in economic theory, particularly monetary theory and international capital movements. It became the starting point for my academic and professional journey."
-    ],
-    education:[
-      "My academic journey began at the Faculty of Law and Political Science (Rechts- und Staatswissenschaftliche Fakultät), University of Bonn, where I studied law and economics. There, I explored game theory and economic decision-making at the chair associated with Nobel laureate Reinhard Selten, where teaching was conducted by his academic staff at the time.",
-      "I became increasingly interested in how economic actors make decisions under uncertainty, and how the resulting risks can be understood and managed.",
-      "This interest took me to Cologne. At the Schmalenbach Institute, Technische Hochschule Köln, I studied insurance with a particular focus on risk theory and risk management, completing the Diplom-Kaufmann qualification in six semesters in 2005.",
-      "Having also pursued legal studies in Bonn, I decided to develop that academic perspective further. In 2008, I earned a Master of Laws (LL.M.) in European Law in the academic context of RPTU Kaiserslautern & Universität des Saarlandes.",
-      "In 2012, I complemented my education with a leadership programme at Harvard Business School focusing on negotiation strategies and game theory.",
-      "Together, economics, law, risk management and strategic decision theory formed an interdisciplinary foundation that continues to inform my professional approach."
-    ],
-    educationTimeline:[
-      ["2002","Rechts- und Staatswissenschaftliche Fakultät Universität Bonn","Law and Economics · Game Theory"],
-      ["2005","Schmalenbach Institut Technische Hochschule Köln","Diplom-Kaufmann · Insurance · Risk Theory and Management"],
-      ["2008","RPTU Kaiserslautern & Universität des Saarlandes","Master of Laws (LL.M.) · European Law"],
-      ["2012","Harvard Business School","Leadership Programme · Negotiation Strategies and Game Theory"]
-    ],
-    career:[
-      "I began working at an international investment bank while still a student. My initial responsibilities were in retail banking and lending, before I moved into securities trading, where I was primarily involved in the direct execution of orders for private clients.",
-      "These early experiences connected academic thinking about financial markets and risk with the operational realities of banking.",
-      "Before completing my degree, I had already received an offer to join an international audit and advisory firm.",
-      "In 2006, I began a long-standing career in financial services. Across different firms, functions and responsibilities, I progressed from Associate to Director.",
-      "My initial work included financial reporting, financial instruments, insurance, risk management and regulatory issues. Over time, I assumed greater responsibility for complex advisory engagements, specialist practices, business development and team leadership.",
-      "Increasingly, my work focused on bringing economic and regulatory requirements together with effective operating structures and modern technology."
-    ],
-    transformationTitle:"Leadership, Technology & Strategic Transformation",
-    transformation:[
-      "As my leadership responsibilities grew, my focus broaden from analysis and advisory to shaping complex organisational change.",
-      "The intersection of regulatory, quantitative and technological innovation became central to my work. Many years earlier, I had already begun exploring machine-learning approaches, data-driven risk models and technological solutions to complex regulatory questions.",
-      "From 2018 onwards, technology and transformation programmes moved further to the centre of my responsibilities, including complex transformations built on SAP technologies, AI-enabled use cases, strategic portfolio development and the leadership of highly specialised teams.",
-      "In subsequent years, I worked on international transformation initiatives, analytical platforms, governance frameworks and commercial and contractual matters across a global environment spanning four continents.",
-      "Technological transformation became increasingly intertwined with entrepreneurial responsibility.",
-      "Artificial intelligence has never been an end in itself for me. What matters is the tangible economic value technology can create – and the organisational and regulatory conditions required to realise that value."
-    ],
-    careerTimeline:[
-      ["","International Investment Bank","During studies · Retail banking, lending and securities order execution"],
-      ["2006–2018","International Audit and Advisory","Financial Services · Progression from Associate to Director"],
-      ["2018–2019","International Technology Consulting","Director · SAP & Risk Analytics · Transformation"],
-      ["2019–2025","International Technology and Transformation Consulting","Principal Business Analyst; from 2022 also COO focusing on commercial and contract management · AI and ESG"],
-      ["2025","Ready Labs","Co-Founder · Strategy, Finance & Growth"]
-    ],
-    skills:[
-      "Financial Services & Capital Markets",
-      "Risk Management & Governance",
-      "Regulation & Compliance",
-      "Digital Transformation",
-      "Artificial Intelligence & Analytics",
-      "Strategy, Finance & Growth"
-    ],
-    publicationsIntro:"National and international publications",
-    search:"Search publications ...",
-    all:"All categories",
-    categories:["Books","Articles","White Papers","Interviews"],
-    count:"publications",
-    noResults:"No matching publications found.",
-    venture:[
-      "In 2025, I co-founded Ready Labs with colleagues.",
-      "Our motivation arose from an observation I had made repeatedly over many years:",
-      "Economic opportunities are often missed not because demand or expertise is lacking, but because finding relevant information and assessing it requires disproportionate effort.",
-      "This challenge is particularly evident in public procurement. My own experience of complex tender processes had shown me both the economic significance of the market and the resources required to identify and pursue suitable opportunities.",
-      "Through Ready Labs, we aim to reduce this complexity.",
-      "Our first product, Ready Tender, uses artificial intelligence to match company profiles with relevant public tenders and simplify research and assessment processes.",
-      "Our longer-term vision goes substantially further. Future concepts, including Ready Grant and Ready Connect, could make funding opportunities and business partnerships more accessible. These are part of our vision rather than current Ready Tender features.",
-      "As a co-founder, I focus particularly on strategy, finance and growth. In a young company, however, these are not rigid boundaries of responsibility but part of our shared entrepreneurial commitment.",
-      "My personal focus is on combining strategic clarity, financial viability and scalable growth."
-    ],
-    motivationTitle:"Purpose, Perspective & Long-Term Vision",
-    motivation:[
-      "Looking back, a fundamental question connects my academic, professional and entrepreneurial experiences:",
-      "How can we understand and shape complex economic systems in ways that enable better decisions and create new opportunities?",
-      "An early interest in monetary theory and capital flows evolved into a sustained engagement with risk, regulation and corporate governance. This, in turn, led to technological transformation, artificial intelligence and ultimately building a company of our own.",
-      "What has changed is the nature of my work, the responsibilities I carry and the opportunities I have to shape outcomes.",
-      "What remains is the curiosity about the mechanisms underlying complex systems – the same curiosity that led me to pick up a dusty book in a Berlin antiquarian bookshop.",
-      "And the ambition to turn that understanding into tangible economic impact."
-    ],
-    labIntro:[
-      "Four strategic decisions. No easy answers.",
-      "How would you act when technological opportunity, economic pressure, regulatory responsibility and human behaviour collide?",
-      "Explore a scenario, make a decision and examine the strategic tensions that follow."
-    ],
-    labCase:"STRATEGIC DECISION EXPERIMENT",
-    labConsequence:"Strategic consequences",
-    labReflection:"The question that matters",
-    labContext:"Related expertise",
-    labReset:"Explore another choice",
-    labNext:"Next scenario →",
-    labDisclaimer:"These are illustrative thought experiments, not real client engagements or individual professional advice. Your selections are neither collected nor transmitted.",
-    contactIntro:"For professional exchange and selected collaborations.",
-    footer:"All rights reserved."
-  },
-  fa:{
-    labels:[
-      "دربارهٔ من (Personal Profile)",
-      "تحصیلات (Academic Background)",
-      "سوابق حرفه‌ای (Professional Track Record)",
-      "تخصص‌ها (Areas of Expertise)",
-      "انتشارات (Selected Publications & Thought Leadership)",
-      "کارآفرینی (Entrepreneurial Ventures)",
-      "آزمایشگاه تفکر (The Thinking Lab)",
-      "تماس (Professional Enquiries)"
-    ],
-    headings:[
-      "آغاز داستان (The Origins of an Intellectual Journey)",
-      "بنیان علمی (Academic Foundations & Intellectual Development)",
-      "از بازارهای مالی تا مشاورهٔ بین‌المللی (Financial Services, Leadership & Global Transformation)",
-      "تخصص‌ها (Areas of Expertise)",
-      "انتشارات و مقالات تخصصی (Selected Publications & Thought Leadership)",
-      "کارآفرینی (Entrepreneurial Ventures)",
-      "آزمایشگاه تفکر (The Thinking Lab)",
-      "تماس (Professional Enquiries)"
-    ],
-    hero:{
-      kicker:"برلین · اواخر دههٔ ۱۹۹۰",
-      title:"گاهی یک سفر با یک کتاب آغاز می‌شود.",
-      intro:"یک روز تابستانی، یک کتاب‌فروشی قدیمی و کشفی اتفاقی که آغازگر علاقه‌ای پایدار به سازوکارهای اقتصادی شد.",
-      motto:"درک پیچیدگی‌ها. آفرینش فرصت‌ها.",
-      philosophy:"پیوند هدفمند دانش تخصصی و دانش فناورانه می‌تواند به ایجاد رفاه پایدار برای همهٔ انسان‌ها کمک کند.",
-      cta:"آشنایی با داستان من ↓"
-    },
-    profile:[
-      "برلین، اواخر دههٔ ۱۹۹۰.",
-      "در یک روز تابستانی، زمانی که منتظر دوستانم بودم، هنگام قدم‌زدن در خیابان‌های شهر به‌طور اتفاقی وارد یک کتاب‌فروشی قدیمی شدم. میان کتاب‌های کهنه و گاه غبارگرفته، اثری دربارهٔ علم اقتصاد یافتم که به تأثیر تحولات اقتصاد کلان بر تصمیم‌های سیاسی می‌پرداخت.",
-      "آن مواجهه مسیر فکری و حرفه‌ای مرا عمیقاً تحت تأثیر قرار داد.",
-      "پرسشی که ذهنم را درگیر کرد، رابطهٔ پول، جریان سرمایه و تصمیم‌های اقتصادی با یکدیگر و تأثیر آن‌ها بر نهادهای سیاسی، بازارها و تحولات اجتماعی بود.",
-      "این کنجکاوی به مطالعه‌ای جدی دربارهٔ نظریه‌های اقتصادی، به‌ویژه نظریهٔ پول و جریان‌های بین‌المللی سرمایه تبدیل شد و نقطهٔ آغاز مسیر دانشگاهی و حرفه‌ای من شد."
-    ],
-    education:[
-      "مسیر دانشگاهی من با تحصیل در رشته‌های حقوق و اقتصاد در دانشکدهٔ حقوق و علوم سیاسی دانشگاه بن (Rechts- und Staatswissenschaftliche Fakultät Universität Bonn) آغاز شد. در آنجا با نظریهٔ بازی‌ها و الگوهای تصمیم‌گیری اقتصادی در کرسی علمی مرتبط با راینهارد زلتن، برندهٔ جایزهٔ نوبل اقتصاد، آشنا شدم. در آن زمان تدریس توسط همکاران علمی او انجام می‌شد.",
-      "به‌تدریج پرسش دربارهٔ چگونگی تصمیم‌گیری کنشگران اقتصادی در شرایط عدم‌قطعیت و شیوهٔ شناخت و مدیریت ریسک برایم اهمیت بیشتری پیدا کرد.",
-      "این علاقه مرا به کلن برد. در مؤسسهٔ شمالنباخ دانشگاه فنی کلن (Schmalenbach Institut Technische Hochschule Köln)، در رشتهٔ بیمه با تمرکز ویژه بر نظریهٔ ریسک و مدیریت ریسک تحصیل کردم و در سال ۲۰۰۵ دورهٔ دیپلم بازرگانی آلمان (Diplom-Kaufmann) را پس از شش نیمسال به پایان رساندم. این مدرک در نظام قدیم آموزش عالی آلمان در سطحی معادل فوق‌لیسانس (Fogh-e Lisans) قرار دارد؛ عنوان رسمی مدرک همچنان Diplom-Kaufmann است.",
-      "از آنجا که تحصیل حقوق را نیز در بن آغاز کرده بودم، تصمیم گرفتم این مسیر علمی را ادامه دهم. در سال ۲۰۰۸ مدرک فوق‌لیسانس (Fogh-e Lisans / LL.M.) را در رشتهٔ حقوق اروپا در چارچوب دانشگاهی دانشگاه فنی کایزرسلاوترن (RPTU Kaiserslautern) و دانشگاه زارلاند (Universität des Saarlandes) دریافت کردم.",
-      "در سال ۲۰۱۲ تحصیلات خود را با برنامهٔ رهبری در مدرسهٔ کسب‌وکار هاروارد، با محوریت راهبردهای مذاکره و نظریهٔ بازی‌ها، تکمیل کردم.",
-      "به این ترتیب، اقتصاد، حقوق، مدیریت ریسک و نظریهٔ تصمیم‌گیری راهبردی بنیانی میان‌رشته‌ای ساختند که همچنان رویکرد حرفه‌ای مرا شکل می‌دهد."
-    ],
-    educationTimeline:[
-      ["2002","دانشکدهٔ حقوق و علوم سیاسی دانشگاه بن (Rechts- und Staatswissenschaftliche Fakultät Universität Bonn)","حقوق و اقتصاد · نظریهٔ بازی‌ها"],
-      ["2005","مؤسسهٔ شمالنباخ دانشگاه فنی کلن (Schmalenbach Institut Technische Hochschule Köln)","دیپلم بازرگانی آلمان (Diplom-Kaufmann) · معادل فوق‌لیسانس (Fogh-e Lisans) · بیمه و مدیریت ریسک"],
-      ["2008","دانشگاه فنی کایزرسلاوترن (RPTU Kaiserslautern) و دانشگاه زارلاند (Universität des Saarlandes)","فوق‌لیسانس (Fogh-e Lisans / LL.M.) · حقوق اروپا"],
-      ["2012","مدرسهٔ کسب‌وکار هاروارد","برنامهٔ رهبری · مذاکره و نظریهٔ بازی‌ها"]
-    ],
-    career:[
-      "فعالیت حرفه‌ای من از دوران دانشجویی و در یک بانک سرمایه‌گذاری بین‌المللی آغاز شد. ابتدا در بانکداری مشتریان حقیقی و امور اعتباری فعالیت داشتم و سپس وارد معاملات اوراق بهادار شدم؛ جایی که عمدتاً در اجرای مستقیم سفارش‌های مشتریان حقیقی مشارکت می‌کردم.",
-      "این تجربه‌های اولیه، مطالعات نظری من دربارهٔ بازارهای مالی و ریسک را با واقعیت عملی فعالیت بانکی پیوند داد.",
-      "پیش از پایان تحصیلاتم، پیشنهاد همکاری از یک مؤسسهٔ بین‌المللی حسابرسی و مشاوره دریافت کرده بودم.",
-      "از سال ۲۰۰۶ فعالیتی طولانی در حوزهٔ خدمات مالی آغاز کردم و در شرکت‌ها، نقش‌ها و مسئولیت‌های مختلف، از جایگاه Associate تا Director پیش رفتم.",
-      "حوزهٔ کار من در ابتدا شامل گزارشگری مالی، ابزارهای مالی، صنعت بیمه، مدیریت ریسک و موضوعات نظارتی بود. به‌مرور مسئولیت هدایت مأموریت‌های پیچیدهٔ مشاوره‌ای، توسعهٔ حوزه‌های تخصصی، رشد کسب‌وکار و رهبری تیم‌ها را بر عهده گرفتم.",
-      "در این مسیر، پیوند الزامات اقتصادی و نظارتی با ساختارهای سازمانی کارآمد و فناوری‌های نوین به یکی از موضوعات اصلی کارم تبدیل شد."
-    ],
-    transformationTitle:"رهبری، فناوری و تحول (Leadership, Technology & Strategic Transformation)",
-    transformation:[
-      "با افزایش مسئولیت‌های مدیریتی، تمرکز من از تحلیل و مشاوره به طراحی و هدایت تحولات پیچیدهٔ سازمانی گسترش یافت.",
-      "پیوند نوآوری‌های نظارتی، کمّی و فناورانه بخش مهمی از فعالیت من شد. سال‌ها پیش‌تر نیز بررسی رویکردهای یادگیری ماشین، مدل‌های ریسک مبتنی بر داده و راهکارهای فناورانه برای مسائل پیچیدهٔ نظارتی را آغاز کرده بودم.",
-      "از سال ۲۰۱۸ برنامه‌های فناوری و تحول جایگاه پررنگ‌تری در مسئولیت‌هایم یافتند؛ از جمله تحولات پیچیده بر پایهٔ فناوری‌های SAP، کاربردهای هوش مصنوعی، توسعهٔ راهبردی سبد خدمات و رهبری تیم‌های بسیار تخصصی.",
-      "در سال‌های بعد، در طرح‌های بین‌المللی تحول، پلتفرم‌های تحلیلی، ساختارهای حاکمیتی و موضوعات تجاری و قراردادی در محیطی جهانی شامل چهار قاره فعالیت کردم.",
-      "در نتیجه، طراحی تحولات فناورانه بیش‌ازپیش با مسئولیت‌های کارآفرینانه پیوند خورد.",
-      "برای من هوش مصنوعی هرگز هدفی مستقل نبوده است. آنچه اهمیت دارد، ارزش اقتصادی ملموسی است که فناوری می‌تواند ایجاد کند و شرایط سازمانی و نظارتی لازم برای تحقق این ارزش."
-    ],
-    careerTimeline:[
-      ["","بانک سرمایه‌گذاری بین‌المللی","دوران تحصیل · بانکداری، اعتبار و معاملات اوراق بهادار"],
-      ["2006–2018","حسابرسی و مشاورهٔ بین‌المللی","خدمات مالی · پیشرفت از Associate تا Director"],
-      ["2018–2019","مشاورهٔ فناوری بین‌المللی","Director · تحلیل ریسک و SAP · تحول"],
-      ["2019–2025","مشاورهٔ فناوری و تحول بین‌المللی","Principal Business Analyst؛ از سال ۲۰۲۲ همچنین COO با تمرکز بر مدیریت تجاری و قراردادها · هوش مصنوعی و ESG"],
-      ["2025","Ready Labs","هم‌بنیان‌گذار · راهبرد، امور مالی و رشد"]
-    ],
-    skills:[
-      "خدمات مالی و بازارهای سرمایه",
-      "مدیریت ریسک و حاکمیت",
-      "مقررات و انطباق",
-      "تحول دیجیتال",
-      "هوش مصنوعی و تحلیل داده",
-      "راهبرد، امور مالی و رشد"
-    ],
-    publicationsIntro:"انتشارات ملی و بین‌المللی",
-    search:"جست‌وجوی انتشارات ...",
-    all:"همهٔ دسته‌ها",
-    categories:[
-      "کتاب‌ها (Books)",
-      "مقالات تخصصی (Professional Articles)",
-      "گزارش‌های تحلیلی (White Papers)",
-      "مصاحبه‌ها (Interviews)"
-    ],
-    count:"اثر",
-    noResults:"اثری مطابق با جست‌وجو یافت نشد.",
-    venture:[
-      "در سال ۲۰۲۵ به همراه همکارانم Ready Labs را بنیان گذاشتم.",
-      "انگیزهٔ ما از مشاهده‌ای شکل گرفت که طی سال‌ها در سازمان‌های گوناگون تکرار می‌شد:",
-      "فرصت‌های اقتصادی اغلب نه به دلیل نبود تقاضا یا تخصص، بلکه به سبب دشواری دسترسی به اطلاعات مرتبط و هزینهٔ بالای ارزیابی آن‌ها از دست می‌روند.",
-      "این چالش در تدارکات و مناقصات عمومی به‌ویژه آشکار است. تجربهٔ شخصی من در فرایندهای پیچیدهٔ مناقصه، هم اهمیت اقتصادی این بازار و هم منابع لازم برای شناسایی و پیگیری فرصت‌های مناسب را نشان داده بود.",
-      "با Ready Labs می‌خواهیم این پیچیدگی را کاهش دهیم.",
-      "نخستین محصول ما، Ready Tender، از هوش مصنوعی برای تطبیق پروفایل شرکت‌ها با مناقصات عمومی مرتبط و ساده‌سازی فرایندهای جست‌وجو و ارزیابی استفاده می‌کند.",
-      "چشم‌انداز بلندمدت ما بسیار فراتر از این محصول است. طرح‌های آینده، از جمله Ready Grant و Ready Connect، می‌توانند دسترسی شرکت‌ها به فرصت‌های تأمین مالی و همکاری‌های تجاری را آسان‌تر کنند. این طرح‌ها بخشی از چشم‌انداز آینده هستند و در حال حاضر قابلیت‌های Ready Tender محسوب نمی‌شوند.",
-      "به‌عنوان یکی از بنیان‌گذاران، به‌ویژه بر راهبرد، امور مالی و رشد تمرکز دارم. بااین‌حال، در یک شرکت جوان این حوزه‌ها مرزهای خشک مسئولیت نیستند، بلکه بخشی از تعهد مشترک کارآفرینانهٔ ما به شمار می‌روند.",
-      "تمرکز شخصی من بر پیوند شفافیت راهبردی، پایداری اقتصادی و رشد مقیاس‌پذیر است."
-    ],
-    motivationTitle:"آنچه امروز به من انگیزه می‌دهد (Purpose, Perspective & Long-Term Vision)",
-    motivation:[
-      "وقتی به گذشته نگاه می‌کنم، پرسشی بنیادی تمام مراحل علمی، حرفه‌ای و کارآفرینانهٔ مرا به هم پیوند می‌دهد:",
-      "چگونه می‌توان نظام‌های پیچیدهٔ اقتصادی را شناخت و به‌گونه‌ای شکل داد که تصمیم‌های بهتر و فرصت‌های تازه‌ای به وجود آیند؟",
-      "علاقهٔ نخستین من به نظریهٔ پول و جریان سرمایه به مطالعهٔ عمیق ریسک، مقررات و راهبری سازمانی انجامید. سپس به تحول فناورانه، هوش مصنوعی و سرانجام ایجاد شرکتی مستقل رسید.",
-      "آنچه در این سال‌ها تغییر کرده، ماهیت وظایف، سطح مسئولیت و امکانات من برای اثرگذاری بوده است.",
-      "اما کنجکاوی دربارهٔ سازوکارهای پنهان نظام‌های پیچیده همچنان باقی مانده است؛ همان کنجکاوی که روزی در برلین مرا واداشت کتابی غبارگرفته را از قفسهٔ یک کتاب‌فروشی قدیمی بردارم.",
-      "و همچنین تلاش برای تبدیل این شناخت به اثری واقعی در اقتصاد."
-    ],
-    labIntro:[
-      "چهار تصمیم راهبردی؛ بدون پاسخ‌های ساده.",
-      "اگر فرصت‌های فناورانه، فشار اقتصادی، مسئولیت نظارتی و رفتار انسانی هم‌زمان مطرح باشند، چگونه تصمیم می‌گیرید؟",
-      "یکی از سناریوها را انتخاب کنید، تصمیم بگیرید و پیامدهای راهبردی آن را بررسی کنید."
-    ],
-    labCase:"آزمایش تصمیم‌گیری راهبردی (Strategic Decision Experiment)",
-    labConsequence:"پیامدهای راهبردی (Strategic Consequences)",
-    labReflection:"پرسش اساسی (The Question That Matters)",
-    labContext:"پیشینهٔ تخصصی (Related Expertise)",
-    labReset:"بررسی تصمیمی دیگر",
-    labNext:"سناریوی بعدی ←",
-    labDisclaimer:"این سناریوها صرفاً آزمایش‌های فکری فرضی هستند و به پرونده‌های واقعی مشتریان یا توصیه‌های حرفه‌ای فردی اشاره ندارند. انتخاب‌های شما ثبت یا ارسال نمی‌شوند.",
-    contactIntro:"برای گفت‌وگوهای تخصصی و همکاری‌های منتخب.",
-    footer:"تمام حقوق محفوظ است."
-  }
-};
+/* =====================================================
+   APPLICATION STATE
+   ===================================================== */
 
-const sectionIDs=[
-  "profile",
-  "education",
-  "career",
-  "expertise",
-  "publications",
-  "entrepreneurship",
-  "lab",
-  "contact"
+const sectionIDs = [
+  "profile","education","career","expertise",
+  "publications","entrepreneurship","lab","contact"
 ];
 
-let currentLang="de";
-let activeCase=0;
-let choices=[null,null,null,null];
+const navIDs = [
+  "profile","career","expertise",
+  "publications","entrepreneurship","lab","contact"
+];
 
-function setText(id,value){
-  document.getElementById(id).textContent=value;
-}
+const categories = ["book","article","paper","interview"];
 
-function escapeHTML(value){
-  return String(value).replace(/[&<>"']/g,ch=>({
+let currentLang = "de";
+let activeCase = 0;
+let choices = [null,null,null,null];
+let publicationLimit = 8;
+
+const $ = id => document.getElementById(id);
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
     "&":"&amp;",
     "<":"&lt;",
     ">":"&gt;",
     '"':"&quot;",
     "'":"&#39;"
-  })[ch]);
+  })[character]);
 }
 
-function paragraphsHTML(lines){
-  return lines.map(line=>`<p>${escapeHTML(line)}</p>`).join("");
+function setText(id, value) {
+  $(id).textContent = value;
 }
 
-function timelineHTML(items){
-  return items.map(([year,heading,detail])=>`
+function paragraphsHTML(lines) {
+  return lines.map(line => `<p>${escapeHTML(line)}</p>`).join("");
+}
+
+function timelineHTML(items) {
+  return items.map(([year, heading, detail]) => `
     <article class="timeline-item">
       <div class="timeline-year" dir="ltr">${escapeHTML(year)}</div>
       <div>
@@ -1478,110 +1712,102 @@ function timelineHTML(items){
   `).join("");
 }
 
-function bilingualHeadingHTML(label){
-  const match=label.match(/^(.*?)\s+\(([^()]*)\)$/);
-  if(!match)return escapeHTML(label);
-  return `<span class="heading-nowrap">`+
-    `<span lang="fa" dir="rtl">${escapeHTML(match[1])}</span> `+
-    `<bdi class="heading-english" lang="en" dir="ltr">`+
-    `(${escapeHTML(match[2])})</bdi></span>`;
+function headingHTML(value, lang) {
+  if (lang !== "fa") return escapeHTML(value);
+
+  const match = value.match(/^(.*?)\s+\(([^()]*)\)$/);
+
+  if (!match) return escapeHTML(value);
+
+  return `
+    <span class="heading-primary" lang="fa">${escapeHTML(match[1])}</span>
+    <span class="heading-english" lang="en" dir="ltr">${escapeHTML(match[2])}</span>
+  `;
 }
 
-function bilingualNavHTML(label){
-  const match=label.match(/^(.*?)\s+\(([^()]*)\)$/);
-  if(!match)return escapeHTML(label);
-  return `<span lang="fa">${escapeHTML(match[1])}</span> `+
-    `<bdi class="nav-english" lang="en" dir="ltr">`+
-    `(${escapeHTML(match[2])})</bdi>`;
+function setHeading(id, value, lang) {
+  $(id).innerHTML = headingHTML(value, lang);
 }
 
-function setHeading(id,value,lang){
-  const element=document.getElementById(id);
-  if(lang==="fa"){
-    element.innerHTML=bilingualHeadingHTML(value);
-  }else{
-    element.textContent=value;
+/* =====================================================
+   PUBLICATION SEARCH AND FILTER
+   ===================================================== */
+
+function renderPublications() {
+  const t = translations[currentLang];
+  const query = $("pubSearch").value.trim().toLocaleLowerCase();
+  const category = $("pubFilter").value || "all";
+
+  const results = publications
+    .map((pub, index) => ({pub, index}))
+    .filter(({pub}) => {
+      const searchable = pub.slice(0,5)
+        .join(" ")
+        .toLocaleLowerCase();
+
+      return searchable.includes(query) &&
+        (category === "all" || pub[5] === category);
+    })
+    .sort((a,b) =>
+      b.pub[0] - a.pub[0] || b.index - a.index
+    );
+
+  setText("pubCount", results.length + " " + t.count);
+
+  const filtering = query.length > 0 || category !== "all";
+  const visible = filtering
+    ? results
+    : results.slice(0,publicationLimit);
+
+  if (!visible.length) {
+    $("pubList").innerHTML =
+      `<p class="empty">${escapeHTML(t.noResults)}</p>`;
+  } else {
+    $("pubList").innerHTML = visible.map(({pub}) => `
+      <article class="pub-item">
+        <div class="pub-year" dir="ltr">${escapeHTML(pub[0])}</div>
+        <div>
+          <p>${escapeHTML(pub[3])}</p>
+          <h4>${escapeHTML(pub[2])}</h4>
+          <p>${escapeHTML(pub[1])}</p>
+          <p>${escapeHTML(pub[4])}</p>
+        </div>
+      </article>
+    `).join("");
   }
+
+  $("pubMore").hidden = filtering || results.length <= publicationLimit;
+  $("pubMore").textContent = t.more;
 }
 
-function renderPublications(){
-  const t=translations[currentLang];
-  const query=document.getElementById("pubSearch")
-    .value.trim().toLocaleLowerCase();
-  const category=document.getElementById("pubFilter").value;
-  const results=publications.filter(pub=>{
-    const searchable=[pub[1],pub[2],pub[3],pub[4]]
-      .join(" ").toLocaleLowerCase();
-    return searchable.includes(query)&&
-      (category==="all"||pub[5]===category);
-  }).sort((a,b)=>b[0]-a[0]);
+/* =====================================================
+   THINKING LAB
+   ===================================================== */
 
-  setText("pubCount",results.length+" "+t.count);
-  const list=document.getElementById("pubList");
+function renderLab(options = {}) {
+  const t = translations[currentLang];
+  const cases = labCases[currentLang];
+  const item = cases[activeCase];
+  const selected = choices[activeCase];
 
-  if(!results.length){
-    list.innerHTML=`<p class="empty">${escapeHTML(t.noResults)}</p>`;
-    return;
-  }
-
-  list.innerHTML=results.map(pub=>`
-    <article class="pub-item">
-      <div class="pub-year" dir="ltr">${escapeHTML(pub[0])}</div>
-      <div>
-        <p>${escapeHTML(pub[3])}</p>
-        <h4>${escapeHTML(pub[2])}</h4>
-        <p>${escapeHTML(pub[1])}</p>
-        <p>${escapeHTML(pub[4])}</p>
-      </div>
-    </article>
-  `).join("");
-}
-
-function renderLab(){
-  const t=translations[currentLang];
-  const cases=labCases[currentLang];
-  const item=cases[activeCase];
-  const selected=choices[activeCase];
-  const tabs=document.getElementById("labTabs");
-  const panel=document.getElementById("labPanel");
-
-  tabs.innerHTML=cases.map((entry,index)=>`
+  $("labTabs").innerHTML = cases.map((entry,index) => `
     <button type="button"
-      class="lab-tab ${index===activeCase?"active":""}"
+      class="lab-tab ${index === activeCase ? "active" : ""}"
       data-case="${index}"
-      aria-pressed="${index===activeCase}">
+      aria-pressed="${index === activeCase}">
       ${escapeHTML(entry.tab)}
     </button>
   `).join("");
 
-  tabs.querySelectorAll("[data-case]").forEach(button=>{
-    button.addEventListener("click",()=>{
-      activeCase=Number(button.dataset.case);
-      renderLab();
-    });
-  });
-
-  const result=selected===null?"":`
-    <div class="lab-result" id="labResult">
-      <p class="lab-result-heading">
-        ${currentLang==="fa"
-          ?bilingualHeadingHTML(t.labConsequence)
-          :escapeHTML(t.labConsequence)}
-      </p>
+  const resultHTML = selected === null ? "" : `
+    <div class="lab-result" id="labResult" aria-live="polite">
+      <p class="lab-result-heading">${escapeHTML(t.labConsequence)}</p>
       <p>${escapeHTML(item.choices[selected].consequence)}</p>
 
-      <p class="lab-result-heading">
-        ${currentLang==="fa"
-          ?bilingualHeadingHTML(t.labReflection)
-          :escapeHTML(t.labReflection)}
-      </p>
+      <p class="lab-result-heading">${escapeHTML(t.labReflection)}</p>
       <p class="lab-reflection">${escapeHTML(item.reflection)}</p>
 
-      <p class="lab-result-heading">
-        ${currentLang==="fa"
-          ?bilingualHeadingHTML(t.labContext)
-          :escapeHTML(t.labContext)}
-      </p>
+      <p class="lab-result-heading">${escapeHTML(t.labContext)}</p>
       <p>${escapeHTML(item.context)}</p>
 
       <div class="lab-actions">
@@ -1595,92 +1821,101 @@ function renderLab(){
     </div>
   `;
 
-  panel.innerHTML=`
+  $("labPanel").innerHTML = `
     <div class="lab-case-label">
-      ${currentLang==="fa"
-        ?bilingualHeadingHTML(t.labCase)
-        :escapeHTML(t.labCase)}
-      · <span dir="ltr">${activeCase+1} / ${cases.length}</span>
+      ${escapeHTML(t.labCase)}
+      · <span dir="ltr">${activeCase + 1} / ${cases.length}</span>
     </div>
 
-    <h3 class="lab-case-title">
-      ${currentLang==="fa"
-        ?bilingualHeadingHTML(item.title)
-        :escapeHTML(item.title)}
-    </h3>
-
+    <h3 class="lab-case-title">${escapeHTML(item.title)}</h3>
     <p class="lab-scenario">${escapeHTML(item.scenario)}</p>
     <p class="lab-question">${escapeHTML(item.question)}</p>
 
     <div class="lab-choices" role="group"
          aria-label="${escapeHTML(item.question)}">
-      ${item.choices.map((choice,index)=>`
+      ${item.choices.map((choice,index) => `
         <button type="button"
           class="lab-choice"
           data-choice="${index}"
-          aria-pressed="${selected===index}">
+          aria-pressed="${selected === index}">
           <span class="lab-choice-letter">${["A","B","C"][index]}</span>
           <span>${escapeHTML(choice.label)}</span>
         </button>
       `).join("")}
     </div>
 
-    ${result}
+    ${resultHTML}
   `;
 
-  panel.querySelectorAll("[data-choice]").forEach(button=>{
-    button.addEventListener("click",()=>{
-      choices[activeCase]=Number(button.dataset.choice);
-      renderLab();
-      const resultElement=document.getElementById("labResult");
-      if(resultElement){
-        resultElement.scrollIntoView({
-          behavior:"auto",
-          block:"nearest"
-        });
-      }
-    });
-  });
-
-  if(selected!==null){
-    document.getElementById("labReset")
-      .addEventListener("click",()=>{
-        choices[activeCase]=null;
-        renderLab();
-      });
-
-    document.getElementById("labNext")
-      .addEventListener("click",()=>{
-        activeCase=(activeCase+1)%cases.length;
-        renderLab();
-        document.getElementById("labTabs")
-          .scrollIntoView({behavior:"auto",block:"nearest"});
-      });
+  if (options.focusChoice !== undefined) {
+    $("labPanel")
+      .querySelector(`[data-choice="${options.focusChoice}"]`)
+      ?.focus({preventScroll:true});
+  } else if (options.focusTab) {
+    $("labTabs")
+      .querySelector(`[data-case="${activeCase}"]`)
+      ?.focus({preventScroll:true});
   }
 }
 
-function renderLanguage(lang){
-  if(!translations[lang])lang="de";
-  currentLang=lang;
-  const t=translations[lang];
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
 
-  document.documentElement.lang=lang==="en"?"en-GB":lang;
-  document.documentElement.dir=lang==="fa"?"rtl":"ltr";
-  document.title=t.hero.motto+" | Executive Biography";
+function setMenuOpen(open) {
+  $("navLinks").classList.toggle("is-open",open);
+  $("menuToggle").setAttribute("aria-expanded",String(open));
+  $("menuToggle").textContent = open ? "✕" : "☰";
 
-  document.querySelectorAll("[data-lang]").forEach(button=>{
-    const active=button.dataset.lang===lang;
+  const t = translations[currentLang];
+  $("menuToggle").setAttribute(
+    "aria-label", open ? t.menuClose : t.menuOpen
+  );
+}
+
+/* =====================================================
+   LANGUAGE RENDERING
+   ===================================================== */
+
+function renderLanguage(lang) {
+  if (!translations[lang]) lang = "de";
+
+  currentLang = lang;
+  const t = translations[lang];
+
+  document.documentElement.lang = lang === "en" ? "en-GB" : lang;
+  document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+
+  document.title =
+    lang === "de"
+      ? "Khakzad | Finanzwirtschaft, Technologie & Transformation"
+      : lang === "en"
+        ? "Khakzad | Financial Services, Technology & Transformation"
+        : "Khakzad | امور مالی، فناوری و تحول";
+
+  document.querySelector('meta[name="description"]')
+    .setAttribute("content",t.meta);
+
+  document.querySelectorAll("[data-lang]").forEach(button => {
+    const active = button.dataset.lang === lang;
     button.classList.toggle("active",active);
     button.setAttribute("aria-pressed",String(active));
   });
 
-  document.getElementById("navLinks").innerHTML=
-    sectionIDs.map((id,i)=>{
-      const label=lang==="fa"
-        ?bilingualNavHTML(t.labels[i])
-        :escapeHTML(t.labels[i]);
-      return `<a href="#${id}">${label}</a>`;
-    }).join("");
+  $("navLinks").innerHTML = navIDs.map((id,index) => `
+    <a href="#${id}">${escapeHTML(t.nav[index])}</a>
+  `).join("");
+
+  $("navLinks").setAttribute("aria-label",t.navigation);
+  $("menuToggle").setAttribute("aria-label",t.menuOpen);
+  $("themeToggle").setAttribute("aria-label",t.theme);
+  $("skipLink").textContent = t.skip;
+
+  document.querySelectorAll(".section-number")
+    .forEach((element,index) => {
+      element.textContent =
+        String(index + 1).padStart(2,"0") + " / " + t.side[index];
+    });
 
   setText("heroKicker",t.hero.kicker);
   setText("heroTitle",t.hero.title);
@@ -1689,121 +1924,185 @@ function renderLanguage(lang){
   setText("heroPhilosophy",t.hero.philosophy);
   setText("heroCTA",t.hero.cta);
 
-  sectionIDs.forEach((id,i)=>{
-    setHeading(id+"Heading",t.headings[i],lang);
+  sectionIDs.forEach((id,index) => {
+    setHeading(id + "Heading",t.headings[index],lang);
   });
 
-  document.getElementById("profileText").innerHTML=
-    paragraphsHTML(t.profile);
+  $("profileText").innerHTML = paragraphsHTML(t.profile);
+  $("educationText").innerHTML = paragraphsHTML(t.education);
+  $("educationTimeline").innerHTML = timelineHTML(t.educationTimeline);
 
-  document.getElementById("educationText").innerHTML=
-    paragraphsHTML(t.education);
-
-  document.getElementById("educationTimeline").innerHTML=
-    timelineHTML(t.educationTimeline);
-
-  document.getElementById("careerText").innerHTML=
-    paragraphsHTML(t.career);
-
+  $("careerText").innerHTML = paragraphsHTML(t.career);
   setHeading("transformationHeading",t.transformationTitle,lang);
+  $("transformationText").innerHTML = paragraphsHTML(t.transformation);
+  $("careerTimeline").innerHTML = timelineHTML(t.careerTimeline);
 
-  document.getElementById("transformationText").innerHTML=
-    paragraphsHTML(t.transformation);
-
-  document.getElementById("careerTimeline").innerHTML=
-    timelineHTML(t.careerTimeline);
-
-  document.getElementById("expertiseSkills").innerHTML=
-    t.skills.map(skill=>
-      `<div class="skill">${escapeHTML(skill)}</div>`
-    ).join("");
+  $("expertiseSkills").innerHTML = t.skills.map(([title,description]) => `
+    <article class="skill">
+      <span class="skill-symbol" aria-hidden="true">◆</span>
+      <h3>${escapeHTML(title)}</h3>
+      <p>${escapeHTML(description)}</p>
+    </article>
+  `).join("");
 
   setText("publicationsIntro",t.publicationsIntro);
 
-  const search=document.getElementById("pubSearch");
-  search.placeholder=t.search;
+  const search = $("pubSearch");
+  search.placeholder = t.search;
   search.setAttribute("aria-label",t.search);
-  search.value="";
 
-  const filter=document.getElementById("pubFilter");
-  const types=["book","article","paper","interview"];
+  const filter = $("pubFilter");
+  const savedCategory = filter.value || "all";
 
-  filter.innerHTML=`
+  filter.innerHTML = `
     <option value="all">${escapeHTML(t.all)}</option>
-    ${types.map((type,i)=>
-      `<option value="${type}">${escapeHTML(t.categories[i])}</option>`
-    ).join("")}
+    ${categories.map((category,index) => `
+      <option value="${category}">${escapeHTML(t.categories[index])}</option>
+    `).join("")}
   `;
+
+  filter.value = categories.includes(savedCategory) ? savedCategory : "all";
+  filter.setAttribute("aria-label",t.all);
 
   renderPublications();
 
-  document.getElementById("entrepreneurshipText").innerHTML=
-    paragraphsHTML(t.venture);
-
+  $("entrepreneurshipText").innerHTML = paragraphsHTML(t.venture);
   setHeading("motivationHeading",t.motivationTitle,lang);
 
-  document.getElementById("motivationText").innerHTML=
-    t.motivation.map((paragraph,i)=>{
-      if(i===1){
-        return `<blockquote class="quote">${escapeHTML(paragraph)}</blockquote>`;
-      }
-      return `<p>${escapeHTML(paragraph)}</p>`;
-    }).join("");
+  $("motivationText").innerHTML = t.motivation.map((text,index) =>
+    index === 1
+      ? `<blockquote class="quote">${escapeHTML(text)}</blockquote>`
+      : `<p>${escapeHTML(text)}</p>`
+  ).join("");
 
-  document.getElementById("labIntro").innerHTML=
-    paragraphsHTML(t.labIntro);
-
-  setText("labDisclaimer",t.labDisclaimer);
-
-  choices=[null,null,null,null];
+  $("labIntro").innerHTML = paragraphsHTML(t.labIntro);
+  $("labDisclaimer").textContent = t.labDisclaimer;
+  $("labTabs").setAttribute("aria-label",t.headings[6]);
   renderLab();
 
   setText("contactIntro",t.contactIntro);
-  setText("footerCopyright","© 2026 · "+t.footer);
+  setText("readyTenderLink",t.readyTender);
+  setText("readyLabsLink",t.readyLabs);
+  setText("footerTop",t.backTop);
+  setText("footerCopyright","© 2026 · " + t.footer);
 
-  try{
+  setMenuOpen(false);
+
+  try {
     localStorage.setItem("cv-language",lang);
-  }catch(error){}
+  } catch (error) {}
 }
 
-document.querySelectorAll("[data-lang]").forEach(button=>{
-  button.addEventListener("click",()=>{
+/* =====================================================
+   EVENT LISTENERS
+   ===================================================== */
+
+document.querySelectorAll("[data-lang]").forEach(button => {
+  button.addEventListener("click",() => {
     renderLanguage(button.dataset.lang);
   });
 });
 
-document.getElementById("pubSearch")
-  .addEventListener("input",renderPublications);
+$("menuToggle").addEventListener("click",() => {
+  const open = $("menuToggle").getAttribute("aria-expanded") !== "true";
+  setMenuOpen(open);
+});
 
-document.getElementById("pubFilter")
-  .addEventListener("change",renderPublications);
+$("navLinks").addEventListener("click",event => {
+  if (event.target.closest("a")) {
+    setMenuOpen(false);
+  }
+});
 
-document.getElementById("themeToggle")
-  .addEventListener("click",()=>{
-    const next=document.documentElement.dataset.theme==="light"
-      ?"dark":"light";
+document.addEventListener("keydown",event => {
+  if (
+    event.key === "Escape" &&
+    $("menuToggle").getAttribute("aria-expanded") === "true"
+  ) {
+    setMenuOpen(false);
+    $("menuToggle").focus();
+  }
+});
 
-    document.documentElement.dataset.theme=next;
+document.addEventListener("click",event => {
+  if (!event.target.closest(".site-header")) {
+    setMenuOpen(false);
+  }
+});
 
-    try{
-      localStorage.setItem("cv-theme",next);
-    }catch(error){}
-  });
+window.addEventListener("resize",() => {
+  if (window.innerWidth > 980) setMenuOpen(false);
+});
 
-let initialTheme="dark";
-let initialLanguage="de";
+$("pubSearch").addEventListener("input",renderPublications);
+$("pubFilter").addEventListener("change",renderPublications);
 
-try{
-  initialTheme=localStorage.getItem("cv-theme")||"dark";
-  initialLanguage=localStorage.getItem("cv-language")||"de";
-}catch(error){}
+$("pubMore").addEventListener("click",() => {
+  publicationLimit += 8;
+  renderPublications();
+});
 
-document.documentElement.dataset.theme=
-  initialTheme==="light"?"light":"dark";
+$("labTabs").addEventListener("click",event => {
+  const button = event.target.closest("[data-case]");
+  if (!button) return;
+
+  activeCase = Number(button.dataset.case);
+  renderLab({focusTab:true});
+});
+
+$("labPanel").addEventListener("click",event => {
+  const choiceButton = event.target.closest("[data-choice]");
+
+  if (choiceButton) {
+    const selected = Number(choiceButton.dataset.choice);
+    choices[activeCase] = selected;
+    renderLab({focusChoice:selected});
+    return;
+  }
+
+  if (event.target.closest("#labReset")) {
+    choices[activeCase] = null;
+    renderLab({focusChoice:0});
+    return;
+  }
+
+  if (event.target.closest("#labNext")) {
+    activeCase = (activeCase + 1) % labCases[currentLang].length;
+    renderLab({focusTab:true});
+  }
+});
+
+$("themeToggle").addEventListener("click",() => {
+  const next =
+    document.documentElement.dataset.theme === "light"
+      ? "dark" : "light";
+
+  document.documentElement.dataset.theme = next;
+
+  try {
+    localStorage.setItem("cv-theme",next);
+  } catch (error) {}
+});
+
+/* =====================================================
+   INITIALIZATION
+   ===================================================== */
+
+let initialTheme = "dark";
+let initialLanguage = "de";
+
+try {
+  initialTheme = localStorage.getItem("cv-theme") || "dark";
+  initialLanguage = localStorage.getItem("cv-language") || "de";
+} catch (error) {}
+
+document.documentElement.dataset.theme =
+  initialTheme === "light" ? "light" : "dark";
 
 renderLanguage(
-  translations[initialLanguage]?initialLanguage:"de"
+  translations[initialLanguage] ? initialLanguage : "de"
 );
+
 </script>
 </body>
 </html>
